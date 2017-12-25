@@ -16,6 +16,7 @@
 			status:'alpha',
 			version:'3.2.3.171223'
 		},
+		
 		inc=typeof module==='object'&&typeof module.exports==='object'?module.exports=global.document?factory(global,factory):function(w){if(!w.document)j.error(j.message.ad);return factory(w,factory);}():factory(global,factory);
 	typeof global.jsl==='undefined'?(inc.fn=j,global.jsl=inc,document.addEventListener('DOMContentLoaded',function(){inc.fn.DOMCL=true;},false)):j.error(j.message.ac);
 }(typeof window!='undefined'?window:this,function(ww,fn){
