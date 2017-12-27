@@ -46,7 +46,7 @@
                                         gh[va][c][j](ev);
                                 }
                             }
-                        },c=b[i];    
+                        },c=b[i];
                         if(/(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(va)!=null){
                             let vb=/(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(va);
                             va=vb[1]+vb[2]+vb[3];
@@ -138,7 +138,7 @@
                                             gc(i)[j](l,gg[i][j][l]);
                                     if(ty.a(gg[i][j][k]))
                                         for(let l=0;l<gg[i][j][k].length;l++)
-                                            gc(i)[j](k,gg[i][j][k][l]);    
+                                            gc(i)[j](k,gg[i][j][k][l]);
                                 }
                                 if(ty.o(gg[i][j])&&ty.a(gg[i][j]))
                                     for(let k=0;k<gg[i][j].length;k++)
@@ -928,7 +928,7 @@
                     gj=[];
                     ev.preventDefault();
                 }
-            }); 
+            });
             if(c==='keydown')new fn.re(ww).on('keyup',function(ev){gj=[];});
             if(c==='keyup')new fn.re(ww).on('keypress',function(ev){gj.splice(gj.indexOf(ev),1);});
         },
