@@ -545,14 +545,11 @@
                     fa=function(ev){
                         for(var i=0;i<gh[vb][c].length;i++){
                             if(ty.f(gh[vb][c][i])){
-                                if(ty.s(gh[vb][c][i]['tagName'])){
-                                    if(gh[vb][c][i]['tagName']==ev.target.tagName){
+                                if(ty.s(gh[vb][c][i]['tagName']))
+                                    if(gh[vb][c][i]['tagName']==ev.target.tagName)
                                         gh[vb][c][i](ev);
-                                    }
-                                }
-                                if(ty.u(gh[vb][c][i]['tagName'])){
+                                if(ty.u(gh[vb][c][i]['tagName']))
                                     gh[vb][c][i](ev);
-                                }
                             }
                         }
                     };
@@ -798,7 +795,7 @@
             submit:function(c,d){bb[0](c,d,'submit');},
             val:function(c,d){bb[0](c,d,'val');}
         };
-        fn.re.prototype=ty.f(Proxy)?new Proxy(ba,{
+        fn.re.prototype=ty.f(ww.Proxy)?new Proxy(ba,{
             get:function(t,k){
                 if(ty.e(a)||a===null||ty.n(a)||String(a)==='[object Object]')return a;
                 if(ty.s(a)||ty.o(a)){
