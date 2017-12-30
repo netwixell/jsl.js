@@ -10,7 +10,8 @@
                 ae:'type mismatch',
                 af:'this database has been created',
                 ag:'bad type data',
-                ah:'this browser does not support desktop notification'
+                ah:'this browser does not support desktop notification',
+                ai:'reserved'
             },
             name:'JavaScript Library',
             status:'alpha',
@@ -65,7 +66,10 @@
                 }else{
                     gk.fn=a;
                     for(var i in b)
-                        gk[i]=b[i];
+                        if(ty.u(gk[i]))
+                            gk[i]=b[i];
+                        else 
+                            gc.fn.error(gc.fn.msg.ai);
                     gk.fn();
                 }
             }else{
@@ -842,7 +846,7 @@
         },
         databaseCreate:function(c,d){
             if(!ty.s(c)||!ty.o(d)){
-                gc.fn.log(gc.fn.msg.ab);
+                gc.fn.error(gc.fn.msg.ab);
                 return;
             }
             if(ty.u(ww.databaseinfo))
@@ -850,7 +854,7 @@
             if(ty.u(ww.databaseinfo[c]))
                 ww.databaseinfo[c]={};
             else 
-                gc.fn.log(gc.fn.msg.af);
+                gc.fn.error(gc.fn.msg.af);
             for(var i in d)
                 ww.databaseinfo[c][i]=d[i];
             if(ty.u(ww.databasedata))
@@ -861,7 +865,7 @@
         databaseInsert:function(c,d){
             for(var i in d){
                 if(ww.databaseinfo[c][i]!=typeof d[i]){
-                    gc.fn.log(gc.fn.msg.ag);
+                    gc.fn.error(gc.fn.msg.ag);
                     return;
                 }
             }
@@ -894,7 +898,7 @@
                             }else 
                                 ww.databasedata[c][i][k]=d[k];
                         }else{
-                            gc.fn.log(gc.fn.msg.ae);
+                            gc.fn.error(gc.fn.msg.ae);
                             return;
                         }
                     }
@@ -979,7 +983,7 @@
         },
         notifi:function(c){
             if(!('Notification' in ww))
-                gc.fn.log(gc.fn.msg.ah);
+                gc.fn.error(gc.fn.msg.ah);
             else 
                 if(Notification.permission==='granted'&&!ty.u(c)&&!ty.e(c))
                     new Notification(c);
