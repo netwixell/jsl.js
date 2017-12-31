@@ -235,8 +235,22 @@
                     for(var i in c)if(ty.f(z[i]))z[i](c[i]);
                 }
                 if(ty.s(c)){
-                    if(c==='scrollTop'&&ty.u(d)&&ty.u(e))return ww.pageYOffset?ww.pageYOffset:ww.do.documentElement.scrollTop?ww.do.documentElement.scrollTop:ww.do.body.scrollTop;
-                    if(c==='scrollLeft'&&ty.u(d)&&ty.u(e))return ww.do.documentElement.scrollLeft?ww.do.documentElement.scrollLeft:ww.do.body.scrollLeft;
+                    if(c==='scrollTop'&&ty.u(d)&&ty.u(e))return 
+                            this.a==ww||a=='body'?
+                            ww.pageYOffset?
+                            ww.pageYOffset:
+                            ww.do.documentElement.scrollTop?
+                            ww.do.documentElement.scrollTop:
+                            ww.do.body.scrollTop:
+                            this.a.scrollTop;
+                    if(c==='scrollLeft'&&ty.u(d)&&ty.u(e))return 
+                            this.a==ww||a=='body'?
+                            ww.pageXOffset?
+                            ww.pageXOffset:
+                            ww.do.documentElement.scrollLeft?
+                            ww.do.documentElement.scrollLeft:
+                            ww.do.body.scrollLeft:
+                            this.a.scrollLeft;
                     if(c==='scrollTop'&&ty.n(d)&&ty.u(e))ww.scrollTo(va.animate('scrollLeft'),d);
                     if(c==='scrollLeft'&&ty.n(d)&&ty.u(e))ww.scrollTo(d,va.animate('scrollTop'));
                     if(c==='scrollTo'&&ty.n(d)&&ty.n(e))ww.scrollTo(d,e);
