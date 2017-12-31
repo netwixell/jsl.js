@@ -235,16 +235,14 @@
                     for(var i in c)if(ty.f(z[i]))z[i](c[i]);
                 }
                 if(ty.s(c)){
-                    if(c==='scrollTop'&&ty.u(d)&&ty.u(e))return 
-                            this.a==ww||a=='body'?
+                    if(c==='scrollTop'&&ty.u(d)&&ty.u(e))return this.a==ww||a=='body'?
                             ww.pageYOffset?
                             ww.pageYOffset:
                             ww.do.documentElement.scrollTop?
                             ww.do.documentElement.scrollTop:
                             ww.do.body.scrollTop:
                             this.a.scrollTop;
-                    if(c==='scrollLeft'&&ty.u(d)&&ty.u(e))return 
-                            this.a==ww||a=='body'?
+                    if(c==='scrollLeft'&&ty.u(d)&&ty.u(e))return this.a==ww||a=='body'?
                             ww.pageXOffset?
                             ww.pageXOffset:
                             ww.do.documentElement.scrollLeft?
