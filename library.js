@@ -822,7 +822,20 @@
                 }
             }
         }):ba;
-        for(var i in ge)if(ty.u(ba[i]))fn.re.prototype[i]=ge[i];return''===a||null===a||ty.n(a)||ty.b(a)||ty.u(a)?a:new fn.re(a,b);
+        for(var i in ge)if(ty.u(ba[i]))fn.re.prototype[i]=function(c,d,e,f,g){
+            var va=this.a,
+                vb=this.length,
+                vc=ge[i](c,d,e,f,g),
+                fa=function tg(){
+                    this.a=va;
+                    this.length=vb;
+                    this.selector=a;
+                };
+            fa.__proto__={};
+            fa.prototype=ba;
+            if(!ty.u(vc))return ge[i]==vc[i]?new fa():vc;
+        };
+        return''===a||null===a||ty.n(a)||ty.b(a)||ty.u(a)?a:new fn.re(a,b);
     });
     return(Object.setPrototypeOf||function(a,b){for(var i in b)gb(a,i,b[i]);a.__proto__=b;return a;})(gc,{
         ajax:function(c,d){
