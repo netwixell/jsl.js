@@ -823,6 +823,12 @@
             }
         }):ba;
         for(var i in ge)if(ty.u(ba[i]))fn.re.prototype[i]=function(c,d,e,f,g){
+            ge[i].ty=ty;ge[i].ga=ga;
+            ge[i].gb=gb;ge[i].gc=gc;
+            ge[i].gd=gd;ge[i].ge=ge;
+            ge[i].gf=gf;ge[i].gg=gg;
+            ge[i].gh=gh;ge[i].gi=gi;
+            ge[i].gj=gj;ge[i].gk=gk;
             var va=this.a,
                 vb=this.length,
                 vc=ge[i](c,d,e,f,g),
