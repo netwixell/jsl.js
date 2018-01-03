@@ -128,7 +128,7 @@ url (*String*) — строка url<br><br>
 **require** ( files ) подключает script и style<br>
 files (*Object*) — масив подключаемых файлов<br><br>
 
-**templater** (c,d)<br><br>
+	**templater** (c,d)<br><br>
 
 **trigger** (type) <br>
 type (*String*) — the type of the listened event.
