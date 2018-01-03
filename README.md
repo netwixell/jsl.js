@@ -84,7 +84,7 @@ str (*String*) — Preobrazhenie line<br><br>
 **navi** () vozvrashaet string navigator.<br><br>
 **notifi** ( title )<br>
 title (*String*) — string uvedomlenie.<br><br>
-**on** (type, listener) specifies the event handler for the item.<br>
+**on** ( type, listener ) specifies the event handler for the item.<br>
 type (*String*) — the type of the listened event.<br>
 listener (*Function*) — the object which receives notification when an event of the specified type occurred. It must be an object that implements the EventListener interface, or simply a JavaScript function (object).<br><br>
 **parserUrl** ( url ) returns the url components.<br>
