@@ -1,56 +1,56 @@
 Methods
 -----------------------------------
-**addClass** ( cName ) этот метод добавляет клас заданному элементу.<br><br>
-сName (*String*) — имя класса. Если нужно указать несколько классов, они указываются через пробел.<br><br>
+**addClass** ( cName ) this method adds the class to the specified element.<br><br>
+<p>сName (*String*) — the name of the class. If you want to specify multiple classes, they are separated by a space.<p><br><br>
 **animate** ( c, d, e )<br><br>
-**append** ( child[, tagName] ) добавляет элемент в конец списка дочерних элементов родителя. Если элемент уже существует он удаляется из текущего родителя и вставляется заново.<br><br>
-child (*String, Object*) — элемент вставляется в конец.<br>
-tagName (*String*) — указывает в элемент какого типа должен быть обернут child перед вставкой.<br><br>
-**attr** ( name[, value] ) Добавляет новый атрибут или изменяет значение существующего атрибута у выбранного элемента или возвращает значение указанного атрибута элемента. Если элемент не содержит данный атрибут, могут быть возвращены null или "" (пустая строка); <br><br>
-name (*String*) — имя атрибута. Так же служит для получения значения атрибута.<br>
-value (*String*) — значение атрибута. Если не задано, возвращается текущее значене.<br><br>
-**blur** () этот метод удаляет фокус с текущего элемента.<br><br>
-**children** ( [index] ) доступный для чтения аттрибут Node.childNodes возвращает коллекцию дочерних элементов данного элемента.<br><br>
-index (*Number*) — индекс элемента. Если не задано, возвращается все дочерние элементы.<br><br>
-**createElement** ( [attributes] ) создает указанный в аргументе элемент или HTMLUnknownElement, если элемент неизвестен.<br><br>
-attributes (*Object*) — перечень атрибутов и значений, которые необходимо назначить создаваемому элементу.<br><br>
-**css** ( property[, value] ) возвращает объект CSSStyleDeclaration который описывает атрибут стиля элемента.<br><br>
-property (*String*) — имя свойства, которое должно быть обработано.<br>
-property (*Object*) — перечень свойств и значений.<br>
-value (*String*) — значение свойства. Если не задано, возвращается текущее значене.<br><br>
-**data** ( property ) служит для привязки свойств к элементу DOM. Не изменяет структуру и всвойства элементов DOM.<br><br>
-property (*Object*) — перечень утавнавливаемых свойств и значений.<br>
-property (*String*) — возвращает значение свойства.<br><br>
-**drgdrp** (direction) позволяет перетаскивать элементы по странице (не стабильно)<br><br>
-direction (*Number*) — направление. 0 - X, 1 - Y<br><br>
-**getCoordinates** () этот метод возващает координаты элемента.<br><br>
-**getEvents** ( [type] ) возвращает объект событий.<br><br>
-type (*String*) — представляющая тип события. Если не задано, возвращается объект содержащий все установлинные обработчики для этого элемента.<br><br>
-**getFocused** ( listener ) метод регистрирует на фокус страницы, вызывает обработчик.<br><br>
-listener (*Function*) — объект который принимает уведомление, когда страница получила фокус.<br><br>
-**getIndex** () этот метод возвращает индекс элемента в DOM.<br><br>
-**html** ( [content] ) устанавливает или получает разметку дочерних элементов.<br><br>
-content (*String*) — значение. Если не задано, возвращается текущее значене.<br><br>
-**off** ( type, tagName, listener ) удаляет обработчик заданного события для элемента, возвращает обработчики событий.<br><br>
-type (*String*) — тип прослушиваемого события.<br>
-tagName (*String*) — указывающая элемент какого типа должен быть обработан.<br>
-listener (*Function*) — объект который принимает уведомление, когда событие указанного типа произошло. Это должен быть объект, реализующий интерфейс EventListener или просто функция JavaScript (объект).<br><br>
-**on** ( type[, tagName, listener] ) устанавливает обработчик заданного события для элемента, возвращает обработчики событий.<br><br>
-type (*String*) — тип прослушиваемого события.<br>
-tagName (*String*) — указывающая элемент какого типа должен быть обработан.<br>
-listener (*Function*) — объект который принимает уведомление, когда событие указанного типа произошло. Это должен быть объект, реализующий интерфейс EventListener или просто функция JavaScript (объект).<br>
-Если tagName и listener не заданы, метод эмулирует событие.<br><br>
-**parent** () этот метод возвращает родителя элемента.<br><br>
-**prop** ( name[, value] ) устанавливает свойство заданного элемента.<br><br>
-name (*String*) — представляющая название свойства элемента.<br>
-value (*String, Number*) — значение свойства элемента. Если не задано, возвращается текущее значене.<br><br>
-**remove** ( child ) удаляет дочерний элемент из DOM. Возвращает удаленный элемент.<br><br>
-child (*Object*) — дочерний элемент который будет удален из DOM.<br><br>
-**removeClass** ( name ) этот метод удаляет клас у заданного элемента.<br><br>
-name (*String*) — название класса элемента.<br><br>
-**shiftEventListener** ( type ) служит для изменения порядка выполнения обработчиков.<br><br>
-type (*String*) — тип изменяемого события.<br><br>
-**submit** ( url ) этот метод отправляет форму после проверки<br><br>
-url (*String*) — адрес для отправки формы.<br><br>
-**val** ( [value] ) этот метод устанавливает или возвращает значение формы<br><br>
-value (*String*) — значение. Если не задано, возвращается текущее значене.
+**append** ( child[, tagName] ) adds an element to the end of the list of children of parent. If the item already exists it is removed from its current parent and inserts it again.<br><br>
+child (*String, Object*) — the element is inserted at the end.<br>
+tagName (*String*) — indicates in what type of element should be wrapped before inserting a child.<br><br>
+**attr** ( name[, value] ) Adds a new attribute or changes the value of an existing attribute on the selected element, or returns the value of the specified attribute of an element. If the item does not contain this attribute can be returned to null or "" (empty string); <br><br>
+name (*String*) — the name of the attribute. The same is used to retrieve attribute values.<br>
+value (*String*) — attribute value. If not specified, returns the current value.<br><br>
+**blur** () this method removes the focus from the current element.<br><br>
+**children** ( [index] ) the read-only attribute Node.childNodes returns a collection of child elements of this element.<br><br>
+index (*Number*) the index of the element. If not specified, returns all child elements.<br><br>
+**createElement** ( [attributes] ) creates the specified in the argument element or HTMLUnknownElement if the element is unknown.<br><br>
+attributes (*Object*) — the list of attributes and values you want to assign to the created element.<br><br>
+**css** ( property[, value] ) returns a CSSStyleDeclaration object which describes the attribute of the style element.<br><br>
+property (*String*) — name of the property that should be processed.<br>
+property (*Object*) — the list of properties and values.<br>
+value (*String*) — the value of the property. If not specified, returns the current value.<br><br>
+**data** ( property ) is used for binding properties to a DOM element. Does not change the structure and properties of DOM elements.<br><br>
+property (*Object*) — utanovleny list of properties and values.<br>
+property (*String*) — returns the value of the property.<br><br>
+**drgdrp** (direction) allows you to drag elements on the page (not stable)<br><br>
+direction (*Number*) — direction. 0 - X, 1 - Y<br><br>
+**getCoordinates** () this method vozvrashaet the coordinates of the element.<br><br>
+**getEvents** ( [type] ) returns the event object.<br><br>
+type (*String*) — represents the type of event. If not specified, the returned object contains all ustanovlennye handlers for this element.<br><br>
+**getFocused** ( listener ) method registers page focus, call the handler.<br><br>
+listener (*Function*) — the object which receives a notification when the page has focus.<br><br>
+**getIndex** () this method returns the index of the element in the DOM.<br><br>
+**html** ( [content] ) sets or gets the layout of child elements.<br><br>
+content (*String*) — value. If not specified, returns the current value.<br><br>
+**off** ( type, tagName, listener ) removes the given event handler for an element, returns the event handlers.<br><br>
+type (*String*) — the type of the listened event.<br>
+tagName (*String*) — indicates what the element type should be processed.<br>
+listener (*Function*) — the object which receives notification when an event of the specified type occurred. It must be an object that implements the EventListener interface, or simply a JavaScript function (object).<br><br>
+**on** ( type[, tagName, listener] ) sets the given event handler for an element, returns the event handlers.<br><br>
+type (*String*) — the type of the listened event.<br>
+tagName (*String*) — indicates what the element type should be processed.<br>
+listener (*Function*) — the object which receives notification when an event of the specified type occurred. It must be an object that implements the EventListener interface, or simply a JavaScript function (object).<br>
+If tagName and listener is not set, the method emulates the event.<br><br>
+**parent** () this method returns the parent element.<br><br>
+**prop** ( name[, value] ) sets a property for the specified element.<br><br>
+name (*String*) — represents the name of the item property.<br>
+value (*String, Number*) the value of the property element. If not specified, returns the current value.<br><br>
+**remove** ( child ) removes a child element from the DOM. Returns the removed element.<br><br>
+child (*Object*) — the child element to be removed from the DOM.<br><br>
+**removeClass** ( name ) this method removes the class from the specified element.<br><br>
+name (*String*) — the name of the element class.<br><br>
+**shiftEventListener** ( type ) is used to change the order of execution of handlers.<br><br>
+type (*String*) — type modified event.<br><br>
+**submit** ( url ) this method sends the form after the validation<br><br>
+url - (*String*) — email address to send the form.<br><br>
+**val** ( [value] ) this method sets or returns the value of the form<br><br>
+value (*String*) — value. If not specified, returns the current value.
