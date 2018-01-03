@@ -68,20 +68,35 @@ headers: an object that can contain the passed headers<br>
 3: the function that occurs after the onset of the readyState 3<br>
 4: function is executed after the occurrence of the condition readyState 4<br>
 send (*String*) — the string wakes, Perdana to send<br><br>
+**bind** ( thisArg )<br><br>
+thisArg (*Object*) — вызывает функцию с указанным значением this и аргументами, предоставленными в виде массива (либо массивоподобного объекта).<br><br>
 
-**bind** ()<br><br>
-**databaseCreate** ()<br><br>
-**databaseInsert** ()<br><br>
-**databaseSelect** ()<br><br>
-**databaseUpdate** ()<br><br>
-**getXmlHttp** ()<br><br>
-**hotkey** ()<br><br>
-**imports** ()<br><br>
-**isJSON** ()<br><br>
-**navi** ()<br><br>
-**notifi** ()<br><br>
-**on** ()<br><br>
-**parserUrl** ()<br><br>
-**require** ()<br><br>
-**templater** ()<br><br>
-**trigger** ()<br><br>
+	**databaseCreate** (c,d)<br><br>
+	**databaseInsert** (c,d)<br><br>
+	**databaseSelect** (c,d)<br><br>
+	**databaseUpdate** (c,d,e)<br><br>
+
+**getXmlHttp** () возвращает экземпляр XMLHttpRequest<br><br>
+**hotkey** ( type, key, listener )<br><br>
+type (*String*) — the type of the listened event.<br><br>
+key (*String*) — keyboard shortcut<br>
+listener (*Function*) — the object which receives notification when an event of the specified type occurred. It must be an object that implements the EventListener interface, or simply a JavaScript function (object).<br><br>
+**imports** ( methods ) импортирует методы использующие DOM. Можно использовать для создания своих модулей.<br><br>
+methods (*Object*) — объект методов<br><br>
+**toJSON** ( str ) возвращает строку в json формате<br><br>
+str (*String*) — переобразуемая строка<br><br>
+**navi** () возвразает строку navigator.<br><br>
+**notifi** ( title )<br><br>
+title (*String*) — строка увдомления.
+**on** (type, listener) specifies the event handler for the item.<br><br>
+type (*String*) — the type of the listened event.<br>
+listener (*Function*) — the object which receives notification when an event of the specified type occurred. It must be an object that implements the EventListener interface, or simply a JavaScript function (object).<br><br>
+**parserUrl** ( url ) возвращает url компоненты<br><br>
+url (*String*) — строка url<br><br>
+**require** ( files ) подключает script и style<br><br>
+files (*Object*) — масив подключаемых файлов<br><br>
+
+**templater** (c,d)<br><br>
+
+**trigger** (type) <br><br>
+type (*String*) — the type of the listened event.
