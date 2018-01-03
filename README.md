@@ -51,7 +51,7 @@ name (*String*) — the name of the element class.<br><br>
 **shiftEventListener** ( type ) is used to change the order of execution of handlers.<br>
 type (*String*) — type modified event.<br><br>
 **submit** ( url ) this method sends the form after the validation<br>
-url * (*String*) — address to send the form.<br><br>
+url (*String*) — address to send the form.<br><br>
 **val** ( [value] ) this method sets or returns the value of the form<br>
 value (*String*) — value. If not specified, returns the current value.<br><br>
 
