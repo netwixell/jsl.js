@@ -92,5 +92,5 @@ url - (*String*) — the url string<br><br>
 **require** ( files ) connect script and style<br>
 files (*Object*) — array of include files<br><br>
 	**templater** (c,d)<br><br>
-**trigger** (type) <br>
+**trigger** ( type ) <br>
 type (*String*) — the type of the listened event.
