@@ -1,7 +1,7 @@
 Methods
 -----------------------------------
 **addClass** ( cName ) this method adds the class to the specified element.<br><br>
- сName (*String*) — the name of the class. If you want to specify multiple classes, they are separated by a space.<br><br>
+сName (*String*) — the name of the class. If you want to specify multiple classes, they are separated by a space.<br><br>
 **animate** ( c, d, e )<br><br>
 **append** ( child[, tagName] ) adds an element to the end of the list of children of parent. If the item already exists it is removed from its current parent and inserts it again.<br><br>
 child (*String, Object*) — the element is inserted at the end.<br>
