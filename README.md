@@ -60,14 +60,14 @@ value (*String*) — value. If not specified, returns the current value.
 Methods
 -----------------------------------
 **ajax** ( object[,send] )
-object (*Object*) — объект может содержать:<br>
-type: срока, "GET" или "POST"<br>
-url: строка, адресс<br>
-headers: объект, может содержать передаваемые заголоваки<br>
-2: функция, выполняется после наступления состояния readyState 2<br>
-3: функция, выполняется после наступления состояния readyState 3<br>
-4: функция, выполняется после наступления состояния readyState 4<br>
-send (*String*) — строка, будит пердано в send<br><br>
+object (*Object*) the object can contain:<br>
+type: the term "GET" or "POST"<br>
+url: string, address<br>
+headers: an object that can contain the passed headers<br>
+2: the function that occurs after the onset of the readyState 2<br>
+3: the function that occurs after the onset of the readyState 3<br>
+4: function is executed after the occurrence of the condition readyState 4<br>
+send (*String*) — the string wakes, Perdana to send<br><br>
 
 **bind** ()
 **databaseCreate** ()
