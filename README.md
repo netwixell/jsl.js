@@ -88,7 +88,7 @@ title (*String*) — string uvedomlenie.<br><br>
 type (*String*) — the type of the listened event.<br>
 listener (*Function*) — the object which receives notification when an event of the specified type occurred. It must be an object that implements the EventListener interface, or simply a JavaScript function (object).<br><br>
 **parserUrl** ( url ) returns the url components.<br>
-url * (*String*) — the url string<br><br>
+url (*String*) — the url string<br><br>
 **require** ( files ) connect script and style<br>
 files (*Object*) — array of include files<br><br>
 	**templater** (c,d)<br><br>
