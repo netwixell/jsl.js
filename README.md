@@ -59,7 +59,7 @@ value (*String*) — value. If not specified, returns the current value.
 
 Methods
 -----------------------------------
-**ajax** ( object[,send] )
+**ajax** ( object[,send] )<br>
 object (*Object*) the object can contain:<br>
 type: the term "GET" or "POST"<br>
 url: string, address<br>
@@ -68,7 +68,8 @@ headers: an object that can contain the passed headers<br>
 3: the function that occurs after the onset of the readyState 3<br>
 4: function is executed after the occurrence of the condition readyState 4<br>
 send (*String*) — the string wakes, Perdana to send<br><br>
-**bind** ( thisArg )<br><br>
+
+**bind** ( thisArg )<br>
 thisArg (*Object*) — вызывает функцию с указанным значением this и аргументами, предоставленными в виде массива (либо массивоподобного объекта).<br><br>
 
 	**databaseCreate** (c,d)<br><br>
@@ -77,26 +78,34 @@ thisArg (*Object*) — вызывает функцию с указанным з�
 	**databaseUpdate** (c,d,e)<br><br>
 
 **getXmlHttp** () возвращает экземпляр XMLHttpRequest<br><br>
-**hotkey** ( type, key, listener )<br><br>
-type (*String*) — the type of the listened event.<br><br>
+
+**hotkey** ( type, key, listener )<br>
+type (*String*) — the type of the listened event.<br>
 key (*String*) — keyboard shortcut<br>
 listener (*Function*) — the object which receives notification when an event of the specified type occurred. It must be an object that implements the EventListener interface, or simply a JavaScript function (object).<br><br>
-**imports** ( methods ) импортирует методы использующие DOM. Можно использовать для создания своих модулей.<br><br>
+
+**imports** ( methods ) импортирует методы использующие DOM. Можно использовать для создания своих модулей.<br>
 methods (*Object*) — объект методов<br><br>
-**toJSON** ( str ) возвращает строку в json формате<br><br>
+
+**toJSON** ( str ) возвращает строку в json формате<br>
 str (*String*) — переобразуемая строка<br><br>
+
 **navi** () возвразает строку navigator.<br><br>
-**notifi** ( title )<br><br>
-title (*String*) — строка увдомления.
-**on** (type, listener) specifies the event handler for the item.<br><br>
+
+**notifi** ( title )<br>
+title (*String*) — строка увдомления.<br><br>
+
+**on** (type, listener) specifies the event handler for the item.<br>
 type (*String*) — the type of the listened event.<br>
 listener (*Function*) — the object which receives notification when an event of the specified type occurred. It must be an object that implements the EventListener interface, or simply a JavaScript function (object).<br><br>
-**parserUrl** ( url ) возвращает url компоненты<br><br>
+
+**parserUrl** ( url ) возвращает url компоненты<br>
 url (*String*) — строка url<br><br>
-**require** ( files ) подключает script и style<br><br>
+
+**require** ( files ) подключает script и style<br>
 files (*Object*) — масив подключаемых файлов<br><br>
 
 **templater** (c,d)<br><br>
 
-**trigger** (type) <br><br>
+**trigger** (type) <br>
 type (*String*) — the type of the listened event.
