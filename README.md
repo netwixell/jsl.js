@@ -77,7 +77,7 @@ thisArg (*Object*) — calls the function with a given this value and arguments 
 type (*String*) — the type of the listened event.<br>
 key (*String*) — keyboard shortcut<br>
 listener (*Function*) — the object which receives notification when an event of the specified type occurred. It must be an object that implements the EventListener interface, or simply a JavaScript function (object).<br><br>
-**imports** ( methods ) imports methods uses DOM. You can use to create your own modules.<br>
+**imports** ( methods ) imports methods for DOM. You can use to create your own modules.<br>
 methods (*Object*) object methods<br><br>
 **toJSON** ( str ) returns a string in json format<br>
 str (*String*) — Preobrazhenie line<br><br>
