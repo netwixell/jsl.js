@@ -1,4 +1,4 @@
-Methods
+Methods for DOM
 -----------------------------------
 **addClass** ( cName ) this method adds the class to the specified element.<br><br>
 сName (*String*) — the name of the class. If you want to specify multiple classes, they are separated by a space.<br><br>
@@ -54,3 +54,34 @@ type (*String*) — type modified event.<br><br>
 url - (*String*) — address to send the form.<br><br>
 **val** ( [value] ) this method sets or returns the value of the form<br><br>
 value (*String*) — value. If not specified, returns the current value.
+
+
+
+Methods
+-----------------------------------
+**ajax** ( object[,send] )
+object (*Object*) — объект может содержать:<br>
+type: срока, "GET" или "POST"<br>
+url: строка, адресс<br>
+headers: объект, может содержать передаваемые заголоваки<br>
+2: функция, выполняется после наступления состояния readyState 2<br>
+3: функция, выполняется после наступления состояния readyState 3<br>
+4: функция, выполняется после наступления состояния readyState 4<br>
+send (*String*) — строка, будит пердано в send<br><br>
+
+**bind** ()
+**databaseCreate** ()
+**databaseInsert** ()
+**databaseSelect** ()
+**databaseUpdate** ()
+**getXmlHttp** ()
+**hotkey** ()
+**imports** ()
+**isJSON** ()
+**navi** ()
+**notifi** ()
+**on** ()
+**parserUrl** ()
+**require** ()
+**templater** ()
+**trigger** ()
