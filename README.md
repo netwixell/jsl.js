@@ -69,19 +69,19 @@ headers: an object that can contain the passed headers<br>
 4: function is executed after the occurrence of the condition readyState 4<br>
 send (*String*) — the string wakes, Perdana to send<br><br>
 
-**bind** ()
-**databaseCreate** ()
-**databaseInsert** ()
-**databaseSelect** ()
-**databaseUpdate** ()
-**getXmlHttp** ()
-**hotkey** ()
-**imports** ()
-**isJSON** ()
-**navi** ()
-**notifi** ()
-**on** ()
-**parserUrl** ()
-**require** ()
-**templater** ()
-**trigger** ()
+**bind** ()<br><br>
+**databaseCreate** ()<br><br>
+**databaseInsert** ()<br><br>
+**databaseSelect** ()<br><br>
+**databaseUpdate** ()<br><br>
+**getXmlHttp** ()<br><br>
+**hotkey** ()<br><br>
+**imports** ()<br><br>
+**isJSON** ()<br><br>
+**navi** ()<br><br>
+**notifi** ()<br><br>
+**on** ()<br><br>
+**parserUrl** ()<br><br>
+**require** ()<br><br>
+**templater** ()<br><br>
+**trigger** ()<br><br>
