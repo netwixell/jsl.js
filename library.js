@@ -970,7 +970,7 @@
                 if(ty.s(i)&&ty.f(c[i]))
                     ge[i]=c[i];
         },
-        isJSON:function(c){
+        toJSON:function(c){
             if(ww.JSON&&JSON.parse){
                 var va=c;
                 va=va.replace(/\\["\\\/bfnrtu]/g, '@');
@@ -1065,7 +1065,7 @@
             })()||'';
             return va;
         },
-        require:function(c,d){
+        require:function(c){
             var va=[
                 [/^(.+)\.[js](.*)$/im,/^(.+)\.[css](.*)$/im],
                 [gc('script'),gc('link')],
@@ -1081,7 +1081,7 @@
                     for(var j=0;j<va[0].length;j++){
                         if(ty.a(c[i].match(va[0][j]))){
                             for(var k=0;k<va[1][j].a.length;k++)
-                                if(va[1][j].a[k].getAttribute(va[2][j])===c[i]&&d!=true)
+                                if(va[1][j].a[k].getAttribute(va[2][j])===c[i])
                                     break _;
                             ([
                                 function(c){va[3].appendChild(va[1][j].createElement({type:'text/javascript',src:c}));},
