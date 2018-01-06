@@ -156,7 +156,8 @@
                 if (vb[1] === 'Object') return a;
             if (ty.a(a) && a.length > 0) {
                 this.selector = undefined;
-                return;
+                for (var i = 0; i < a.length; i++)
+                    if (ty.o(a[i])) return;
             }
             if (va === null && vb === null) return a;
         }
@@ -1354,4 +1355,4 @@
                 ww.dispatchEvent(gc.fn.events[c]);
         }
     });
-});
+// });
