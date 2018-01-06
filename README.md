@@ -1,4 +1,6 @@
 <img src="https://travis-ci.org/netwixell/jsl.js.svg?branch=master">
+
+
 Methods for DOM
 --------------------------------------------------------------------
 **addClass** ( cName ) this method adds the class to the specified element.<br>
