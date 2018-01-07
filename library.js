@@ -18,8 +18,8 @@
                 ai: 'reserved'
             },
             name: 'JavaScript Library',
-            status: 'alpha',
-            version: '3.2.3.171227'
+            status: 'beta',
+            version: '3.2.4.180107'
         },
         inc = typeof module === 'object' && typeof module.exports === 'object' ? module.exports = gl.document ? fa(gl, fa) : function(w) {
             if (!w.document) j.error(j.msg.ad);
@@ -46,7 +46,7 @@
                 return typeof v === 'number';
             },
             o: function(v) {
-                return typeof v === 'object';
+                return !Array.isArray(v) ? typeof v === 'object' : false;
             },
             s: function(v) {
                 return typeof v === 'string';
@@ -87,39 +87,31 @@
         };
     gb(fn, 're', function(a, b) {
         if (ty.f(a)) {
-            if (ty.o(b)) {
-                if (ty.a(b)) {
-                    for (var i = 0; i < b.length; i++) {
-                        if (gi.indexOf(ww) === -1) gi.push(ww);
-                        var va = /\[object [a-zA-Z]+\]/.test(String(ww)) ? ww + gi.indexOf(ww) : ww,
-                            fa = function(ev) {
-                                for (var j = 0; j < gh[va][c].length; j++) {
-                                    if (ty.f(gh[va][c][j]) == true) {
-                                        if (ty.s(gh[va][c][j]['tagName']))
-                                            if (gh[va][c][j]['tagName'] == ev.target.tagName) gh[va][c][j](ev);
-                                        if (ty.u(gh[va][c][j]['tagName'])) gh[va][c][j](ev);
-                                    }
+            if (ty.a(b)) {
+                for (var i = 0; i < b.length; i++) {
+                    if (gi.indexOf(ww) === -1) gi.push(ww);
+                    var va = /\[object [a-zA-Z]+\]/.test(String(ww)) ? ww + gi.indexOf(ww) : ww,
+                        fa = function(ev) {
+                            for (var j = 0; j < gh[va][c].length; j++) {
+                                if (ty.f(gh[va][c][j]) == true) {
+                                    if (ty.s(gh[va][c][j]['tagName']))
+                                        if (gh[va][c][j]['tagName'] == ev.target.tagName) gh[va][c][j](ev);
+                                    if (ty.u(gh[va][c][j]['tagName'])) gh[va][c][j](ev);
                                 }
-                            },
-                            c = b[i];
-                        if (/(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(va) != null) {
-                            var vb = /(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(va);
-                            va = vb[1] + vb[2] + vb[3];
-                        }
-                        if (ty.u(gh[va])) gh[va] = {};
-                        if (ty.u(gh[va][c])) gh[va][c] = [];
-                        gh[va][c].push(function(ev) {
-                            gk.fn = a;
-                            gk.fn(ev);
-                        });
-                        ww.addEventListener(c, fa, b || false);
+                            }
+                        },
+                        c = b[i];
+                    if (/(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(va) != null) {
+                        var vb = /(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(va);
+                        va = vb[1] + vb[2] + vb[3];
                     }
-                } else {
-                    gk.fn = a;
-                    for (var i in b)
-                        if (ty.u(gk[i])) gk[i] = b[i];
-                        else gc.fn.error(gc.fn.msg.ai);
-                    gk.fn();
+                    if (ty.u(gh[va])) gh[va] = {};
+                    if (ty.u(gh[va][c])) gh[va][c] = [];
+                    gh[va][c].push(function(ev) {
+                        gk.fn = a;
+                        gk.fn(ev);
+                    });
+                    ww.addEventListener(c, fa, b || false);
                 }
             } else {
                 gk.fn = a;
