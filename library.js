@@ -32,7 +32,7 @@
     var ty = {
             a: function(v) {
                 if (v != null)
-                    if (typeof v.length === 'number') return true;
+                    if (typeof v === 'object' && v.length > 0) return true;
                 return Array.isArray(v);
             },
             b: function(v) {
@@ -428,7 +428,7 @@
                     if (this.a == null) return this;
                     var fa = function(c, d, e) {
                         if (ty.s(d)) {
-                            if (ty.a(e)) {
+                            if ( /*ty.a(e)*/ ty.o(e) && ty.n(e.length)) {
                                 for (var i = 0; i < e.length; i++)
                                     if (ty.f(e[i].setAttribute))
                                         e[i].setAttribute(c, d);
