@@ -980,7 +980,7 @@
                         if (ty.u(gg[va])) gg[va] = {};
                         if (ty.u(gg[va][g])) gg[va][g] = {};
                         if (ty.u(gg[va][g][d])) gg[va][g][d] = [];
-                        if (ty.o(gg[va][g][d])) gg[va][g][d].push(i);
+                        if (ty.a(gg[va][g][d])) gg[va][g][d].push(i);
                     }
                 },
                 function(c, d, e) {
