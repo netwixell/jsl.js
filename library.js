@@ -130,7 +130,7 @@
                 for(var i in gg)
                     for(var j in gg[i])
                         for(var k=0;k<gg[i][j].length;k++)
-                            gc(i)[j](gg[i][j][k][0],gg[i][j][k][1],gg[i][j][k][2])    
+                            gc(i)[j](gg[i][j][k][0],gg[i][j][k][1],gg[i][j][k][2]);
                 return rs===null?rs:rs.length===1&&ty.o(rs[0])?rs[0]:rs;
             },b&&true),this.length=undefined):(this.length=ty.u(tg.length)?1:tg.length||0,this.length===1&&ty.o(tg[0])?this.a=tg[0]:ty.o(tg)?this.a=tg:(this.a=null,this.length=0));
             this.selector=a;
