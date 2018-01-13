@@ -19,7 +19,7 @@
             },
             name: 'JavaScript Library',
             status: 'beta',
-            version: '3.4.7.180112'
+            version: '3.4.9.180113'
         },
         inc = typeof module === 'object' && typeof module.exports === 'object' ? module.exports = gl.document ? fa(gl, fa) : function(w) {
             if (!w.document) j.error(j.msg.ad);
@@ -154,96 +154,91 @@
         }
         if (ty.s(a)) {
             var fa = function(st) {
-                    var fb = function(sr) {
-                            var fc = function(av) {
-                                    var va = [
-                                        /^(.+)\[(\d+)-(\d+)\]$/im,
-                                        /^(.+)\((\d+),(\d+)\)$/im,
-                                        /^(.+)\[(\d+)-\]$/im, /^(.+)\[(\d+)\]$/im,
-                                        /^(.+)!(\d+)$/im, /^(.+):(\d+)$/im
-                                    ];
-                                    for (var i = 0; i < va.length; i++) {
-                                        var vb = av.match(va[i]);
-                                        if (ty.a(vb)) {
-                                            vb = vb.map(function(aa) {
-                                                var va = +aa;
-                                                return ty.N(va) ? aa : va;
-                                            });
-                                            return [
-                                                [
-                                                    [vb[2], vb[3]], 0, sr = vb[1]
-                                                ],
-                                                [
-                                                    [vb[2], vb[3]], 1, sr = vb[1]
-                                                ],
-                                                [
-                                                    [vb[2], vb[3]], 2, sr = vb[1]
-                                                ],
-                                                [vb[2], 4, sr = vb[1]],
-                                                [vb[2], 3, sr = vb[1]],
-                                                [vb[2], 4, sr = vb[1]]
-                                            ][i];
-                                        }
-                                    }
-                                    return false;
-                                }(sr),
-                                va = ww.do.querySelectorAll(sr);
-                            if (ty.a(fc))
-                                switch (fc[1]) {
-                                    case 0:
-                                        {
-                                            var vb = [];
-                                            if (fc[0][0] >= 0 && fc[0][1] >= 0 && fc[0][0] <= fc[0][1])
-                                                for (var i = fc[0][0]; i <= fc[0][1]; i++)
-                                                    if (ty.o(va[i])) vb.push(va[i]);va = vb;
-                                        };
-                                        break;
-                                    case 1:
-                                        {
-                                            var vb = [];
-                                            if (fc[0][0] >= 0 && fc[0][1] >= 0)
-                                                for (var i = fc[0][0], j = 0; j < fc[0][1]; i++, j++)
-                                                    if (ty.o(va[i])) vb.push(va[i]);va = vb;
-                                        };
-                                        break;
-                                    case 2:
-                                        {
-                                            var vb = [];
-                                            if (fc[0][0] >= 0 && !fc[0][1])
-                                                for (var i = fc[0][0]; i <= va.length; i++)
-                                                    if (ty.o(va[i])) vb.push(va[i]);va = vb;
-                                        };
-                                        break;
-                                    case 3:
-                                        {
-                                            var vb = [];
-                                            for (var i = 0; i < va.length; i++)
-                                                if (ty.o(va[i])) vb.push(va[i]);vb.splice(fc[0], 1);va = vb;
-                                        };
-                                        break;
-                                    case 4:
-                                        va = va[fc[0]];
-                                        break;
-                                }
-                            return va;
-                        },
-                        va = st.split(/(?!\([^)]*),(?![^(]*\))/);
-                    if (va.length > 1) {
-                        var vb = [];
+                var fb = function(sr) {
+                    var fc = function(av) {
+                        var va = [/^(.+)\[(\d+)-(\d+)\]$/im, /^(.+)\((\d+),(\d+)\)$/im, /^(.+)\[(\d+)-\]$/im, /^(.+)\[(\d+)\]$/im, /^(.+)!(\d+)$/im, /^(.+):(\d+)$/im];
                         for (var i = 0; i < va.length; i++) {
-                            var vc = fb(va[i]);
-                            if (ty.a(vc))
-                                for (var j = 0; j < vc.length; j++)
-                                    vb.push(vc[j]);
-                            else
-                            if (ty.u(vc.length))
-                                vb.push(vc);
+                            var vb = av.match(va[i]);
+                            if (ty.a(vb)) {
+                                vb = vb.map(function(aa) {
+                                    var va = +aa;
+                                    return ty.N(va) ? aa : va;
+                                });
+                                return [
+                                    [
+                                        [vb[2], vb[3]], 0, sr = vb[1]
+                                    ],
+                                    [
+                                        [vb[2], vb[3]], 1, sr = vb[1]
+                                    ],
+                                    [
+                                        [vb[2], vb[3]], 2, sr = vb[1]
+                                    ],
+                                    [vb[2], 4, sr = vb[1]],
+                                    [vb[2], 3, sr = vb[1]],
+                                    [vb[2], 4, sr = vb[1]]
+                                ][i];
+                            }
                         }
-                        return vb;
-                    }
-                    return fb(st);
+                        return false;
+                    }(sr),
+                    va = ww.do.querySelectorAll(sr);
+                    if (ty.a(fc))
+                        switch (fc[1]) {
+                            case 0:
+                                {
+                                    var vb = [];
+                                    if (fc[0][0] >= 0 && fc[0][1] >= 0 && fc[0][0] <= fc[0][1])
+                                        for (var i = fc[0][0]; i <= fc[0][1]; i++)
+                                            if (ty.o(va[i])) vb.push(va[i]);va = vb;
+                                };
+                                break;
+                            case 1:
+                                {
+                                    var vb = [];
+                                    if (fc[0][0] >= 0 && fc[0][1] >= 0)
+                                        for (var i = fc[0][0], j = 0; j < fc[0][1]; i++, j++)
+                                            if (ty.o(va[i])) vb.push(va[i]);va = vb;
+                                };
+                                break;
+                            case 2:
+                                {
+                                    var vb = [];
+                                    if (fc[0][0] >= 0 && !fc[0][1])
+                                        for (var i = fc[0][0]; i <= va.length; i++)
+                                            if (ty.o(va[i])) vb.push(va[i]);va = vb;
+                                };
+                                break;
+                            case 3:
+                                {
+                                    var vb = [];
+                                    for (var i = 0; i < va.length; i++)
+                                        if (ty.o(va[i])) vb.push(va[i]);vb.splice(fc[0], 1);va = vb;
+                                };
+                                break;
+                            case 4:
+                                va = va[fc[0]];
+                                break;
+                        }
+                        return va;
                 },
-                va = fa(a);
+                va = st.split(/(?!\([^)]*),(?![^(]*\))/);
+                if (va.length > 1) {
+                    var vb = [];
+                    for (var i = 0; i < va.length; i++) {
+                        var vc = fb(va[i]);
+                        if (ty.a(vc))
+                            for (var j = 0; j < vc.length; j++)
+                                vb.push(vc[j]);
+                        else
+                        if (ty.u(vc.length))
+                            vb.push(vc);
+                    }
+                    return vb;
+                }
+                return fb(st);
+            },
+            va = fa(a);
             va === null || va.length === 0 ? gc.fn.DOMCL === true ? (this.a = null, this.length = 0) : (ww.do.addEventListener('DOMContentLoaded', this.a = function tg() {
                 var va = fa(a).length === 0 ? null : fa(a);
                 for (var i in gg)
@@ -257,149 +252,236 @@
     });
     gb(fn.re, 'dom', function(a, b) {
         var ba = {
-                addClass: function(c) {
-                    if (ty.f(this.a)) bc('addClass', c);
-                    if (this.a == null) return this;
-                    if (!ty.e(this.a.className))
-                        for (var i = 0; i < this.a.className.split(' ').length; i++)
-                            if (this.a.className.split(' ')[i] == c)
-                                return this;
-                    ga(a, 'addClass', 'className', c);
-                    if (ty.e(this.a.className) || ty.u(this.a.className))
-                        this.a.className = c;
-                    else
-                        this.a.className = this.a.className + ' ' + c;
-                    return this;
-                },
-                animate: function(c, d, e) {
-                    if (ty.f(this.a) || this.a == null) return this;
-                    var va = this;
-                    if (ty.o(c)) {
-                        var z = {
-                            colorRotate: function(f) {
-                                var vb = (va.a.style.backgroundColor || 'rgb(255,255,255)').match(/[rgb|rgba]\((\d+),[ ]?(\d+),[ ]?(\d+)*/),
-                                    vc = [Number(vb[1]), Number(vb[2]), Number(vb[3])],
-                                    fa = function() {
-                                        setTimeout(function() {
-                                            for (var i = 0; i < f.length; i++) {
-                                                if (f[i] < vc[i]) vc[i] = --vc[i];
-                                                if (f[i] > vc[i]) vc[i] = ++vc[i];
-                                            }
-                                            new fn.re(va.a, b).css('background', 'rgb(' + vc.join(',') + ')');
-                                            if (f.join('') != vc.join('')) fa();
-                                        }, d);
-                                    };
-                                fa();
-                            },
-                            opacity: function(f) {
-                                var vb = va.a.opacity = va.a.style.opacity = new fn.re(a, b).css('opacity') || 1,
-                                    fa = function() {
-                                        setTimeout(function() {
-                                            vb = va.a.opacity = va.a.style.opacity = (vb > f ? Number(vb) - e : Number(vb) + e).toFixed(2);
-                                            if (vb != f) fa();
-                                        }, vc);
-                                    };
-                                if (ty.u(e)) e = 0.05;
-                                else if (e < 0.01) e = 0.01;
-                                var vc = vb > f ? (d / ((vb - f) / e)) : (d / ((f - vb) / e));
+            addClass: function(c) {
+                if (ty.f(this.a)) bc('addClass', c);
+                if (this.a == null) return this;
+                if (!ty.e(this.a.className))
+                    for (var i = 0; i < this.a.className.split(' ').length; i++)
+                        if (this.a.className.split(' ')[i] == c)
+                            return this;
+                ga(a, 'addClass', 'className', c);
+                if (ty.e(this.a.className) || ty.u(this.a.className))
+                    this.a.className = c;
+                else
+                    this.a.className = this.a.className + ' ' + c;
+                return this;
+            },
+            animate: function(c, d, e) {
+                if (ty.f(this.a) || this.a == null) return this;
+                var va = this;
+                if (ty.o(c)) {
+                    var z = {
+                        colorRotate: function(f) {
+                            var vb = (va.a.style.backgroundColor || 'rgb(255,255,255)').match(/[rgb|rgba]\((\d+),[ ]?(\d+),[ ]?(\d+)*/),
+                                vc = [Number(vb[1]), Number(vb[2]), Number(vb[3])],
+                                fa = function() {
+                                    setTimeout(function() {
+                                        for (var i = 0; i < f.length; i++) {
+                                            if (f[i] < vc[i]) vc[i] = --vc[i];
+                                            if (f[i] > vc[i]) vc[i] = ++vc[i];
+                                        }
+                                        new fn.re(va.a, b).css('background', 'rgb(' + vc.join(',') + ')');
+                                        if (f.join('') != vc.join('')) fa();
+                                    }, d);
+                                };
+                            fa();
+                        },
+                        opacity: function(f) {
+                            var vb = va.a.opacity = va.a.style.opacity = new fn.re(a, b).css('opacity') || 1,
+                                fa = function() {
+                                    setTimeout(function() {
+                                        vb = va.a.opacity = va.a.style.opacity = (vb > f ? Number(vb) - e : Number(vb) + e).toFixed(2);
+                                        if (vb != f) fa();
+                                    }, vc);
+                                };
+                            if (ty.u(e)) e = 0.05;
+                            else if (e < 0.01) e = 0.01;
+                            var vc = vb > f ? (d / ((vb - f) / e)) : (d / ((f - vb) / e));
+                            if (vb != f) fa();
+                        },
+                        scrollTop: function(f) {
+                            var vb = va.animate('scrollTop'),
+                                vc = va.animate('scrollLeft'),
+                                fa = function() {
+                                    setTimeout(function() {
+                                        scrollTo(vc, vb < f ? f - 8 + i : f + 8 - i);
+                                        if (i != 8) fa();
+                                        i++;
+                                    }, d);
+                                },
+                                i = 0;
+                            if (Math.abs(vb - f) > 10 && Math.abs(f - vb) > 10) {
+                                scrollTo(vc, vb < f ? f - 8 : f + 8);
                                 if (vb != f) fa();
-                            },
-                            scrollTop: function(f) {
-                                var vb = va.animate('scrollTop'),
-                                    vc = va.animate('scrollLeft'),
-                                    fa = function() {
-                                        setTimeout(function() {
-                                            scrollTo(vc, vb < f ? f - 8 + i : f + 8 - i);
-                                            if (i != 8) fa();
-                                            i++;
-                                        }, d);
-                                    },
-                                    i = 0;
-                                if (Math.abs(vb - f) > 10 && Math.abs(f - vb) > 10) {
-                                    scrollTo(vc, vb < f ? f - 8 : f + 8);
-                                    if (vb != f) fa();
-                                } else
-                                    scrollTo(vc, f);
-                            },
-                            scrollElem: function(f) {
-                                var vb, vc, i = 0,
-                                    vd = new fn.re(a, b).getCoordinates(),
-                                    fa = function() {
-                                        setTimeout(function() {
-                                            if (i < f[1]) {
-                                                if (f[0] == 0 || f[0] == 1) vc = vc - 1;
-                                                if (f[0] == 2 || f[0] == 3) vc = vc + 1;
-                                                if (f[0] == 0 || f[0] == 2) {
-                                                    vb = {
-                                                        top: vc + 'px'
-                                                    };
-                                                }
-                                                if (f[0] == 1 || f[0] == 3) {
-                                                    vb = {
-                                                        left: vc + 'px'
-                                                    };
-                                                }
-                                                new fn.re(a, b).css(vb);
-                                                i++;
-                                                fa();
+                            } else
+                                scrollTo(vc, f);
+                        },
+                        scrollElem: function(f) {
+                            var vb, vc, i = 0,
+                                vd = new fn.re(a, b).getCoordinates(),
+                                fa = function() {
+                                    setTimeout(function() {
+                                        if (i < f[1]) {
+                                            if (f[0] == 0 || f[0] == 1) vc = vc - 1;
+                                            if (f[0] == 2 || f[0] == 3) vc = vc + 1;
+                                            if (f[0] == 0 || f[0] == 2) {
+                                                vb = {
+                                                    top: vc + 'px'
+                                                };
                                             }
-                                        }, d / f[1]);
-                                    };
-                                if (f[0] == 0 || f[0] == 2) vc = vd.top;
-                                if (f[0] == 1 || f[0] == 3) vc = vd.left;
-                                fa();
-                            }
-                        };
-                        for (var i in c)
-                            if (ty.f(z[i])) z[i](c[i]);
-                    }
-                    if (ty.s(c)) {
-                        if (c === 'scrollTop' && ty.u(d) && ty.u(e)) return this.a == ww || a == 'body' ?
-                            ww.pageYOffset ?
-                            ww.pageYOffset :
-                            ww.do.documentElement.scrollTop ?
-                            ww.do.documentElement.scrollTop :
-                            ww.do.body.scrollTop :
-                            this.a.scrollTop;
-                        if (c === 'scrollLeft' && ty.u(d) && ty.u(e)) return this.a == ww || a == 'body' ?
-                            ww.pageXOffset ?
-                            ww.pageXOffset :
-                            ww.do.documentElement.scrollLeft ?
-                            ww.do.documentElement.scrollLeft :
-                            ww.do.body.scrollLeft :
-                            this.a.scrollLeft;
-                        if (c === 'scrollTop' && ty.n(d) && ty.u(e)) ww.scrollTo(va.animate('scrollLeft'), d);
-                        if (c === 'scrollLeft' && ty.n(d) && ty.u(e)) ww.scrollTo(d, va.animate('scrollTop'));
-                        if (c === 'scrollTo' && ty.n(d) && ty.n(e)) ww.scrollTo(d, e);
-                    }
-                    return this;
-                },
-                append: function(c, d) {
-                    if (ty.f(this.a) || this.a == null) return this;
-                    if (ty.s(c) || ty.o(c)) {
-                        var fa = function(aa) {
-                            var va;
-                            if (ty.s(c)) {
-                                va = ty.u(d) ? ww.do.createElement('DIV') : ww.do.createElement(d);
-                                va.innerHTML = c;
-                                ga(aa, 'append', 'appendChild', va);
-                                aa.appendChild(ty.u(d) ? va.lastChild : va);
-                            }
-                            if (ty.a(c)) {
-                                for (var i = 0; i < c.length; i++) {
-                                    if (ty.s(c[i])) {
-                                        ww.do.createElement('DIV').innerHTML = c[i];
-                                        ga(aa, 'append', 'appendChild', va);
-                                        aa.appendChild(va);
-                                    }
-                                    if (ty.o(c[i])) {
-                                        ga(aa, 'append', 'appendChild', c[i]);
-                                        aa.appendChild(c[i]);
-                                    }
+                                            if (f[0] == 1 || f[0] == 3) {
+                                                vb = {
+                                                    left: vc + 'px'
+                                                };
+                                            }
+                                            new fn.re(a, b).css(vb);
+                                            i++;
+                                            fa();
+                                        }
+                                    }, d / f[1]);
+                                };
+                            if (f[0] == 0 || f[0] == 2) vc = vd.top;
+                            if (f[0] == 1 || f[0] == 3) vc = vd.left;
+                            fa();
+                        }
+                    };
+                    for (var i in c)
+                        if (ty.f(z[i])) z[i](c[i]);
+                }
+                if (ty.s(c)) {
+                    if (c === 'scrollTop' && ty.u(d) && ty.u(e)) return this.a == ww || a == 'body' ?
+                        ww.pageYOffset ?
+                        ww.pageYOffset :
+                        ww.do.documentElement.scrollTop ?
+                        ww.do.documentElement.scrollTop :
+                        ww.do.body.scrollTop :
+                        this.a.scrollTop;
+                    if (c === 'scrollLeft' && ty.u(d) && ty.u(e)) return this.a == ww || a == 'body' ?
+                        ww.pageXOffset ?
+                        ww.pageXOffset :
+                        ww.do.documentElement.scrollLeft ?
+                        ww.do.documentElement.scrollLeft :
+                        ww.do.body.scrollLeft :
+                        this.a.scrollLeft;
+                    if (c === 'scrollTop' && ty.n(d) && ty.u(e)) ww.scrollTo(va.animate('scrollLeft'), d);
+                    if (c === 'scrollLeft' && ty.n(d) && ty.u(e)) ww.scrollTo(d, va.animate('scrollTop'));
+                    if (c === 'scrollTo' && ty.n(d) && ty.n(e)) ww.scrollTo(d, e);
+                }
+                return this;
+            },
+            append: function(c, d) {
+                if (ty.f(this.a) || this.a == null) return this;
+                if (ty.s(c) || ty.o(c)) {
+                    var fa = function(aa) {
+                        var va;
+                        if (ty.s(c)) {
+                            va = ty.u(d) ? ww.do.createElement('DIV') : ww.do.createElement(d);
+                            va.innerHTML = c;
+                            ga(aa, 'append', 'appendChild', va);
+                            aa.appendChild(ty.u(d) ? va.lastChild : va);
+                        }
+                        if (ty.a(c)) {
+                            for (var i = 0; i < c.length; i++) {
+                                if (ty.s(c[i])) {
+                                    ww.do.createElement('DIV').innerHTML = c[i];
+                                    ga(aa, 'append', 'appendChild', va);
+                                    aa.appendChild(va);
                                 }
-                            } else {
-                                ga(aa, 'append', 'appendChild', c);
-                                aa.appendChild(c);
+                                if (ty.o(c[i])) {
+                                    ga(aa, 'append', 'appendChild', c[i]);
+                                    aa.appendChild(c[i]);
+                                }
+                            }
+                        } else {
+                            ga(aa, 'append', 'appendChild', c);
+                            aa.appendChild(c);
+                        }
+                    };
+                    if (ty.a(this.a)) {
+                        for (var i = 0; i < this.a.length; i++)
+                            if (ty.o(this.a[i]))
+                                fa(this.a[i]);
+                    } else
+                        fa(this.a);
+                }
+                return this;
+            },
+            attr: function(c, d) {
+                if (ty.f(this.a)) bc('attr', c, d);
+                if (this.a == null) return this;
+                var fa = function(c, d, e) {
+                    if (ty.s(d)) {
+                        if ( /*ty.a(e)*/ ty.o(e) && ty.n(e.length)) {
+                            for (var i = 0; i < e.length; i++)
+                                if (ty.f(e[i].setAttribute))
+                                    e[i].setAttribute(c, d);
+                        } else
+                        if (ty.o(e))
+                            e.setAttribute(c, d);
+                    }
+                };
+                if (ty.s(c) && ty.s(d)) {
+                    fa(c, d, this.a);
+                    ga(a, 'attr', c, d);
+                }
+                if (ty.o(c) && ty.u(d)) {
+                    for (var i in c) {
+                        fa(i, c[i], this.a);
+                        ga(a, 'attr', i, c[i]);
+                    }
+                }
+                if (ty.s(c) && ty.u(d)) {
+                    if (ty.a(this.a)) {
+                        var va = [];
+                        for (var i = 0; i < this.a.length; i++)
+                            if (ty.o(this.a[i]))
+                                va[i] = this.a[i].getAttribute(c);
+                            else
+                                va[i] = this.a[i];
+                        return va;
+                    } else
+                    if (ty.o(this.a))
+                        return this.a.getAttribute(c);
+                }
+                return this;
+            },
+            blur: function() {
+                if (ty.f(this.a) || this.a == null) return this;
+                this.a.blur();
+                return this;
+            },
+            children: function(c) {
+                if (ty.f(this.a) || this.a == null) return this;
+                if (ty.n(c))
+                    this.a = this.a.children[c];
+                else
+                if (this.a.children)
+                    this.a = this.a.children;
+                return this;
+            },
+            createElement: function(c) {
+                var va = ww.do.createElement(a);
+                if (ty.o(c))
+                    for (var i in c)
+                        if (ty.s(c[i]))
+                            va.setAttribute(i, c[i]);
+                return va;
+            },
+            css: function(c, d) {
+                if (ty.f(this.a)) bc('css', c, d);
+                if (this.a == null) return this;
+                if ((ty.s(c) || ty.o(c)) && (ty.s(d) || ty.u(d))) {
+                    if ((ty.o(this.a) || ty.a(this.a)) && this.a != null) {
+                        var fa = function(aa) {
+                            if (ty.s(c) && ty.s(d)) {
+                                aa.style[c] = d;
+                                ga(a, 'css', c, d);
+                            }
+                            if (ty.o(c) && ty.u(d)) {
+                                for (var i in c) {
+                                    aa.style[i] = c[i];
+                                    ga(a, 'css', i, c[i]);
+                                }
                             }
                         };
                         if (ty.a(this.a)) {
@@ -408,542 +490,455 @@
                                     fa(this.a[i]);
                         } else
                             fa(this.a);
-                    }
-                    return this;
-                },
-                attr: function(c, d) {
-                    if (ty.f(this.a)) bc('attr', c, d);
-                    if (this.a == null) return this;
-                    var fa = function(c, d, e) {
-                        if (ty.s(d)) {
-                            if ( /*ty.a(e)*/ ty.o(e) && ty.n(e.length)) {
-                                for (var i = 0; i < e.length; i++)
-                                    if (ty.f(e[i].setAttribute))
-                                        e[i].setAttribute(c, d);
-                            } else
-                            if (ty.o(e))
-                                e.setAttribute(c, d);
-                        }
-                    };
-                    if (ty.s(c) && ty.s(d)) {
-                        fa(c, d, this.a);
-                        ga(a, 'attr', c, d);
-                    }
-                    if (ty.o(c) && ty.u(d)) {
-                        for (var i in c) {
-                            fa(i, c[i], this.a);
-                            ga(a, 'attr', i, c[i]);
-                        }
                     }
                     if (ty.s(c) && ty.u(d)) {
-                        if (ty.a(this.a)) {
-                            var va = [];
-                            for (var i = 0; i < this.a.length; i++)
-                                if (ty.o(this.a[i]))
-                                    va[i] = this.a[i].getAttribute(c);
-                                else
-                                    va[i] = this.a[i];
-                            return va;
-                        } else
-                        if (ty.o(this.a))
-                            return this.a.getAttribute(c);
-                    }
-                    return this;
-                },
-                blur: function() {
-                    if (ty.f(this.a) || this.a == null) return this;
-                    this.a.blur();
-                    return this;
-                },
-                children: function(c) {
-                    if (ty.f(this.a) || this.a == null) return this;
-                    if (ty.n(c))
-                        this.a = this.a.children[c];
-                    else
-                    if (this.a.children)
-                        this.a = this.a.children;
-                    return this;
-                },
-                createElement: function(c) {
-                    var va = ww.do.createElement(a);
-                    if (ty.o(c))
-                        for (var i in c)
-                            if (ty.s(c[i]))
-                                va.setAttribute(i, c[i]);
-                    return va;
-                },
-                css: function(c, d) {
-                    if (ty.f(this.a)) bc('css', c, d);
-                    if (this.a == null) return this;
-                    if ((ty.s(c) || ty.o(c)) && (ty.s(d) || ty.u(d))) {
-                        if ((ty.o(this.a) || ty.a(this.a)) && this.a != null) {
-                            var fa = function(aa) {
-                                if (ty.s(c) && ty.s(d)) {
-                                    aa.style[c] = d;
-                                    ga(a, 'css', c, d);
-                                }
-                                if (ty.o(c) && ty.u(d)) {
-                                    for (var i in c) {
-                                        aa.style[i] = c[i];
-                                        ga(a, 'css', i, c[i]);
-                                    }
-                                }
-                            };
-                            if (ty.a(this.a)) {
-                                for (var i = 0; i < this.a.length; i++)
-                                    if (ty.o(this.a[i]))
-                                        fa(this.a[i]);
-                            } else
-                                fa(this.a);
-                        }
-                        if (ty.s(c) && ty.u(d)) {
-                            var fa = function(aa) {
-                                    if (ty.o(aa.style))
-                                        if (!ty.u(aa.style[c]) && !ty.e(aa.style[c]) && aa.style[c] != 'auto')
-                                            return aa.style[c];
-                                    if (!ty.u(aa[c]) && !ty.e(aa[c]) && aa[c] != 'auto')
-                                        return aa[c];
-                                    return false;
-                                },
-                                va, vb, vc = getComputedStyle(this.a, null);
-                            if (c === 'outerHeight' || c === 'outerWidth') {
-                                va = [
-                                    parseInt(vc['margin-top']),
-                                    parseInt(vc['margin-right']),
-                                    parseInt(vc['margin-bottom']),
-                                    parseInt(vc['margin-left'])
-                                ];
-                                if (c === 'outerHeight') {
-                                    vb = 1;
-                                    c = 'offsetHeight';
-                                }
-                                if (c === 'outerWidth') {
-                                    vb = 2;
-                                    c = 'offsetWidth';
-                                }
-                            }
-                            if (fa(this.a) != false) {
-                                if (vb === 1) return fa(this.a) + va[0] + va[2];
-                                if (vb === 2) return fa(this.a) + va[1] + va[3];
-                                return fa(this.a);
-                            }
-                            try {
-                                return (vc[c] || this.a.currentStyle[c]);
-                            } catch (e) {};
-                            return '';
-                        }
-                    }
-                    return this;
-                },
-                data: function(c) {
-                    if (ty.o(c)) {
-                        if (ty.u(gd[a]))
-                            gd[a] = {};
-                        for (var i in c)
-                            gd[a][i] = c[i];
-                    }
-                    if (ty.s(c))
-                        if (!ty.u(gd[a]))
-                            return gd[a][c];
-                    if (ty.u(c))
-                        return gd[a];
-                    return this;
-                },
-                drgdrp: function(c) {
-                    if (ty.f(this.a) || this.a == null) return this;
-                    this.a.onmousedown = function(ev) {
-                        var va = ww.do.elementFromPoint(ev.clientX, ev.clientY),
-                            vb = ty.u(ev.offsetX) ? ev.layerX : ev.offsetX,
-                            vc = ty.u(ev.offsetY) ? ev.layerY : ev.offsetY;
-                        va.style.zIndex = 1e3;
-                        va.style.position = 'fixed';
-                        va.style.top = (Number(ev.clientY) - vc) + 'px';
-                        va.style.left = (Number(ev.clientX) - vb) + 'px';
-                        ww.do.onmouseup = function(ev) {
-                            ww.do.onmousemove = null;
-                            ww.do.body.onmousedown = null;
-                        };
-                        ww.do.onselectstart = function(ev) {
-                            ev.preventDefault();
-                        };
-                        ww.do.ondragstart = function(ev) {
-                            ev.preventDefault();
-                        };
-                        ww.do.onmousemove = function(ev) {
-                            if (c != 2 && (Number(ev.pageY) - vc) > 0)
-                                va.style.top = (Number(ev.pageY) - vc) + 'px';
-                            if (c != 1 && (Number(ev.pageX) - vb) > 0)
-                                va.style.left = (Number(ev.pageX) - vb) + 'px';
-                        };
-                    };
-                    return this;
-                },
-                getCoordinates: function() {
-                    if (ty.f(this.a) || this.a == null) return this;
-                    return function(aa) {
-                        var va = aa.getBoundingClientRect(),
-                            vb = ww.do.body,
-                            vc = ww.do.documentElement,
-                            vd = ww.pageYOffset || vc.scrollTop || vb.scrollTop,
-                            ve = ww.pageXOffset || vc.scrollLeft || vb.scrollLeft,
-                            vf = vc.clientTop || vb.clientTop || 0,
-                            vg = vc.clientLeft || vb.clientLeft || 0,
-                            vh = va.top + vd - vf,
-                            vi = va.left + ve - vg;
-                        return {
-                            top: Math.round(vh),
-                            left: Math.round(vi)
-                        };
-                    }(this.a);
-                },
-                getEvents: function(c) {
-                    if (ty.s(c))
-                        if (ty.o(gh[a]))
-                            return gh[a][c];
-                    if (ty.u(c))
-                        return gh[a];
-                    return gh;
-                },
-                getFocused: function(c) {
-                    if (this.a != ww) return;
-                    var fa = function() {
-                        if ((ww.do.visibilityState || ww.do.webkitVisibilityState) === 'hidden') return false;
-                        if ((ww.do.visibilityState || ww.do.webkitVisibilityState) === 'visible') return true;
-                    };
-                    if (ty.f(c)) {
-                        if (!fa()) ww.do.addEventListener('focus', function() {
-                            c();
-                        }, false);
-                        if (fa()) c();
-                    }
-                    return ty.u(c) || ty.f(c) ? fa() : this;
-                },
-                getIndex: function() {
-                    if (ty.f(this.a) || this.a == null) return this;
-                    for (var i = 0; i < new fn.re(this.a.tagName, b).a.length; i++)
-                        if (new fn.re(this.a.tagName, b).a[i] === this.a)
-                            return i;
-                    return this;
-                },
-                html: function(c) {
-                    if (ty.f(this.a)) bc('html', c);
-                    if (this.a == null) return this;
-                    if (ty.o(c) || ty.s(c)) {
                         var fa = function(aa) {
-                            if (ty.o(c)) {
-                                aa.innerHTML = '';
-                                aa.appendChild(c);
-                                ga(a, 'html', 'innerHTML', '');
+                                if (ty.o(aa.style))
+                                    if (!ty.u(aa.style[c]) && !ty.e(aa.style[c]) && aa.style[c] != 'auto')
+                                        return aa.style[c];
+                                if (!ty.u(aa[c]) && !ty.e(aa[c]) && aa[c] != 'auto')
+                                    return aa[c];
+                                return false;
+                            },
+                            va, vb, vc = getComputedStyle(this.a, null);
+                        if (c === 'outerHeight' || c === 'outerWidth') {
+                            va = [
+                                parseInt(vc['margin-top']),
+                                parseInt(vc['margin-right']),
+                                parseInt(vc['margin-bottom']),
+                                parseInt(vc['margin-left'])
+                            ];
+                            if (c === 'outerHeight') {
+                                vb = 1;
+                                c = 'offsetHeight';
                             }
-                            if (ty.s(c)) {
-                                aa.innerHTML = c;
-                                ga(a, 'html', 'innerHTML', c);
-                            }
-                        };
-                        if (ty.a(this.a))
-                            this.a.forEach(function(aa) {
-                                fa(aa);
-                            });
-                        else
-                            fa(this.a);
-                    }
-                    if (ty.u(c))
-                        return this.a.innerHTML;
-                    return this;
-                },
-                off: function(c, d, e) {
-                    if (ty.f(this.a) || this.a == null) return this;
-                    if ((ty.s(c) && ty.f(d) && ty.u(e)) || (ty.s(c) && ty.s(d) && ty.f(e))) {
-                        var va, vb = a,
-                            vc;
-                        if (ty.s(c) && ty.f(d) && ty.u(e))
-                            va = d;
-                        if (ty.s(c) && ty.s(d) && ty.f(e))
-                            va = e;
-                        if (/\[object [a-zA-Z]+\]/.test(String(a))) {
-                            vc = /\[object [a-zA-Z]+\]/.test(String(a)) ? vb + gi.indexOf(a) : vb;
-                            if (/(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(vc) != null) {
-                                var vd = /(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(vc);
-                                vc = vd[1] + vd[2] + vd[3];
-                            }
-                            if (gi.indexOf(a) != -1) {
-                                for (var i = 0; i < gh[vc][c].length; i++) {
-                                    if (String(va).replace(/\s+/g, ' ') === String(gh[vc][c][i]).replace(/\s+/g, ' ')) {
-                                        gh[vc][c].splice(i, 1);
-                                    }
-                                }
-                            }
-                        } else {
-                            if (ty.o(gh[vb])) {
-                                if (ty.a(gh[vb][c])) {
-                                    for (var i = 0; i <= gh[vb][c].length; i++) {
-                                        if (String(va) === String(gh[vb][c][i])) {
-                                            gh[vb][c].splice(i, 1);
-                                            break;
-                                        }
-                                    }
-                                }
+                            if (c === 'outerWidth') {
+                                vb = 2;
+                                c = 'offsetWidth';
                             }
                         }
-                    }
-                    return this;
-                },
-                on: function(c, d, e) {
-                    if (ty.f(this.a)) bc('on', c, d, e);
-                    if (this.a == null) return this;
-                    var va = /\[object [a-zA-Z]+\]/.test(String(a)),
-                        ve = [
-                            ty.s(c) && (ty.f(d) && ty.u(e)),
-                            ty.s(c) && ty.s(d) && ty.f(e),
-                            ty.s(c) && ty.s(d) && e === null,
-                            ty.s(c) && d === null
-                        ],
-                        vb, fa;
-                    if (ve[0] || ve[1] || ve[2] || ve[3]) {
-                        fa = function(ev) {
-                            for (var i = 0; i < gh[vb][c].length; i++) {
-                                if (ty.f(gh[vb][c][i])) {
-                                    if (ty.s(gh[vb][c][i]['tagName']))
-                                        if (gh[vb][c][i]['tagName'] == ev.target.tagName)
-                                            gh[vb][c][i](ev);
-                                    if (ty.u(gh[vb][c][i]['tagName']))
-                                        gh[vb][c][i](ev);
-                                }
-                            }
-                        };
-                        if (gi.indexOf(a) === -1 && va)
-                            gi.push(a);
-                        vb = va ? a + gi.indexOf(a) : a;
-                        if (/(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(vb) != null) {
-                            var vd = /(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(vb);
-                            vb = vd[1] + vd[2] + vd[3];
+                        if (fa(this.a) != false) {
+                            if (vb === 1) return fa(this.a) + va[0] + va[2];
+                            if (vb === 2) return fa(this.a) + va[1] + va[3];
+                            return fa(this.a);
                         }
-                        if (ty.u(gh[vb]))
-                            gh[vb] = {};
-                        if (ty.u(gh[vb][c]))
-                            gh[vb][c] = [];
-                        gh[vb][c]['a'] = this.a;
-                        if (ty.a(this.a)) {
-                            for (var i = 0; i < this.a.length; i++)
-                                if (ty.o(this.a[i]))
-                                    this.a[i]['on' + c] = fa;
-                        } else
-                            this.a['on' + c] = fa;
+                        try {
+                            return (vc[c] || this.a.currentStyle[c]);
+                        } catch (e) {};
+                        return '';
                     }
-                    if (ve[0] || ve[1]) {
-                        var vc;
-                        if (ty.s(c) && ty.f(d) && ty.u(e))
-                            vc = [d];
-                        if (ty.s(c) && ty.s(d) && ty.f(e))
-                            vc = [e];
-                        if (ty.f(this.a['on' + c]))
-                            if (String(this.a['on' + c]).replace(/\s+/g, ' ') != String(fa).replace(/\s+/g, ' '))
-                                vc.push(this.a['on' + c]);
-                        for (var i = 0; i < gh[vb][c].length; i++)
-                            for (var j = 0; j < vc.length; j++)
-                                if (String(gh[vb][c][i]).replace(/\s+/g, ' ') === String(vc[j]).replace(/\s+/g, ' '))
-                                    vc.splice(j, 1);
-                        for (var i = 0; i < vc.length; i++) {
-                            if (ty.s(d))
-                                vc[i]['tagName'] = d;
-                            gh[vb][c].push(vc[i]);
-                        }
-                    }
-                    if (ve[2] || ve[3]) {
-                        if (ty.o(gh[vb]))
-                            gh[vb][c] = [];
-                        if (ty.f(e))
-                            gh[vb][c].push(e);
-                    }
-                    if (ty.s(c) && ty.u(d) && ty.u(e)) {
-                        if (ty.o(this.a) || ty.a(this.a) || ty.s(this.a)) {
-                            if (ty.f(this.a[c]))
-                                this.a[c]();
-                            if (ty.f(this.a['on' + c]))
-                                this.a['on' + c]();
-                        }
-                    }
-                    return this;
-                },
-                parent: function() {
-                    if (ty.f(this.a) || this.a == null) return null;
-                    if (this.a.parentNode)
-                        this.a = this.a.parentNode;
-                    return this;
-                },
-                prop: function(c, d) {
-                    if (ty.f(this.a)) bc('prop', c, d);
-                    if (this.a == null) return this;
-                    if (ty.s(c) && !ty.u(d)) {
-                        ga(a, 'prop', c, d);
-                        this.a[c] = d;
-                    }
-                    if (ty.s(c) && ty.u(d))
-                        return !ty.u(this.a[c]) ? this.a[c] : this.a;
-                    return this;
-                },
-                remove: function(c) {
-                    if (ty.f(this.a) || this.a == null) return this;
-                    if (ty.s(c) || ty.o(c)) {
-                        var fa = function(aa) {
-                            if (ty.s(c)) {
-                                ww.do.createElement('DIV').innerHTML = c;
-                                ga(aa, 'remove', 'removeChild', this.a.lastChild);
-                                aa.removeChild(this.a.lastChild);
-                            }
-                            if (ty.o(c)) {
-                                ga(aa, 'remove', 'removeChild', c);
-                                aa.removeChild(c);
-                            }
-                        };
-                        if (ty.a(this.a)) {
-                            for (var i = 0; i < this.a.length; i++)
-                                if (ty.o(this.a[i]))
-                                    fa(this.a[i]);
-                        } else
-                            fa(this.a);
-                    }
-                    return this;
-                },
-                removeClass: function(c) {
-                    if (ty.f(this.a)) bc('removeClass', c);
-                    if (this.a == null) return this;
-                    if (ty.s(c) && !ty.e(this.a.className)) {
-                        var va = this.a.className.split(' ');
-                        for (var i = 0; i < va.length; i++)
-                            if (va[i] == c)
-                                va.splice(i, 1);
-                        this.a.className = va.join(' ');
-                        ga(a, 'removeClass', 'className', c);
-                    }
-                    return this;
-                },
-                shiftEventListener: function(c) {
-                    return ty.s(c) && ty.o(gh[a][c]) ? {
-                        getIndex: function(d) {
-                            if (ty.f(d) || ty.s(d))
-                                for (var i = 0; i < gh[a][c].length; i++)
-                                    if (String(gh[a][c][i]) === String(d))
-                                        return i;
-                        },
-                        swap: function(d, e) {
-                            if (ty.f(d)) d = this.getIndex(d);
-                            if (ty.f(e)) e = this.getIndex(e);
-                            if (ty.n(d) && ty.n(e)) {
-                                var va = gh[a][c][d];
-                                gh[a][c][d] = gh[a][c][e];
-                                gh[a][c][e] = va;
-                            }
-                        },
-                        insertAfter: function(d, e) {
-                            if (ty.f(e)) e = this.getIndex(e);
-                            if (ty.f(d) && ty.n(e))
-                                gh[a][c].splice(e + 1, 0, d);
-                        },
-                        remove: function(d) {
-                            if (ty.n(d))
-                                gh[a][c].splice(d, 1);
-                            if (ty.f(d))
-                                gh[a][c].splice(this.getIndex(d), 1);
-                        },
-                        transferTo: function(d, e) {
-                            if (ty.f(d)) d = this.getIndex(d);
-                            if (ty.f(e)) e = this.getIndex(e);
-                            if (ty.n(d) && ty.n(e)) {
-                                var va = gh[a][c][d];
-                                gh[a][c].splice(d, 1);
-                                gh[a][c].splice(e, 1, va);
-                            }
-                        }
-                    } : gh[a];
-                },
-                submit: function(c) {
-                    if (ty.f(this.a)) bc('submit', c);
-                    if (this.a == null) return this;
-                    if (ty.u(gc.fn.smb)) gc.fn.smb = {};
-                    if (ty.s(c)) {
-                        var fa = function(aa) {
-                            for (var i = 0; i < aa.length; i++) {
-                                var va = aa[i],
-                                    fb = function(r, l) {
-                                        if (ty.e(va.value) || va.value.length < l || !r.test(String(va.value)))
-                                            return false;
-                                    },
-                                    fc = function() {
-                                        va.focus();
-                                        gc(va).css('background', 'rgb(255,225,225)').animate({
-                                            colorRotate: [255, 255, 255]
-                                        }, 20);
-                                    };
-                                switch (va.getAttribute('name')) {
-                                    case 'text':
-                                        if (fb(/^[\w.@+ -]{4,50}$/, 1) === false) {
-                                            fc();
-                                            return false;
-                                        }
-                                        break;
-                                    case 'login':
-                                        if (fb(/^[\w.@+ -]{4,50}$/, 4) === false) {
-                                            fc();
-                                            return false;
-                                        }
-                                        break;
-                                    case 'password':
-                                        if (fb(/^[\w ]{4,50}$/, 4) === false) {
-                                            fc();
-                                            return false;
-                                        }
-                                        break;
-                                    case 'email':
-                                        if (fb(/^[\w.@ _-]{4,50}$/, 5) === false) {
-                                            fc();
-                                            return false;
-                                        }
-                                        break;
-                                    case 'mobile':
-                                        if (fb(/^[\w+ -]{4,50}$/, 3) === false) {
-                                            fc();
-                                            return false;
-                                        }
-                                        break;
-                                    default:
-                                        '';
-                                }
-                            }
-                            return true;
-                        };
-                        this.a.onsubmit = function() {
-                            return false;
-                        };
-                        if (fa(this.a) === true) {
-                            this.a.setAttribute('action', location.protocol + '\u002F\u002F' + (location.host || location.hostname) + '\u002F' + c + '?patch=' + location.pathname + '&nins=' + navi);
-                            this.a.submit();
-                            return true;
-                        } else return false;
-                    }
-                    if (ty.f(c))
-                        gc.fn.smb[a] = c;
-                    return this;
-                },
-                val: function(c) {
-                    if (ty.f(this.a)) bc('val', c);
-                    if (this.a == null) return this;
-                    if (ty.s(c) || ty.n(c))
-                        if (ty.a(this.a)) {
-                            for (var i = 0; i < this.a.length; i++) {
-                                if (ty.o(this.a[i])) {
-                                    this.a[i].value = c;
-                                    ga(this.a[i], 'val', 'value', c);
-                                }
-                            }
-                        } else {
-                            this.a.value = c;
-                            ga(a, 'val', 'value', c);
-                        }
-                    if (ty.u(c))
-                        return this.a.value || '';
-                    return this;
                 }
+                return this;
+            },
+            data: function(c) {
+                if (ty.o(c)) {
+                    if (ty.u(gd[a]))
+                        gd[a] = {};
+                    for (var i in c)
+                        gd[a][i] = c[i];
+                }
+                if (ty.s(c))
+                    if (!ty.u(gd[a]))
+                        return gd[a][c];
+                if (ty.u(c))
+                    return gd[a];
+                return this;
+            },
+            drgdrp: function(c) {
+                if (ty.f(this.a) || this.a == null) return this;
+                this.a.onmousedown = function(ev) {
+                    var va = ww.do.elementFromPoint(ev.clientX, ev.clientY),
+                        vb = ty.u(ev.offsetX) ? ev.layerX : ev.offsetX,
+                        vc = ty.u(ev.offsetY) ? ev.layerY : ev.offsetY;
+                    va.style.zIndex = 1e3;
+                    va.style.position = 'fixed';
+                    va.style.top = (Number(ev.clientY) - vc) + 'px';
+                    va.style.left = (Number(ev.clientX) - vb) + 'px';
+                    ww.do.onmouseup = function(ev) {
+                        ww.do.onmousemove = null;
+                        ww.do.body.onmousedown = null;
+                    };
+                    ww.do.onselectstart = function(ev) {
+                        ev.preventDefault();
+                    };
+                    ww.do.ondragstart = function(ev) {
+                        ev.preventDefault();
+                    };
+                    ww.do.onmousemove = function(ev) {
+                        if (c != 2 && (Number(ev.pageY) - vc) > 0)
+                            va.style.top = (Number(ev.pageY) - vc) + 'px';
+                        if (c != 1 && (Number(ev.pageX) - vb) > 0)
+                            va.style.left = (Number(ev.pageX) - vb) + 'px';
+                    };
+                };
+                return this;
+            },
+            getCoordinates: function() {
+                if (ty.f(this.a) || this.a == null) return this;
+                return function(aa) {
+                    var va = aa.getBoundingClientRect(),
+                        vb = ww.do.body,
+                        vc = ww.do.documentElement,
+                        vd = ww.pageYOffset || vc.scrollTop || vb.scrollTop,
+                        ve = ww.pageXOffset || vc.scrollLeft || vb.scrollLeft,
+                        vf = vc.clientTop || vb.clientTop || 0,
+                        vg = vc.clientLeft || vb.clientLeft || 0,
+                        vh = va.top + vd - vf,
+                        vi = va.left + ve - vg;
+                    return {
+                        top: Math.round(vh),
+                        left: Math.round(vi)
+                    };
+                }(this.a);
+            },
+            getEvents: function(c) {
+                if (ty.s(c))
+                    if (ty.o(gh[a]))
+                        return gh[a][c];
+                if (ty.u(c))
+                    return gh[a];
+                return gh;
+            },
+            getFocused: function(c) {
+                if (this.a != ww) return;
+                var fa = function() {
+                    if ((ww.do.visibilityState || ww.do.webkitVisibilityState) === 'hidden') return false;
+                    if ((ww.do.visibilityState || ww.do.webkitVisibilityState) === 'visible') return true;
+                };
+                if (ty.f(c)) {
+                    if (!fa()) ww.do.addEventListener('focus', function() {
+                        c();
+                    }, false);
+                    if (fa()) c();
+                }
+                return ty.u(c) || ty.f(c) ? fa() : this;
+            },
+            getIndex: function() {
+                if (ty.f(this.a) || this.a == null) return this;
+                for (var i = 0; i < new fn.re(this.a.tagName, b).a.length; i++)
+                    if (new fn.re(this.a.tagName, b).a[i] === this.a)
+                        return i;
+                return this;
+            },
+            html: function(c) {
+                if (ty.f(this.a)) bc('html', c);
+                if (this.a == null) return this;
+                if (ty.o(c) || ty.s(c)) {
+                    var fa = function(aa) {
+                        if (ty.o(c)) {
+                            aa.innerHTML = '';
+                            aa.appendChild(c);
+                            ga(a, 'html', 'innerHTML', '');
+                        }
+                        if (ty.s(c)) {
+                            aa.innerHTML = c;
+                            ga(a, 'html', 'innerHTML', c);
+                        }
+                    };
+                    if (ty.a(this.a))
+                        this.a.forEach(function(aa) {
+                            fa(aa);
+                        });
+                    else
+                        fa(this.a);
+                }
+                if (ty.u(c))
+                    return this.a.innerHTML;
+                return this;
+            },
+            off: function(c, d, e) {
+                if (ty.f(this.a) || this.a == null) return this;
+                if ((ty.s(c) && ty.f(d) && ty.u(e)) || (ty.s(c) && ty.s(d) && ty.f(e))) {
+                    var va, vb = a,
+                        vc;
+                    if (ty.s(c) && ty.f(d) && ty.u(e))
+                        va = d;
+                    if (ty.s(c) && ty.s(d) && ty.f(e))
+                        va = e;
+                    if (/\[object [a-zA-Z]+\]/.test(String(a))) {
+                        vc = /\[object [a-zA-Z]+\]/.test(String(a)) ? vb + gi.indexOf(a) : vb;
+                        if (/(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(vc) != null) {
+                            var vd = /(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(vc);
+                            vc = vd[1] + vd[2] + vd[3];
+                        }
+                        if (gi.indexOf(a) != -1) {
+                            for (var i = 0; i < gh[vc][c].length; i++) {
+                                if (String(va).replace(/\s+/g, ' ') === String(gh[vc][c][i]).replace(/\s+/g, ' ')) {
+                                    gh[vc][c].splice(i, 1);
+                                }
+                            }
+                        }
+                    } else {
+                        if (ty.o(gh[vb])) {
+                            if (ty.a(gh[vb][c])) {
+                                for (var i = 0; i <= gh[vb][c].length; i++) {
+                                    if (String(va) === String(gh[vb][c][i])) {
+                                        gh[vb][c].splice(i, 1);
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                return this;
+            },
+            on: function(c, d, e) {
+                if (ty.f(this.a)) bc('on', c, d, e);
+                if (this.a == null) return this;
+                var va = /\[object [a-zA-Z]+\]/.test(String(a)),
+                    ve = [
+                        ty.s(c) && (ty.f(d) && ty.u(e)),
+                        ty.s(c) && ty.s(d) && ty.f(e),
+                        ty.s(c) && ty.s(d) && e === null,
+                        ty.s(c) && d === null
+                    ],
+                    vb, fa;
+                if (ve[0] || ve[1] || ve[2] || ve[3]) {
+                    fa = function(ev) {
+                        for (var i = 0; i < gh[vb][c].length; i++) {
+                            if (ty.f(gh[vb][c][i])) {
+                                if (ty.s(gh[vb][c][i]['tagName']))
+                                    if (gh[vb][c][i]['tagName'] == ev.target.tagName)
+                                        gh[vb][c][i](ev);
+                                if (ty.u(gh[vb][c][i]['tagName']))
+                                    gh[vb][c][i](ev);
+                            }
+                        }
+                    };
+                    if (gi.indexOf(a) === -1 && va)
+                        gi.push(a);
+                    vb = va ? a + gi.indexOf(a) : a;
+                    if (/(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(vb) != null) {
+                        var vd = /(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(vb);
+                        vb = vd[1] + vd[2] + vd[3];
+                    }
+                    if (ty.u(gh[vb]))
+                        gh[vb] = {};
+                    if (ty.u(gh[vb][c]))
+                        gh[vb][c] = [];
+                    gh[vb][c]['a'] = this.a;
+                    if (ty.a(this.a)) {
+                        for (var i = 0; i < this.a.length; i++)
+                            if (ty.o(this.a[i]))
+                                this.a[i]['on' + c] = fa;
+                    } else
+                        this.a['on' + c] = fa;
+                }
+                if (ve[0] || ve[1]) {
+                    var vc;
+                    if (ty.s(c) && ty.f(d) && ty.u(e))
+                        vc = [d];
+                    if (ty.s(c) && ty.s(d) && ty.f(e))
+                        vc = [e];
+                    if (ty.f(this.a['on' + c]))
+                        if (String(this.a['on' + c]).replace(/\s+/g, ' ') != String(fa).replace(/\s+/g, ' '))
+                            vc.push(this.a['on' + c]);
+                    for (var i = 0; i < gh[vb][c].length; i++)
+                        for (var j = 0; j < vc.length; j++)
+                            if (String(gh[vb][c][i]).replace(/\s+/g, ' ') === String(vc[j]).replace(/\s+/g, ' '))
+                                vc.splice(j, 1);
+                    for (var i = 0; i < vc.length; i++) {
+                        if (ty.s(d))
+                            vc[i]['tagName'] = d;
+                        gh[vb][c].push(vc[i]);
+                    }
+                }
+                if (ve[2] || ve[3]) {
+                    if (ty.o(gh[vb]))
+                        gh[vb][c] = [];
+                    if (ty.f(e))
+                        gh[vb][c].push(e);
+                }
+                if (ty.s(c) && ty.u(d) && ty.u(e)) {
+                    if (ty.o(this.a) || ty.a(this.a) || ty.s(this.a)) {
+                        if (ty.f(this.a[c]))
+                            this.a[c]();
+                        if (ty.f(this.a['on' + c]))
+                            this.a['on' + c]();
+                    }
+                }
+                return this;
+            },
+            parent: function() {
+                if (ty.f(this.a) || this.a == null) return null;
+                if (this.a.parentNode)
+                    this.a = this.a.parentNode;
+                return this;
+            },
+            prop: function(c, d) {
+                if (ty.f(this.a)) bc('prop', c, d);
+                if (this.a == null) return this;
+                if (ty.s(c) && !ty.u(d)) {
+                    ga(a, 'prop', c, d);
+                    this.a[c] = d;
+                }
+                if (ty.s(c) && ty.u(d))
+                    return !ty.u(this.a[c]) ? this.a[c] : this.a;
+                return this;
+            },
+            remove: function(c) {
+                if (ty.f(this.a) || this.a == null) return this;
+                if (ty.s(c) || ty.o(c)) {
+                    var fa = function(aa) {
+                        if (ty.s(c)) {
+                            ww.do.createElement('DIV').innerHTML = c;
+                            ga(aa, 'remove', 'removeChild', this.a.lastChild);
+                            aa.removeChild(this.a.lastChild);
+                        }
+                        if (ty.o(c)) {
+                            ga(aa, 'remove', 'removeChild', c);
+                            aa.removeChild(c);
+                        }
+                    };
+                    if (ty.a(this.a)) {
+                        for (var i = 0; i < this.a.length; i++)
+                            if (ty.o(this.a[i]))
+                                fa(this.a[i]);
+                    } else
+                        fa(this.a);
+                }
+                return this;
+            },
+            removeClass: function(c) {
+                if (ty.f(this.a)) bc('removeClass', c);
+                if (this.a == null) return this;
+                if (ty.s(c) && !ty.e(this.a.className)) {
+                    var va = this.a.className.split(' ');
+                    for (var i = 0; i < va.length; i++)
+                        if (va[i] == c)
+                            va.splice(i, 1);
+                    this.a.className = va.join(' ');
+                    ga(a, 'removeClass', 'className', c);
+                }
+                return this;
+            },
+            shiftEventListener: function(c) {
+                return ty.s(c) && ty.o(gh[a][c]) ? {
+                    getIndex: function(d) {
+                        if (ty.f(d) || ty.s(d))
+                            for (var i = 0; i < gh[a][c].length; i++)
+                                if (String(gh[a][c][i]) === String(d))
+                                    return i;
+                    },
+                    swap: function(d, e) {
+                        if (ty.f(d)) d = this.getIndex(d);
+                        if (ty.f(e)) e = this.getIndex(e);
+                        if (ty.n(d) && ty.n(e)) {
+                            var va = gh[a][c][d];
+                            gh[a][c][d] = gh[a][c][e];
+                            gh[a][c][e] = va;
+                        }
+                    },
+                    insertAfter: function(d, e) {
+                        if (ty.f(e)) e = this.getIndex(e);
+                        if (ty.f(d) && ty.n(e))
+                            gh[a][c].splice(e + 1, 0, d);
+                    },
+                    remove: function(d) {
+                        if (ty.n(d))
+                            gh[a][c].splice(d, 1);
+                        if (ty.f(d))
+                            gh[a][c].splice(this.getIndex(d), 1);
+                    },
+                    transferTo: function(d, e) {
+                        if (ty.f(d)) d = this.getIndex(d);
+                        if (ty.f(e)) e = this.getIndex(e);
+                        if (ty.n(d) && ty.n(e)) {
+                            var va = gh[a][c][d];
+                            gh[a][c].splice(d, 1);
+                            gh[a][c].splice(e, 1, va);
+                        }
+                    }
+                } : gh[a];
+            },
+            submit: function(c) {
+                if (ty.f(this.a)) bc('submit', c);
+                if (this.a == null) return this;
+                if (ty.u(gc.fn.smb)) gc.fn.smb = {};
+                if (ty.s(c)) {
+                    var fa = function(aa) {
+                        for (var i = 0; i < aa.length; i++) {
+                            var va = aa[i],
+                                fb = function(r, l) {
+                                    if (ty.e(va.value) || va.value.length < l || !r.test(String(va.value)))
+                                        return false;
+                                },
+                                fc = function() {
+                                    va.focus();
+                                    gc(va).css('background', 'rgb(255,225,225)').animate({
+                                        colorRotate: [255, 255, 255]
+                                    }, 20);
+                                };
+                            switch (va.getAttribute('name')) {
+                                case 'text':
+                                    if (fb(/^[\w.@+ -]{4,50}$/, 1) === false) {
+                                        fc();
+                                        return false;
+                                    }
+                                    break;
+                                case 'login':
+                                    if (fb(/^[\w.@+ -]{4,50}$/, 4) === false) {
+                                        fc();
+                                        return false;
+                                    }
+                                    break;
+                                case 'password':
+                                    if (fb(/^[\w ]{4,50}$/, 4) === false) {
+                                        fc();
+                                        return false;
+                                    }
+                                    break;
+                                case 'email':
+                                    if (fb(/^[\w.@ _-]{4,50}$/, 5) === false) {
+                                        fc();
+                                        return false;
+                                    }
+                                    break;
+                                case 'mobile':
+                                    if (fb(/^[\w+ -]{4,50}$/, 3) === false) {
+                                        fc();
+                                        return false;
+                                    }
+                                    break;
+                                default:
+                                    '';
+                            }
+                        }
+                        return true;
+                    };
+                    this.a.onsubmit = function() {
+                        return false;
+                    };
+                    if (fa(this.a) === true) {
+                        this.a.setAttribute('action', location.protocol + '\u002F\u002F' + (location.host || location.hostname) + '\u002F' + c + '?patch=' + location.pathname + '&nins=' + navi);
+                        this.a.submit();
+                        return true;
+                    } else return false;
+                }
+                if (ty.f(c))
+                    gc.fn.smb[a] = c;
+                return this;
+            },
+            val: function(c) {
+                if (ty.f(this.a)) bc('val', c);
+                if (this.a == null) return this;
+                if (ty.s(c) || ty.n(c))
+                    if (ty.a(this.a)) {
+                        for (var i = 0; i < this.a.length; i++) {
+                            if (ty.o(this.a[i])) {
+                                this.a[i].value = c;
+                                ga(this.a[i], 'val', 'value', c);
+                            }
+                        }
+                    } else {
+                        this.a.value = c;
+                        ga(a, 'val', 'value', c);
+                    }
+                if (ty.u(c))
+                    return this.a.value || '';
+                return this;
+            }
             },
             bb = function(c, d, e, f, g, h) {
                 if (ty.u(gg[d])) gg[d] = {};
