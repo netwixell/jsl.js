@@ -141,7 +141,7 @@
             if (ty.a(va)) this.selector = va[1].toLowerCase();
             if (ty.a(vb))
                 if (vb[1] === 'Object') return a;
-            if (ty.a(a) /*&&a.length>0*/ ) {
+            if (ty.a(a)) {
                 this.selector = a;
                 for (var i = 0; i < a.length; i++)
                     if (ty.o(a[i])) return;
@@ -295,7 +295,7 @@
                                         }, vc);
                                     };
                                 if (ty.u(e)) e = 0.05;
-                                else if (e < 0.01) e = 0.01;
+                                if (e < 0.01) e = 0.01;
                                 var vc = vb > f ? (d / ((vb - f) / e)) : (d / ((f - vb) / e));
                                 if (vb != f) fa();
                             },
@@ -371,7 +371,7 @@
                 },
                 append: function(c, d) {
                     if (ty.f(this.a) || this.a == null) return this;
-                    if (ty.s(c) || ty.o(c)) {
+                    if (ty.s(c) || ty.o(c) || ty.a(c)) {
                         var fa = function(aa) {
                             var va;
                             if (ty.s(c)) {
@@ -392,7 +392,8 @@
                                         aa.appendChild(c[i]);
                                     }
                                 }
-                            } else {
+                            }
+                            if (ty.o(c)) {
                                 ga(aa, 'append', 'appendChild', c);
                                 aa.appendChild(c);
                             }
@@ -411,12 +412,12 @@
                     if (this.a == null) return this;
                     var fa = function(c, d, e) {
                         if (ty.s(d)) {
-                            if ( /*ty.a(e)*/ ty.o(e) && ty.n(e.length)) {
+                            if (ty.a(e) /*ty.o(e)&&ty.n(e.length)*/ ) {
                                 for (var i = 0; i < e.length; i++)
                                     if (ty.f(e[i].setAttribute))
                                         e[i].setAttribute(c, d);
-                            } else
-                            if (ty.o(e))
+                            }
+                            if (!ty.a(e) && ty.o(e))
                                 e.setAttribute(c, d);
                         }
                     };
@@ -436,10 +437,8 @@
                             for (var i = 0; i < this.a.length; i++)
                                 if (ty.o(this.a[i]))
                                     va[i] = this.a[i].getAttribute(c);
-                                else
-                                    va[i] = this.a[i];
                             return va;
-                        } else
+                        }
                         if (ty.o(this.a))
                             return this.a.getAttribute(c);
                     }
@@ -488,7 +487,8 @@
                                 for (var i = 0; i < this.a.length; i++)
                                     if (ty.o(this.a[i]))
                                         fa(this.a[i]);
-                            } else
+                            }
+                            if (ty.o(this.a))
                                 fa(this.a);
                         }
                         if (ty.s(c) && ty.u(d)) {
@@ -639,7 +639,7 @@
                             this.a.forEach(function(aa) {
                                 fa(aa);
                             });
-                        else
+                        if (ty.o(this.a))
                             fa(this.a);
                     }
                     if (ty.u(c))
@@ -722,7 +722,8 @@
                             for (var i = 0; i < this.a.length; i++)
                                 if (ty.o(this.a[i]))
                                     this.a[i]['on' + c] = fa;
-                        } else
+                        }
+                        if (ty.o(this.a))
                             this.a['on' + c] = fa;
                     }
                     if (ve[0] || ve[1]) {
@@ -795,7 +796,8 @@
                             for (var i = 0; i < this.a.length; i++)
                                 if (ty.o(this.a[i]))
                                     fa(this.a[i]);
-                        } else
+                        }
+                        if (ty.o(this.a))
                             fa(this.a);
                     }
                     return this;
@@ -931,10 +933,11 @@
                                     ga(this.a[i], 'val', 'value', c);
                                 }
                             }
-                        } else {
-                            this.a.value = c;
-                            ga(a, 'val', 'value', c);
                         }
+                    if (ty.o(this.a)) {
+                        this.a.value = c;
+                        ga(a, 'val', 'value', c);
+                    }
                     if (ty.u(c))
                         return this.a.value || '';
                     return this;
@@ -995,7 +998,7 @@
                 new fa().fn(c, d, e, f, g);
                 return new fb();
             };
-        return a === null || ty.e(a) || ty.n(a) || ty.b(a) || ty.u(a) ? a : new fn.re(a, b);
+        return a === null || ty.b(a) || ty.e(a) || ty.n(a) || ty.u(a) ? a : new fn.re(a, b);
     });
     return (Object.setPrototypeOf || function(a, b) {
         for (var i in b) gb(a, i, b[i]);
