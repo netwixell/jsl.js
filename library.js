@@ -246,7 +246,7 @@
                         for (var k = 0; k < gg[i][j].length; k++)
                             gc(i)[j](gg[i][j][k][0], gg[i][j][k][1], gg[i][j][k][2], gg[i][j][k][3]);
                 return va === null ? va : va.length === 1 && ty.o(va[0]) ? va[0] : va;
-            }, b && true), this.length = undefined) : (this.length = ty.u(va.length) ? 1 : va.length || 0, this.length === 1 && ty.o(va[0]) ? this.a = va[0] : ty.a(va) || ty.o(va) ? this.a = va : (this.a = null, this.length = 0));
+            }, b && true), this.length = undefined) : (this.length = ty.u(va.length) ? 1 : va.length || 0, this.a = this.length === 1 && ty.o(va[0]) ? va[0] : ty.a(va) || ty.o(va) ? va : null);
             this.selector = a;
         }
     });
