@@ -82,11 +82,11 @@
         gf = {},
         gg = {},
         gh = {},
-        gi = [],
-        gj = [],
-        gk = {
+        gi = {
             creator: 'jsl'
-        };
+        },
+        gk = [],
+        gl = [];
     gb(fn, 're', function(a, b) {
         if (ty.a(a)) {
             this.selector = a;
@@ -96,9 +96,9 @@
         if (ty.f(a)) {
             if (ty.a(b)) {
                 for (var i = 0; i < b.length; i++) {
-                    if (gi.indexOf(ww) === -1)
-                        gi.push(ww);
-                    var va = /\[object [a-zA-Z]+\]/.test(String(ww)) ? ww + gi.indexOf(ww) : ww,
+                    if (gk.indexOf(ww) === -1)
+                        gk.push(ww);
+                    var va = /\[object [a-zA-Z]+\]/.test(String(ww)) ? ww + gk.indexOf(ww) : ww,
                         vb = b[i],
                         fa = function(ev) {
                             for (var j = 0; j < gh[va][vb].length; j++) {
@@ -120,14 +120,14 @@
                     if (ty.u(gh[va][vb]))
                         gh[va][vb] = [];
                     gh[va][vb].push(function(ev) {
-                        gk.fn = a;
-                        gk.fn(ev);
+                        gi.fn = a;
+                        gi.fn(ev);
                     });
                     ww.addEventListener(vb, fa, b || false);
                 }
             } else {
-                gk.fn = a;
-                gk.fn();
+                gi.fn = a;
+                gi.fn();
             }
             return a;
         }
@@ -656,12 +656,12 @@
                         if (ty.s(c) && ty.s(d) && ty.f(e))
                             va = e;
                         if (/\[object [a-zA-Z]+\]/.test(String(a))) {
-                            vc = /\[object [a-zA-Z]+\]/.test(String(a)) ? vb + gi.indexOf(a) : vb;
+                            vc = /\[object [a-zA-Z]+\]/.test(String(a)) ? vb + gk.indexOf(a) : vb;
                             if (/(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(vc) != null) {
                                 var vd = /(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(vc);
                                 vc = vd[1] + vd[2] + vd[3];
                             }
-                            if (gi.indexOf(a) != -1) {
+                            if (gk.indexOf(a) != -1) {
                                 for (var i = 0; i < gh[vc][c].length; i++) {
                                     if (String(va).replace(/\s+/g, ' ') === String(gh[vc][c][i]).replace(/\s+/g, ' ')) {
                                         gh[vc][c].splice(i, 1);
@@ -706,9 +706,9 @@
                                 }
                             }
                         };
-                        if (gi.indexOf(a) === -1 && va)
-                            gi.push(a);
-                        vb = va ? a + gi.indexOf(a) : a;
+                        if (gk.indexOf(a) === -1 && va)
+                            gk.push(a);
+                        vb = va ? a + gk.indexOf(a) : a;
                         if (/(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(vb) != null) {
                             var vd = /(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(vb);
                             vb = vd[1] + vd[2] + vd[3];
@@ -925,7 +925,7 @@
                 val: function(c) {
                     if (ty.f(this.a)) bc('val', c);
                     if (this.a == null) return this;
-                    if (ty.s(c) || ty.n(c))
+                    if (ty.s(c) || ty.n(c)) {
                         if (ty.a(this.a)) {
                             for (var i = 0; i < this.a.length; i++) {
                                 if (ty.o(this.a[i])) {
@@ -934,9 +934,10 @@
                                 }
                             }
                         }
-                    if (ty.o(this.a)) {
-                        this.a.value = c;
-                        ga(a, 'val', 'value', c);
+                        if (ty.o(this.a)) {
+                            this.a.value = c;
+                            ga(a, 'val', 'value', c);
+                        }
                     }
                     if (ty.u(c))
                         return this.a.value || '';
@@ -982,17 +983,17 @@
                     };
                 fa.prototype = {
                     ty: ty,
-                    gb: gb,
-                    gd: gd,
-                    gf: gf,
-                    gh: gh,
-                    gj: gj,
                     ga: ga,
+                    gb: gb,
                     gc: gc,
+                    gd: gd,
                     ge: ge,
+                    gf: gf,
                     gg: gg,
+                    gh: gh,
                     gi: gi,
-                    gk: gk
+                    gk: gk,
+                    gl: gl
                 };
                 fb.prototype = ba;
                 new fa().fn(c, d, e, f, g);
@@ -1116,20 +1117,20 @@
                 gf[d] = [];
             gf[d].push(e);
             new fn.re(ww).on(c, function(ev) {
-                if (gj.indexOf(ev.keyCode) === -1)
-                    gj.push(ev.keyCode);
-                if (ty.a(gf[gj.join('+')])) {
-                    for (var i = 0; i < gf[gj.join('+')].length; i++)
-                        gf[gj.join('+')][i]();
-                    gj = [];
+                if (gl.indexOf(ev.keyCode) === -1)
+                    gl.push(ev.keyCode);
+                if (ty.a(gf[gl.join('+')])) {
+                    for (var i = 0; i < gf[gl.join('+')].length; i++)
+                        gf[gl.join('+')][i]();
+                    gl = [];
                     ev.preventDefault();
                 }
             });
             if (c === 'keydown') new fn.re(ww).on('keyup', function(ev) {
-                gj = [];
+                gl = [];
             });
             if (c === 'keyup') new fn.re(ww).on('keypress', function(ev) {
-                gj.splice(gj.indexOf(ev), 1);
+                gl.splice(gl.indexOf(ev), 1);
             });
         },
         imports: function(c) {
