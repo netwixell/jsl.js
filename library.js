@@ -17,9 +17,9 @@
                 ah: 'this browser does not support desktop notification',
                 ai: 'reserved'
             },
-            name: 'JavaScript Library',
+            name: 'JSL (JavaScript Library)',
             status: 'beta',
-            version: '3.4.9.180113'
+            version: '3.5.1.180113'
         },
         inc = typeof module === 'object' && typeof module.exports === 'object' ? module.exports = gl.document ? fa(gl, fa) : function(w) {
             if (!w.document) j.error(j.msg.ad);
@@ -82,9 +82,7 @@
         gf = {},
         gg = {},
         gh = {},
-        gi = {
-            creator: 'jsl'
-        },
+        gi = {},
         gk = [],
         gl = [];
     gb(fn, 're', function(a, b) {
@@ -120,12 +118,14 @@
                     if (ty.u(gh[va][vb]))
                         gh[va][vb] = [];
                     gh[va][vb].push(function(ev) {
+                        gi.creator = gc.fn.name;
                         gi.fn = a;
                         gi.fn(ev);
                     });
                     ww.addEventListener(vb, fa, b || false);
                 }
             } else {
+                gi.creator = gc.fn.name;
                 gi.fn = a;
                 gi.fn();
             }
