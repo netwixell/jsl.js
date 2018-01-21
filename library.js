@@ -19,7 +19,7 @@
             },
             name: 'JSL (JavaScript Library)',
             status: 'beta',
-            version: '3.5.1.180113'
+            version: '3.5.1.180119'
         },
         inc = typeof module === 'object' && typeof module.exports === 'object' ? module.exports = gl.document ? fa(gl, fa) : function(w) {
             if (!w.document) j.error(j.msg.ad);
@@ -32,7 +32,7 @@
     var ty = {
             a: function(v) {
                 if (v != null)
-                    if (typeof v === 'object' && v.length > 0) return true;
+                    if (typeof v === 'object' && v.length >= 0) return true;
                 return Array.isArray(v);
             },
             b: function(v) {
@@ -407,15 +407,14 @@
                 attr: function(c, d) {
                     if (ty.f(this.a)) bc('attr', c, d);
                     if (this.a == null) return this;
-                    var fa = function(c, d, e) {
-                        if (ty.s(d)) {
-                            if (ty.a(e) /*ty.o(e)&&ty.n(e.length)*/ ) {
-                                for (var i = 0; i < e.length; i++)
-                                    if (ty.f(e[i].setAttribute))
-                                        e[i].setAttribute(c, d);
-                            }
-                            if (!ty.a(e) && ty.o(e))
-                                e.setAttribute(c, d);
+                    var fa = function(aa, ab, ac) {
+                        if (ty.s(ab)) {
+                            if (ty.a(ac))
+                                for (var i = 0; i < ac.length; i++)
+                                    if (ty.f(ac[i].setAttribute))
+                                        ac[i].setAttribute(aa, ab);
+                            if (!ty.a(ac) && ty.o(ac))
+                                ac.setAttribute(aa, ab);
                         }
                     };
                     if (ty.s(c) && ty.s(d)) {
@@ -859,8 +858,8 @@
                         var fa = function(aa) {
                             for (var i = 0; i < aa.length; i++) {
                                 var va = aa[i],
-                                    fb = function(r, l) {
-                                        if (ty.e(va.value) || va.value.length < l || !r.test(String(va.value)))
+                                    fb = function(ab, ac) {
+                                        if (ty.e(va.value) || va.value.length < ac || !ab.test(String(va.value)))
                                             return false;
                                     },
                                     fc = function() {
