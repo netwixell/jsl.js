@@ -454,6 +454,14 @@
                         this.a = this.a.children;
                     return this;
                 },
+                childrenAll: function() {
+                    if (ty.f(this.a) || this.a == null) return this;
+                    var childAll = this.a.querySelectorAll('*'),
+                        arr = [this.a];
+                    for (var i = 0; i < childAll.length; i++)
+                        arr.push(childAll[i]);
+                    return arr;
+                },
                 createElement: function(c) {
                     var va = ww.do.createElement(a);
                     if (ty.o(c))
