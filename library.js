@@ -1,3 +1,13 @@
+/*!
+ * JavaScript Library v3.5.1
+ * https://github.com/netwixell/jsl.js
+ *
+ * Copyright JS Foundation and other contributors
+ * Released under the MIT license
+ * https://raw.githubusercontent.com/netwixell/jsl.js/master/LICENSE
+ *
+ * Date: 2018-01-19T17:24Z
+ */
 'use strict';
 (function(gl, fa) {
     var j = {
