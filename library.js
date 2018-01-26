@@ -298,6 +298,7 @@
                                     fa = function() {
                                         setTimeout(function() {
                                             vb = va.a.opacity = va.a.style.opacity = (vb > f ? Number(vb) - e : Number(vb) + e).toFixed(2);
+                                            ga(a, 'animate', 'opacity', vb);
                                             if (vb != f) fa();
                                         }, vc);
                                     };
