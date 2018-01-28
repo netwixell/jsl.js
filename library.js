@@ -1,5 +1,5 @@
 /*
- * JavaScript Library v3.5.1
+ * JavaScript Library v3.5.4
  * https://github.com/netwixell/jsl.js
  *
  * Copyright JS Foundation and other contributors
@@ -30,7 +30,7 @@
             name: 'JSL (JavaScript Library)',
             nn: '106115108',
             status: 'beta',
-            version: '3.5.3.180128'
+            version: '3.5.4.180128'
         },
         inc = typeof module === 'object' && typeof module.exports === 'object' ? module.exports = gl.document ? fa(gl, fa) : function(w) {
             if (!w.document) j.error(j.msg.ad);
@@ -965,19 +965,22 @@
                 if (ty.u(gg[d][c])) gg[d][c] = [];
                 if (ty.a(gg[d][c])) gg[d][c].push([e, f, g, h]);
             },
-            bc = function(g) {
+            bc = function(g, h, i, k, l) {
                 return function(c, d, e, f) {
                     bb(g, a, c, d, e, f);
-                }
+                }(h, i, k, l);
             },
             bd = ['addClass', 'attr', 'css', 'html', 'on', 'prop', 'removeClass', 'submit', 'val'];
         fn.re.prototype = ty.f(ww.Proxy) ? new Proxy(ba, {
             get: function(t, k) {
                 var va = new fn.re(a, b).a;
-                if (ty.f(va) && bd.indexOf(k) == -1) return null;
+                if (ty.f(va) && bd.indexOf(k) == -1) return ty.f(ba[k]) && ge.__proto__() ? function tg(c, d, e, f) {
+                    bc(k, c, d, e, f);
+                    return this;
+                } : null;
                 if (ty.f(va) && bd.indexOf(k) != -1) return function tg(c, d, e, f) {
-                    bc(k)(c, d, e, f);
-                    return this
+                    bc(k, c, d, e, f);
+                    return this;
                 };
                 if (ty.o(va) || ty.a(va)) return t[k];
             }
@@ -1149,10 +1152,13 @@
                 gl.splice(gl.indexOf(ev), 1);
             });
         },
-        imports: function(c) {
+        imports: function(c, d) {
             for (var i in c)
                 if (ty.s(i) && ty.f(c[i]))
                     ge[i] = c[i];
+            ge.__proto__ = function() {
+                return d;
+            };
             return c;
         },
         toJSON: function(c) {
