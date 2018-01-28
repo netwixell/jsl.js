@@ -1019,7 +1019,7 @@
     });
     return (Object.setPrototypeOf || function(a, b) {
         for (var i in b) gb(a, i, b[i]);
-        a.__proto__ = b;
+        gb(a, '__proto__', b);
         return a;
     })(gc, {
         ajax: function(c, d) {
