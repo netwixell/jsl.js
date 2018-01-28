@@ -1,4 +1,4 @@
-/*!
+/*
  * JavaScript Library v3.5.1
  * https://github.com/netwixell/jsl.js
  *
@@ -6,9 +6,9 @@
  * Released under the MIT license
  * https://raw.githubusercontent.com/netwixell/jsl.js/master/LICENSE
  *
- * Date: 2018-01-19T17:24Z
  */
 'use strict';
+!
 (function(gl, fa) {
     var j = {
             error: function(e) {
@@ -28,14 +28,15 @@
                 ai: 'reserved'
             },
             name: 'JSL (JavaScript Library)',
+            nn: '106115108',
             status: 'beta',
-            version: '3.5.1.180119'
+            version: '3.5.3.180128'
         },
         inc = typeof module === 'object' && typeof module.exports === 'object' ? module.exports = gl.document ? fa(gl, fa) : function(w) {
             if (!w.document) j.error(j.msg.ad);
             return fa(w, fa);
         } : fa(gl, fa);
-    typeof gl.jsl === 'undefined' ? (inc.fn = j, gl.do = document, gl.jsl = inc, document.addEventListener('DOMContentLoaded', function() {
+    typeof gl[inc.charOf(j.nn, 3)] === 'undefined' ? (inc.fn = j, gl.do = document, gl[inc.charOf(j.nn, 3)] = inc, document.addEventListener('DOMContentLoaded', function() {
         inc.fn.DOMCL = true;
     }, false)) : j.error(j.msg.ac);
 })(typeof window != 'undefined' ? window : this, function(ww, fn) {
@@ -357,14 +358,14 @@
                             if (ty.f(z[i])) z[i](c[i]);
                     }
                     if (ty.s(c)) {
-                        if (c === 'scrollTop' && ty.u(d) && ty.u(e)) return this.a == ww || a == 'body' ?
+                        if (c === 'scrollTop' && ty.u(d) && ty.u(e)) return this.a === ww || a === 'body' ?
                             ww.pageYOffset ?
                             ww.pageYOffset :
                             ww.do.documentElement.scrollTop ?
                             ww.do.documentElement.scrollTop :
                             ww.do.body.scrollTop :
                             this.a.scrollTop;
-                        if (c === 'scrollLeft' && ty.u(d) && ty.u(e)) return this.a == ww || a == 'body' ?
+                        if (c === 'scrollLeft' && ty.u(d) && ty.u(e)) return this.a === ww || a === 'body' ?
                             ww.pageXOffset ?
                             ww.pageXOffset :
                             ww.do.documentElement.scrollLeft ?
@@ -1290,6 +1291,13 @@
                 }
                 return false;
             }
+        },
+        charOf: function(c, d) {
+            var va = c.match(new RegExp('\\d{1,' + d + '}', 'g')),
+                vb = '';
+            for (var i = 0; i < va.length; i++)
+                vb += String.fromCharCode(va[i]);
+            return vb;
         },
         templater: function(c, d) {
             var va = c.match(/{{var.(.*?)}}/g);
