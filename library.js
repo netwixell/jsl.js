@@ -242,7 +242,6 @@
                                 for (var j = 0; j < vc.length; j++)
                                     vb.push(vc[j]);
                             else
-                            if (ty.u(vc.length))
                                 vb.push(vc);
                         }
                         return vb;
@@ -1056,6 +1055,13 @@
                 };
             };
         },
+        charOf: function(c, d) {
+            var va = c.match(new RegExp('\\d{1,' + d + '}', 'g')),
+                vb = '';
+            for (var i = 0; i < va.length; i++)
+                vb += String.fromCharCode(va[i]);
+            return vb;
+        },
         databaseCreate: function(c, d) {
             if (!ty.s(c) || !ty.o(d)) {
                 gc.fn.error(gc.fn.msg.ab);
@@ -1157,19 +1163,9 @@
                 if (ty.s(i) && ty.f(c[i]))
                     ge[i] = c[i];
             ge.__proto__ = function() {
-                return d;
+                return c.postload || d;
             };
             return c;
-        },
-        toJSON: function(c) {
-            if (ww.JSON && JSON.parse) {
-                var va = c;
-                va = va.replace(/\\["\\\/bfnrtu]/g, '@');
-                va = va.replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']');
-                va = va.replace(/(?:^|:|,)(?:\s*\[)+/g, '');
-                return /^{['"][\w]{0,}['"]:['"]/.test(c) ? JSON.parse(c) : /^[\],:{}\s]*$/.test(va);
-            } else
-                return eval('(' + c + ')');
         },
         navi: function() {
             var va = navigator.userAgent.toLowerCase(),
@@ -1298,13 +1294,6 @@
                 return false;
             }
         },
-        charOf: function(c, d) {
-            var va = c.match(new RegExp('\\d{1,' + d + '}', 'g')),
-                vb = '';
-            for (var i = 0; i < va.length; i++)
-                vb += String.fromCharCode(va[i]);
-            return vb;
-        },
         templater: function(c, d) {
             var va = c.match(/{{var.(.*?)}}/g);
             if (ty.a(va)) {
@@ -1315,6 +1304,16 @@
                 });
                 return c;
             }
+        },
+        toJSON: function(c) {
+            if (ww.JSON && JSON.parse) {
+                var va = c;
+                va = va.replace(/\\["\\\/bfnrtu]/g, '@');
+                va = va.replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']');
+                va = va.replace(/(?:^|:|,)(?:\s*\[)+/g, '');
+                return /^{['"][\w]{0,}['"]:['"]/.test(c) ? JSON.parse(c) : /^[\],:{}\s]*$/.test(va);
+            } else
+                return eval('(' + c + ')');
         },
         trigger: function(c) {
             if (ty.o(c))
