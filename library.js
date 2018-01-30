@@ -25,12 +25,13 @@
                 af: 'this database has been created',
                 ag: 'bad type data',
                 ah: 'this browser does not support desktop notification',
-                ai: 'reserved'
+                ai: 'reserved',
+                ak: 'this item is not available',
             },
             name: 'JSL (JavaScript Library)',
             nn: '106115108',
             status: 'beta',
-            version: '3.5.4.180128'
+            version: '3.5.7.180130'
         },
         inc = typeof module === 'object' && typeof module.exports === 'object' ? module.exports = gl.document ? fa(gl, fa) : function(w) {
             if (!w.document) j.error(j.msg.ad);
@@ -973,7 +974,7 @@
         fn.re.prototype = ty.f(ww.Proxy) ? new Proxy(ba, {
             get: function(t, k) {
                 var va = new fn.re(a, b).a;
-                if (ty.f(va) && bd.indexOf(k) == -1) return ty.f(ba[k]) && ge.__proto__() ? function tg(c, d, e, f) {
+                if (ty.f(va) && bd.indexOf(k) == -1) return !ty.f(ge.__proto__) ? null : ty.f(ba[k]) && ge.__proto__() ? function tg(c, d, e, f) {
                     bc(k, c, d, e, f);
                     return this;
                 } : null;
