@@ -1,5 +1,5 @@
 /*
- * JavaScript Library v3.5.4
+ * JavaScript Library v3.5.8
  * https://github.com/netwixell/jsl.js
  *
  * Copyright JS Foundation and other contributors
@@ -31,7 +31,7 @@
             name: 'JSL (JavaScript Library)',
             nn: '106115108',
             status: 'beta',
-            version: '3.5.7.180130'
+            version: '3.5.8.180204'
         },
         inc = typeof module === 'object' && typeof module.exports === 'object' ? module.exports = gl.document ? fa(gl, fa) : function(w) {
             if (!w.document) j.error(j.msg.ad);
@@ -264,7 +264,7 @@
     gb(fn.re, 'dom', function(a, b) {
         var ba = {
                 addClass: function(c) {
-                    if (ty.f(this.a)) bc('addClass', c);
+                    if (ty.f(this.a)) bb('addClass', c);
                     if (this.a == null) return this;
                     if (!ty.e(this.a.className))
                         for (var i = 0; i < this.a.className.split(' ').length; i++)
@@ -417,7 +417,7 @@
                     return this;
                 },
                 attr: function(c, d) {
-                    if (ty.f(this.a)) bc('attr', c, d);
+                    if (ty.f(this.a)) bb('attr', c, d);
                     if (this.a == null) return this;
                     var fa = function(aa, ab, ac) {
                         if (ty.s(ab)) {
@@ -483,7 +483,7 @@
                     return va;
                 },
                 css: function(c, d) {
-                    if (ty.f(this.a)) bc('css', c, d);
+                    if (ty.f(this.a)) bb('css', c, d);
                     if (this.a == null) return this;
                     if ((ty.s(c) || ty.o(c)) && (ty.s(d) || ty.u(d))) {
                         if ((ty.o(this.a) || ty.a(this.a)) && this.a != null) {
@@ -637,7 +637,7 @@
                     return this;
                 },
                 html: function(c) {
-                    if (ty.f(this.a)) bc('html', c);
+                    if (ty.f(this.a)) bb('html', c);
                     if (this.a == null) return this;
                     if (ty.o(c) || ty.s(c)) {
                         var fa = function(aa) {
@@ -700,7 +700,7 @@
                     return this;
                 },
                 on: function(c, d, e) {
-                    if (ty.f(this.a)) bc('on', c, d, e);
+                    if (ty.f(this.a)) bb('on', c, d, e);
                     if (this.a == null) return this;
                     var va = /\[object [a-zA-Z]+\]/.test(String(a)),
                         ve = [
@@ -784,7 +784,7 @@
                     return this;
                 },
                 prop: function(c, d) {
-                    if (ty.f(this.a)) bc('prop', c, d);
+                    if (ty.f(this.a)) bb('prop', c, d);
                     if (this.a == null) return this;
                     if (ty.s(c) && !ty.u(d)) {
                         ga(a, 'prop', c, d);
@@ -819,7 +819,7 @@
                     return this;
                 },
                 removeClass: function(c) {
-                    if (ty.f(this.a)) bc('removeClass', c);
+                    if (ty.f(this.a)) bb('removeClass', c);
                     if (this.a == null) return this;
                     if (ty.s(c) && !ty.e(this.a.className)) {
                         var va = this.a.className.split(' ');
@@ -871,7 +871,7 @@
                     } : gh[a];
                 },
                 submit: function(c) {
-                    if (ty.f(this.a)) bc('submit', c);
+                    if (ty.f(this.a)) bb('submit', c);
                     if (this.a == null) return this;
                     if (ty.u(gc.fn.smb)) gc.fn.smb = {};
                     if (ty.s(c)) {
@@ -939,7 +939,7 @@
                     return this;
                 },
                 val: function(c) {
-                    if (ty.f(this.a)) bc('val', c);
+                    if (ty.f(this.a)) bb('val', c);
                     if (this.a == null) return this;
                     if (ty.s(c) || ty.n(c)) {
                         if (ty.a(this.a)) {
@@ -960,33 +960,28 @@
                     return this;
                 }
             },
-            bb = function(c, d, e, f, g, h) {
-                if (ty.u(gg[d])) gg[d] = {};
-                if (ty.u(gg[d][c])) gg[d][c] = [];
-                if (ty.a(gg[d][c])) gg[d][c].push([e, f, g, h]);
+            bb = function tg(c, d, e, f, g) {
+                if (ty.u(gg[a])) gg[a] = {};
+                if (ty.u(gg[a][c])) gg[a][c] = [];
+                if (ty.a(gg[a][c])) gg[a][c].push([d, e, f, g]);
             },
-            bc = function(g, h, i, k, l) {
-                return function(c, d, e, f) {
-                    bb(g, a, c, d, e, f);
-                }(h, i, k, l);
-            },
-            bd = ['addClass', 'attr', 'css', 'html', 'on', 'prop', 'removeClass', 'submit', 'val'];
+            bc = ['addClass', 'attr', 'css', 'html', 'on', 'prop', 'removeClass', 'submit', 'val'];
         fn.re.prototype = ty.f(ww.Proxy) ? new Proxy(ba, {
-            get: function(t, k) {
+            get: function tg(t, k) {
                 var va = new fn.re(a, b).a;
-                if (ty.f(va) && bd.indexOf(k) == -1) return !ty.f(ge.__proto__) ? null : ty.f(ba[k]) && ge.__proto__() ? function tg(c, d, e, f) {
-                    bc(k, c, d, e, f);
+                if (ty.f(va) && bc.indexOf(k) == -1) return !ty.f(ge.__proto__) ? null : ty.f(ba[k]) && ge.__proto__() ? function tg(c, d, e, f) {
+                    bb(k, c, d, e, f);
                     return this;
                 } : null;
-                if (ty.f(va) && bd.indexOf(k) != -1) return function tg(c, d, e, f) {
-                    bc(k, c, d, e, f);
+                if (ty.f(va) && bc.indexOf(k) != -1) return function tg(c, d, e, f) {
+                    bb(k, c, d, e, f);
                     return this;
                 };
                 if (ty.o(va) || ty.a(va)) return t[k];
             }
         }) : ba;
         for (var i in ge)
-            if (ty.u(ba[i])) fn.re.prototype[i] = function(c, d, e, f, g) {
+            if (ty.u(ba[i])) fn.re.prototype[i] = function tg(c, d, e, f, g) {
                 var va = this.a,
                     vb = this.length,
                     fa = function tg() {
@@ -1020,7 +1015,7 @@
             };
         return a === null || ty.b(a) || ty.e(a) || ty.n(a) || ty.u(a) ? a : new fn.re(a, b);
     });
-    return (Object.setPrototypeOf || function(a, b) {
+    return (Object.setPrototypeOf || function tg(a, b) {
         for (var i in b) gb(a, i, b[i]);
         gb(a, '__proto__', b);
         return a;
