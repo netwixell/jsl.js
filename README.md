@@ -5,7 +5,6 @@ UI manipulate framework<br>
 Welcome to the jsl.js!<br>
 
 Method for manipulating DOM
-
 --------------------------------------------------------------------
 **addClass ( cName )** this method adds the class to the specified element.<br>
 сName (*String*) — the name of the class. If you want to specify multiple classes, they are separated by a space.<br>
