@@ -27,7 +27,7 @@ value (*String*) — attribute value. If not specified, returns the current valu
 `jsl('body').attr('id','body')`<br>
 `jsl('body').attr('id') // body`<br>
 <br>
-**blur ()** this method removes the focus from the current element.<br><br>
+**blur ()** this method removes the focus from the current element.<br>
 <br>
 **children ( [_index_] )** the read-only attribute Node.childNodes returns a collection of child elements of this element.<br>
 index (*Number*) the index of the element. If not specified, returns all child elements.<br>
