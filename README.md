@@ -1,4 +1,5 @@
 # jsl.js
+
 UI manipulate framework<br>
 Welcome to the jsl.js!<br>
 Method for manipulating DOM
@@ -108,10 +109,10 @@ headers (*Object*) an object that can contain the passed headers<br>
 send (*String*) — the string wakes, Perdana to send<br><br>
 **bind** ( thisArg ) raises the specified event<br>
 thisArg (*Object*) — calls the function with a given this value and arguments provided as an array (or an array-like object).<br><br>
-	**databaseCreate** (c,d)<br><br>
-	**databaseInsert** (c,d)<br><br>
-	**databaseSelect** (c,d)<br><br>
-	**databaseUpdate** (c,d,e)<br><br>
+**databaseCreate** (c,d)<br><br>
+**databaseInsert** (c,d)<br><br>
+**databaseSelect** (c,d)<br><br>
+**databaseUpdate** (c,d,e)<br><br>
 **getXmlHttp** () returns an instance of XMLHttpRequest<br><br>
 **hotkey** ( type, key, listener )<br>
 type (*String*) — the type of the listened event.<br>
