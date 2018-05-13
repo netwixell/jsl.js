@@ -70,7 +70,8 @@ content (*String*) — value. If not specified, returns the current value.<br>
 **off ( type, tagName, listener )** removes the given event handler for an element, returns the event handlers.<br>
 type (*String*) — the type of the listened event.<br>
 tagName (*String*) — indicates what the element type should be processed.<br>
-listener (*Function*) — the object which receives notification when an event of the specified type occurred. It must be an object that implements the EventListener interface, or simply a JavaScript function (object).<br><br>
+listener (*Function*) — the object which receives notification when an event of the specified type occurred. It must be an object that implements the EventListener interface, or simply a JavaScript function (object).<br>
+<br>
 **on ( type[_, tagName, listener_] )** sets the given event handler for an element, returns the event handlers.<br>
 type (*String*) — the type of the listened event.<br>
 tagName (*String*) — indicates what the element type should be processed.<br>
@@ -81,7 +82,8 @@ If tagName and listener is not set, the method emulates the event.<br>
 <br>
 **prop ( name[_, value_] )** sets a property for the specified element.<br>
 name (*String*) — represents the name of the item property.<br>
-value (*String, Number*) the value of the property element. If not specified, returns the current value.<br><br>
+value (*String, Number*) the value of the property element. If not specified, returns the current value.<br>
+<br>
 **remove ( child )** removes a child element from the DOM. Returns the removed element.<br>
 child (*Object*) — the child element to be removed from the DOM.<br>
 <br>
@@ -96,7 +98,7 @@ url (*String*) — address to send the form.<br>
 <br>
 **val ( [_value_] )** this method sets or returns the value of the form<br>
 value (*String*) — value. If not specified, returns the current value.<br>
-<br><br>
+<br>
 
 Methods
 --------------------------------------------------------------------
@@ -108,32 +110,45 @@ headers (*Object*) an object that can contain the passed headers<br>
 2: the function that occurs after the onset of the readyState 2<br>
 3: the function that occurs after the onset of the readyState 3<br>
 4: function is executed after the occurrence of the condition readyState 4<br>
-send (*String*) — the string wakes, Perdana to send<br><br>
+send (*String*) — the string wakes, Perdana to send<br>
+<br>
 **bind** ( thisArg ) raises the specified event<br>
-thisArg (*Object*) — calls the function with a given this value and arguments provided as an array (or an array-like object).<br><br>
-**databaseCreate** (c,d)<br><br>
-**databaseInsert** (c,d)<br><br>
-**databaseSelect** (c,d)<br><br>
-**databaseUpdate** (c,d,e)<br><br>
-**getXmlHttp** () returns an instance of XMLHttpRequest<br><br>
+thisArg (*Object*) — calls the function with a given this value and arguments provided as an array (or an array-like object).<br>
+<br>
+**databaseCreate** (c,d)<br>
+<br>
+**databaseInsert** (c,d)<br>
+<br>
+**databaseSelect** (c,d)<br>
+<br>
+**databaseUpdate** (c,d,e)<br>
+<br>
+**getXmlHttp** () returns an instance of XMLHttpRequest<br>
+<br>
 **hotkey** ( type, key, listener )<br>
 type (*String*) — the type of the listened event.<br>
 key (*String*) — keyboard shortcut<br>
-listener (*Function*) — the object which receives notification when an event of the specified type occurred. It must be an object that implements the EventListener interface, or simply a JavaScript function (object).<br><br>
+listener (*Function*) — the object which receives notification when an event of the specified type occurred. It must be an object that implements the EventListener interface, or simply a JavaScript function (object).<br>
+<br>
 **imports** ( methods ) imports methods for DOM. You can use to create your own modules.<br>
-methods (*Object*) object methods<br><br>
+methods (*Object*) object methods<br>
+<br>
 **toJSON** ( str ) returns a string in json format<br>
-str (*String*) — Preobrazhenie line<br><br>
-**navi** () returns string navigator.<br><br>
+str (*String*) — Preobrazhenie line<br>
+<br>
+**navi** () returns string navigator.<br>
+<br>
 **notifi** ( title )<br>
-title (*String*) — string uvedomlenie.<br><br>
+title (*String*) — string uvedomlenie.<br>
+<br>
 **on** ( type, listener ) specifies the event handler for the item.<br>
 type (*String*) — the type of the listened event.<br>
 listener (*Function*) — the object which receives notification when an event of the specified type occurred. It must be an object that implements the EventListener interface, or simply a JavaScript function (object).<br><br>
 **parserUrl** ( url ) returns the url components.<br>
-url (*String*) — the url string<br><br>
+url (*String*) — the url string<br>
+<br>
 **require** ( files ) connect script and style<br>
-files (*Object*) — array of include files<br><br>
-	**templater** (c,d)<br><br>
+files (*Object*) — array of include files<br>
+<br>
 **trigger** ( type )<br>
 type (*String*) — the type of the listened event.
