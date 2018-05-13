@@ -1,9 +1,6 @@
 # jsl.js
 UI manipulate framework
 
-# jsl.js
-UI manipulate framework
-
 Welcome to the jsl.js wiki!
 Methods for DOM
 --------------------------------------------------------------------
