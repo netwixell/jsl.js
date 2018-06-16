@@ -1,5 +1,5 @@
 /*
-* JavaScript Library v2.8.1.180616:21851
+* JavaScript Library v2.8.1.180616:21952
 * https://github.com/netwixell/jsl.js
 *
 * Copyright JS Foundation and other contributors
