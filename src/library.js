@@ -1,4 +1,12 @@
 /*
+* JavaScript Library v2.8.2.180617:85142
+* https://github.com/netwixell/jsl.js
+*
+* Copyright JS Foundation and other contributors
+* Released under the MIT license
+* https://raw.githubusercontent.com/netwixell/jsl.js/master/LICENSE
+*/
+/*
 * JavaScript Library v2.8.2.180617:85055
 * https://github.com/netwixell/jsl.js
 *
@@ -112,32 +120,32 @@
         }
         if (k['f'](Q)) {
             if (k['a'](R)) {
-                for (var S = 0x0; S < R['length']; S++) {
+                for (var a2 = 0x0; a2 < R['length']; a2++) {
                     if (u['indexOf'](i) === -0x1)
                         u['push'](i);
-                    var T = /\[object [a-zA-Z]+\]/['test'](String(i)) ? i + u['indexOf'](i) : i, U = R[S], V = function (W) {
-                            for (var X = 0x0; X < s[T][U]['length']; X++) {
-                                if (k['f'](s[T][U][X])) {
-                                    if (k['s'](s[T][U][X]['tagName']))
-                                        if (s[T][U][X]['tagName'] === W['target']['tagName'])
-                                            s[T][U][X](W);
-                                    if (k['u'](s[T][U][X]['tagName']))
-                                        s[T][U][X](W);
+                    var a0 = /\[object [a-zA-Z]+\]/['test'](String(i)) ? i + u['indexOf'](i) : i, a1 = R[a2], a4 = function (W) {
+                            for (var X = 0x0; X < s[a0][a1]['length']; X++) {
+                                if (k['f'](s[a0][a1][X])) {
+                                    if (k['s'](s[a0][a1][X]['tagName']))
+                                        if (s[a0][a1][X]['tagName'] === W['target']['tagName'])
+                                            s[a0][a1][X](W);
+                                    if (k['u'](s[a0][a1][X]['tagName']))
+                                        s[a0][a1][X](W);
                                 }
                             }
                         };
-                    if (/(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/['exec'](T) != null) {
-                        var Y = /(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/['exec'](T);
-                        T = Y[0x1] + Y[0x2] + Y[0x3];
+                    if (/(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/['exec'](a0) != null) {
+                        var Y = /(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/['exec'](a0);
+                        a0 = Y[0x1] + Y[0x2] + Y[0x3];
                     }
-                    s[T] = s[T] || {};
-                    s[T][U] = s[T][U] || [];
-                    s[T][U]['push'](function (Z) {
+                    s[a0] = s[a0] || {};
+                    s[a0][a1] = s[a0][a1] || [];
+                    s[a0][a1]['push'](function (Z) {
                         t['creator'] = n['fn']['name'];
                         t['fn'] = Q;
                         t['fn'](Z);
                     });
-                    i['addEventListener'](U, V, R || !0x1);
+                    i['addEventListener'](a1, a4, R || !0x1);
                 }
             } else {
                 t['creator'] = n['fn']['name'];
@@ -147,10 +155,10 @@
             return Q;
         }
         if (k['o'](Q)) {
-            var T = Q['toString']()['match'](/\[object HTML([a-zA-Z]+)/), U = Q['toString']()['match'](/\[object ([A-Z][a-z]+)/);
+            var a0 = Q['toString']()['match'](/\[object HTML([a-zA-Z]+)/), a1 = Q['toString']()['match'](/\[object ([A-Z][a-z]+)/);
             if (k['o'](Q['a']) && k['s'](Q['selector']) && k['n'](Q['length'])) {
-                for (var S in Q)
-                    this[S] = Q[S];
+                for (var a2 in Q)
+                    this[a2] = Q[a2];
                 return this;
             }
             this['a'] = Q;
@@ -159,25 +167,25 @@
                 return this['selector'] = 'window';
             if (Q === i['do'])
                 return this['selector'] = 'document';
-            if (k['a'](T))
-                return this['selector'] = T[0x1]['toLowerCase']();
+            if (k['a'](a0))
+                return this['selector'] = a0[0x1]['toLowerCase']();
             if (k['s'](Q['href']))
                 return this['selector'] = 'a';
             if (k['a'](Q))
-                for (var S = 0x0; S < Q['length']; S++)
-                    if (k['o'](Q[S]))
+                for (var a2 = 0x0; a2 < Q['length']; a2++)
+                    if (k['o'](Q[a2]))
                         return this['selector'] = Q;
-            if (k['a'](U))
-                if (U[0x1] === 'Object')
+            if (k['a'](a1))
+                if (a1[0x1] === 'Object')
                     return Q;
-            if (T === null && U === null)
+            if (a0 === null && a1 === null)
                 return Q;
         }
         if (k['s'](Q)) {
-            var V = function (a6) {
+            var a4 = function (a6) {
                     var a7 = function (a9) {
                             var aa = function (ab) {
-                                var T = [
+                                var a0 = [
                                     /^(.+)\[(\d+)-(\d+)\]$/im,
                                     /^(.+)\((\d+),(\d+)\)$/im,
                                     /^(.+)\[(\d+)-\]$/im,
@@ -185,133 +193,133 @@
                                     /^(.+)!(\d+)$/im,
                                     /^(.+):(\d+)$/im
                                 ];
-                                for (var S = 0x0; S < T['length']; S++) {
-                                    var U = ab['match'](T[S]);
-                                    if (k['a'](U)) {
-                                        U = U['map'](function (af) {
-                                            var T = +af;
-                                            return k['N'](T) ? af : T;
+                                for (var a2 = 0x0; a2 < a0['length']; a2++) {
+                                    var a1 = ab['match'](a0[a2]);
+                                    if (k['a'](a1)) {
+                                        a1 = a1['map'](function (af) {
+                                            var a0 = +af;
+                                            return k['N'](a0) ? af : a0;
                                         });
                                         return [
                                             [
                                                 [
-                                                    U[0x2],
-                                                    U[0x3]
+                                                    a1[0x2],
+                                                    a1[0x3]
                                                 ],
                                                 0x0,
-                                                a9 = U[0x1]
+                                                a9 = a1[0x1]
                                             ],
                                             [
                                                 [
-                                                    U[0x2],
-                                                    U[0x3]
+                                                    a1[0x2],
+                                                    a1[0x3]
                                                 ],
                                                 0x1,
-                                                a9 = U[0x1]
+                                                a9 = a1[0x1]
                                             ],
                                             [
                                                 [
-                                                    U[0x2],
-                                                    U[0x3]
+                                                    a1[0x2],
+                                                    a1[0x3]
                                                 ],
                                                 0x2,
-                                                a9 = U[0x1]
+                                                a9 = a1[0x1]
                                             ],
                                             [
-                                                U[0x2],
+                                                a1[0x2],
                                                 0x4,
-                                                a9 = U[0x1]
+                                                a9 = a1[0x1]
                                             ],
                                             [
-                                                U[0x2],
+                                                a1[0x2],
                                                 0x3,
-                                                a9 = U[0x1]
+                                                a9 = a1[0x1]
                                             ],
                                             [
-                                                U[0x2],
+                                                a1[0x2],
                                                 0x4,
-                                                a9 = U[0x1]
+                                                a9 = a1[0x1]
                                             ]
-                                        ][S];
+                                        ][a2];
                                     }
                                 }
                                 return !0x1;
                             }(a9);
                             try {
-                                var T = i['do']['querySelectorAll'](a9);
+                                var a0 = i['do']['querySelectorAll'](a9);
                             } catch (ai) {
                                 return null;
                             }
                             if (k['a'](aa))
                                 switch (aa[0x1]) {
                                 case 0x0: {
-                                        var U = [];
+                                        var a1 = [];
                                         if (aa[0x0][0x0] >= 0x0 && aa[0x0][0x1] >= 0x0 && aa[0x0][0x0] <= aa[0x0][0x1])
-                                            for (var S = aa[0x0][0x0]; S <= aa[0x0][0x1]; S++)
-                                                if (k['o'](T[S]))
-                                                    U['push'](T[S]);
-                                        T = U;
+                                            for (var a2 = aa[0x0][0x0]; a2 <= aa[0x0][0x1]; a2++)
+                                                if (k['o'](a0[a2]))
+                                                    a1['push'](a0[a2]);
+                                        a0 = a1;
                                     }
                                     ;
                                     break;
                                 case 0x1: {
-                                        var U = [];
+                                        var a1 = [];
                                         if (aa[0x0][0x0] >= 0x0 && aa[0x0][0x1] >= 0x0)
-                                            for (var S = aa[0x0][0x0], an = 0x0; an < aa[0x0][0x1]; S++, an++)
-                                                if (k['o'](T[S]))
-                                                    U['push'](T[S]);
-                                        T = U;
+                                            for (var a2 = aa[0x0][0x0], an = 0x0; an < aa[0x0][0x1]; a2++, an++)
+                                                if (k['o'](a0[a2]))
+                                                    a1['push'](a0[a2]);
+                                        a0 = a1;
                                     }
                                     ;
                                     break;
                                 case 0x2: {
-                                        var U = [];
+                                        var a1 = [];
                                         if (aa[0x0][0x0] >= 0x0 && !aa[0x0][0x1])
-                                            for (var S = aa[0x0][0x0]; S <= T['length']; S++)
-                                                if (k['o'](T[S]))
-                                                    U['push'](T[S]);
-                                        T = U;
+                                            for (var a2 = aa[0x0][0x0]; a2 <= a0['length']; a2++)
+                                                if (k['o'](a0[a2]))
+                                                    a1['push'](a0[a2]);
+                                        a0 = a1;
                                     }
                                     ;
                                     break;
                                 case 0x3: {
-                                        var U = [];
-                                        for (var S = 0x0; S < T['length']; S++)
-                                            if (k['o'](T[S]))
-                                                U['push'](T[S]);
-                                        U['splice'](aa[0x0], 0x1);
-                                        T = U;
+                                        var a1 = [];
+                                        for (var a2 = 0x0; a2 < a0['length']; a2++)
+                                            if (k['o'](a0[a2]))
+                                                a1['push'](a0[a2]);
+                                        a1['splice'](aa[0x0], 0x1);
+                                        a0 = a1;
                                     }
                                     ;
                                     break;
                                 case 0x4:
-                                    T = T[aa[0x0]];
+                                    a0 = a0[aa[0x0]];
                                     break;
                                 }
-                            return T;
-                        }, T = a6['split'](/(?!\([^)]*),(?![^(]*\))/);
-                    if (T['length'] > 0x1) {
-                        var U = [];
-                        for (var S = 0x0; S < T['length']; S++) {
-                            var Y = a7(T[S]);
+                            return a0;
+                        }, a0 = a6['split'](/(?!\([^)]*),(?![^(]*\))/);
+                    if (a0['length'] > 0x1) {
+                        var a1 = [];
+                        for (var a2 = 0x0; a2 < a0['length']; a2++) {
+                            var Y = a7(a0[a2]);
                             if (k['a'](Y))
                                 for (var av = 0x0; av < Y['length']; av++)
-                                    U['push'](Y[av]);
+                                    a1['push'](Y[av]);
                             else
-                                U['push'](Y);
+                                a1['push'](Y);
                         }
-                        return U;
+                        return a1;
                     }
                     return a7(a6);
-                }, T = V(Q);
-            T === null || T['length'] === 0x0 ? n['fn']['DOMCL'] === !0x0 ? (this['a'] = null, this['length'] = 0x0) : (i['do']['addEventListener']('DOMContentLoaded', this['a'] = function () {
-                var T = V(Q)['length'] === 0x0 ? null : V(Q);
-                for (var S in r)
-                    for (var ay in r[S])
-                        for (var az = 0x0; az < r[S][ay]['length']; az++)
-                            n(S)[ay](r[S][ay][az][0x0], r[S][ay][az][0x1], r[S][ay][az][0x2], r[S][ay][az][0x3]);
-                return T === null ? T : T['length'] === 0x1 && k['o'](T[0x0]) ? T[0x0] : T;
-            }, R && !0x0), this['length'] = void 0x0) : (this['length'] = k['u'](T['length']) && k['o'](T) && T != null ? 0x1 : T['length'], this['a'] = k['a'](T) || k['o'](T) ? this['length'] === 0x1 && k['o'](T[0x0]) ? T[0x0] : this['a'] = T : null);
+                }, a0 = a4(Q);
+            a0 === null || a0['length'] === 0x0 ? n['fn']['DOMCL'] === !0x0 ? (this['a'] = null, this['length'] = 0x0) : (i['do']['addEventListener']('DOMContentLoaded', this['a'] = function () {
+                var a0 = a4(Q)['length'] === 0x0 ? null : a4(Q);
+                for (var a2 in r)
+                    for (var ay in r[a2])
+                        for (var az = 0x0; az < r[a2][ay]['length']; az++)
+                            n(a2)[ay](r[a2][ay][az][0x0], r[a2][ay][az][0x1], r[a2][ay][az][0x2], r[a2][ay][az][0x3]);
+                return a0 === null ? a0 : a0['length'] === 0x1 && k['o'](a0[0x0]) ? a0[0x0] : a0;
+            }, R && !0x0), this['length'] = void 0x0) : (this['length'] = k['u'](a0['length']) && k['o'](a0) && a0 != null ? 0x1 : a0['length'], this['a'] = k['a'](a0) || k['o'](a0) ? this['length'] === 0x1 && k['o'](a0[0x0]) ? a0[0x0] : this['a'] = a0 : null);
             this['selector'] = Q;
         }
     }), m(j['re'], 'dom', function (aA, aB) {
@@ -439,8 +447,8 @@
                                 ba['innerHTML'] = b6;
                                 if (k['u'](b7)) {
                                     if (ba['children']['length'] > 0x1)
-                                        for (var bb = 0x0; bb < ba['children']['length']; bb++)
-                                            b9['appendChild'](ba['children'][bb]);
+                                        for (var bc = 0x0; bc < ba['children']['length']; bc++)
+                                            b9['appendChild'](ba['children'][bc]);
                                     if (ba['children']['length'] === 0x1)
                                         if (k['u'](b7))
                                             b9['appendChild'](ba['children'][0x0]);
@@ -449,15 +457,15 @@
                                     b9['appendChild'](ba);
                             }
                             if (k['a'](b6)) {
-                                for (var bb = 0x0; bb < b6['length']; bb++) {
-                                    if (k['s'](b6[bb])) {
-                                        i['do']['createElement']('DIV')['innerHTML'] = b6[bb];
+                                for (var bc = 0x0; bc < b6['length']; bc++) {
+                                    if (k['s'](b6[bc])) {
+                                        i['do']['createElement']('DIV')['innerHTML'] = b6[bc];
                                         l(b9, 'append', 'appendChild', ba);
                                         b9['appendChild'](ba);
                                     }
-                                    if (k['o'](b6[bb])) {
-                                        l(b9, 'append', 'appendChild', b6[bb]);
-                                        b9['appendChild'](b6[bb]);
+                                    if (k['o'](b6[bc])) {
+                                        l(b9, 'append', 'appendChild', b6[bc]);
+                                        b9['appendChild'](b6[bc]);
                                     }
                                 }
                             }
@@ -498,17 +506,17 @@
                         l(aA, 'attr', be, bf);
                     }
                     if (k['o'](be) && k['u'](bf)) {
-                        for (var bl in be) {
-                            bg(bl, be[bl], this['a']);
-                            l(aA, 'attr', bl, be[bl]);
+                        for (var bn in be) {
+                            bg(bn, be[bn], this['a']);
+                            l(aA, 'attr', bn, be[bn]);
                         }
                     }
                     if (k['s'](be) && k['u'](bf)) {
                         if (k['a'](this['a'])) {
                             var bm = [];
-                            for (var bl = 0x0; bl < this['a']['length']; bl++)
-                                if (k['o'](this['a'][bl]))
-                                    bm[bl] = this['a'][bl]['getAttribute'](be);
+                            for (var bn = 0x0; bn < this['a']['length']; bn++)
+                                if (k['o'](this['a'][bn]))
+                                    bm[bn] = this['a'][bn]['getAttribute'](be);
                             return bm;
                         }
                         if (k['o'](this['a']))
@@ -562,23 +570,23 @@
                         return this;
                     if (k['s'](bt)) {
                         if (k['f'](this['a']['querySelectorAll'])) {
-                            var bu = this['a']['querySelectorAll'](bt), bv = [];
-                            for (var bw = 0x0; bw < bu['length']; bw++)
-                                bv['push'](bu[bw]);
+                            var bx = this['a']['querySelectorAll'](bt), by = [];
+                            for (var bB = 0x0; bB < bx['length']; bB++)
+                                by['push'](bx[bB]);
                         }
                         this['selector'] = aA + '\x20' + bt;
                     }
                     if (k['n'](bt)) {
-                        var bu = this['a']['querySelectorAll']('*'), bv = bu[bt];
+                        var bx = this['a']['querySelectorAll']('*'), by = bx[bt];
                         this['selector'] = aA + '[' + bt + ']';
                     }
                     if (k['u'](bt)) {
-                        var bu = this['a']['querySelectorAll']('*'), bv = [];
-                        for (var bw = 0x0; bw < bu['length']; bw++)
-                            bv['push'](bu[bw]);
+                        var bx = this['a']['querySelectorAll']('*'), by = [];
+                        for (var bB = 0x0; bB < bx['length']; bB++)
+                            by['push'](bx[bB]);
                         this['selector'] = '' + this['a'];
                     }
-                    this['a'] = bv;
+                    this['a'] = by;
                     if (k['u'](this['a'])) {
                         this['a'] = null;
                         this['length'] = 0x0;
@@ -607,7 +615,7 @@
                         return this;
                     if ((k['s'](bF) || k['o'](bF)) && (k['s'](bG) || k['u'](bG))) {
                         if ((k['o'](this['a']) || k['a'](this['a'])) && this['a'] != null) {
-                            var bH = function (bI) {
+                            var bL = function (bI) {
                                 if (k['s'](bF) && k['s'](bG)) {
                                     bI['style'][bF] = bG;
                                     l(aA, 'css', bF, bG);
@@ -622,12 +630,12 @@
                             if (k['a'](this['a']))
                                 for (var bK = 0x0; bK < this['a']['length']; bK++)
                                     if (k['o'](this['a'][bK]))
-                                        bH(this['a'][bK]);
+                                        bL(this['a'][bK]);
                             if (k['o'](this['a']))
-                                bH(this['a']);
+                                bL(this['a']);
                         }
                         if (k['s'](bF) && k['u'](bG)) {
-                            var bH = function (bP) {
+                            var bL = function (bP) {
                                     if (k['o'](bP['style']))
                                         if (!k['u'](bP['style'][bF]) && !k['e'](bP['style'][bF]) && bP['style'][bF] != 'auto')
                                             return bP['style'][bF];
@@ -651,12 +659,12 @@
                                     bF = 'offsetWidth';
                                 }
                             }
-                            if (bH(this['a']) != !0x1) {
+                            if (bL(this['a']) != !0x1) {
                                 if (bN === 0x1)
-                                    return bH(this['a']) + bM[0x0] + bM[0x2];
+                                    return bL(this['a']) + bM[0x0] + bM[0x2];
                                 if (bN === 0x2)
-                                    return bH(this['a']) + bM[0x1] + bM[0x3];
-                                return bH(this['a']);
+                                    return bL(this['a']) + bM[0x1] + bM[0x3];
+                                return bL(this['a']);
                             }
                             try {
                                 return bO[bF] || this['a']['currentStyle'][bF];
@@ -820,18 +828,18 @@
                                 ct = cu[0x1] + cu[0x2] + cu[0x3];
                             }
                             if (u['indexOf'](aA) != -0x1) {
-                                for (var cv = 0x0; cv < s[ct][co]['length']; cv++) {
-                                    if (String(cr)['replace'](/\s+/g, '\x20') === String(s[ct][co][cv])['replace'](/\s+/g, '\x20')) {
-                                        s[ct][co]['splice'](cv, 0x1);
+                                for (var cw = 0x0; cw < s[ct][co]['length']; cw++) {
+                                    if (String(cr)['replace'](/\s+/g, '\x20') === String(s[ct][co][cw])['replace'](/\s+/g, '\x20')) {
+                                        s[ct][co]['splice'](cw, 0x1);
                                     }
                                 }
                             }
                         } else {
                             if (k['o'](s[cs])) {
                                 if (k['a'](s[cs][co])) {
-                                    for (var cv = 0x0; cv < s[cs][co]['length']; cv++) {
+                                    for (var cw = 0x0; cw < s[cs][co]['length']; cw++) {
                                         if (cr == s[cs][co]) {
-                                            s[cs][co]['splice'](cv, 0x1);
+                                            s[cs][co]['splice'](cw, 0x1);
                                             break;
                                         }
                                     }
@@ -883,9 +891,9 @@
                         s[cC] = s[cC] || {};
                         s[cC][cx] = s[cC][cx] || [];
                         if (k['a'](this['a']))
-                            for (var cK = 0x0; cK < this['a']['length']; cK++)
-                                if (k['o'](this['a'][cK]))
-                                    this['a'][cK]['on' + cx] = cF;
+                            for (var cL = 0x0; cL < this['a']['length']; cL++)
+                                if (k['o'](this['a'][cL]))
+                                    this['a'][cL]['on' + cx] = cF;
                         if (k['o'](this['a']))
                             this['a']['on' + cx] = cF;
                     }
@@ -897,14 +905,14 @@
                         if (k['f'](this['a']['on' + cx]))
                             if (String(this['a']['on' + cx])['replace'](/\s+/g, '\x20') != String(cF)['replace'](/\s+/g, '\x20'))
                                 cD['push'](this['a']['on' + cx]);
-                        for (var cK = 0x0; cK < s[cC][cx]['length']; cK++)
+                        for (var cL = 0x0; cL < s[cC][cx]['length']; cL++)
                             for (var cM = 0x0; cM < cD['length']; cM++)
-                                if (String(cK)['replace'](/\s+/g, '\x20') === String(cD[cM])['replace'](/\s+/g, '\x20'))
+                                if (String(cL)['replace'](/\s+/g, '\x20') === String(cD[cM])['replace'](/\s+/g, '\x20'))
                                     cD['splice'](cM, 0x1);
-                        for (var cK = 0x0; cK < cD['length']; cK++) {
+                        for (var cL = 0x0; cL < cD['length']; cL++) {
                             if (k['s'](cy))
-                                cD[cK]['tagName'] = cy;
-                            s[cC][cx]['push'](cD[cK]);
+                                cD[cL]['tagName'] = cy;
+                            s[cC][cx]['push'](cD[cL]);
                         }
                     }
                     if (cB[0x2] || cB[0x3]) {
@@ -1227,8 +1235,8 @@
                 var e0 = this['getXmlHttp'](), e1 = k['f'](dY[0x2]) ? dY[0x2] : void 0x0, e2 = k['f'](dY[0x3]) ? dY[0x3] : void 0x0, e3 = k['f'](dY[0x4]) ? dY[0x4] : void 0x0;
                 e0['open'](dY['type'], dY['url'], !0x0);
                 if (k['o'](dY['headers']))
-                    for (var e4 in dY['headers'])
-                        e0['setRequestHeader'](e4, dY['headers'][e4]);
+                    for (var e6 in dY['headers'])
+                        e0['setRequestHeader'](e6, dY['headers'][e6]);
                 e0['send'](dY['type'] === 'POST' ? dZ ? dZ : dY['url']['split']('?')[0x1] : null);
                 if ((k['f'](e1) || k['f'](e2) || k['f'](e3)) && k['u'](dY['callback']))
                     e0['onreadystatechange'] = function (e5) {
@@ -1240,8 +1248,8 @@
                             e3(e0);
                     };
                 if (k['u'](e1) && k['u'](e2) && k['u'](e3) && k['o'](dY['callback']))
-                    for (var e4 in dY['callback'])
-                        e0[e4] = dY['callback'][e4];
+                    for (var e6 in dY['callback'])
+                        e0[e6] = dY['callback'][e6];
                 return e0;
             }
         },
@@ -1447,9 +1455,9 @@
             var f2 = i['do']['createElement']('a');
             f2['href'] = f1 || location['href'];
             f2['directory'] = f2['pathname']['split']('/');
-            for (var f3 = 0x0; f3 < f2['directory']['length']; f3++)
-                if (k['u'](f2['directory'][f3]) || k['e'](f2['directory'][f3]))
-                    f2['directory']['splice'](f3, 0x1);
+            for (var f4 = 0x0; f4 < f2['directory']['length']; f4++)
+                if (k['u'](f2['directory'][f4]) || k['e'](f2['directory'][f4]))
+                    f2['directory']['splice'](f4, 0x1);
             if (f2['pathname'][f2['pathname']['length'] - 0x1] != '/') {
                 f2['file'] = f2['directory'][f2['directory']['length'] - 0x1] || '';
                 f2['directory']['splice'](f2['directory']['length'] - 0x1);
@@ -1479,15 +1487,15 @@
             if (k['e'](f2['parameterns'][0x0]) || k['u'](f2['parameterns'][0x0])) {
                 f2['parameterns'] = '';
             }
-            for (var f3 = 0x0; f3 < f2['parameter']['length']; f3++)
-                f2['query'][f2['parameter'][f3]['split']('=')[0x0]] = f2['parameter'][f3]['split']('=')[0x1];
+            for (var f4 = 0x0; f4 < f2['parameter']['length']; f4++)
+                f2['query'][f2['parameter'][f4]['split']('=')[0x0]] = f2['parameter'][f4]['split']('=')[0x1];
             f2['mod'] = function () {
-                for (var f3 = f2['parameter']['length']; f3 > 0x0; f3--)
-                    if (k['f'](modales[String(f2['parameter']['slice'](f3 - 0x1, f2['parameter']['length']))['split']('=')[0x0]]))
+                for (var f4 = f2['parameter']['length']; f4 > 0x0; f4--)
+                    if (k['f'](modales[String(f2['parameter']['slice'](f4 - 0x1, f2['parameter']['length']))['split']('=')[0x0]]))
                         return [
-                            modales[String(f2['parameter']['slice'](f3 - 0x1, f2['parameter']['length']))['split']('=')[0x0]],
-                            f2['parameter']['slice'](f3 - 0x1, f3)['join']('&'),
-                            f2['parameter'][f3 - 0x1]
+                            modales[String(f2['parameter']['slice'](f4 - 0x1, f2['parameter']['length']))['split']('=')[0x0]],
+                            f2['parameter']['slice'](f4 - 0x1, f4)['join']('&'),
+                            f2['parameter'][f4 - 0x1]
                         ];
             }() || '';
             return f2;
@@ -1514,16 +1522,16 @@
                 n('head')['a']
             ];
             if (k['a'](f8)) {
-                for (var fa = 0x0; fa < f8['length']; fa++)
+                for (var fd = 0x0; fd < f8['length']; fd++)
                     for (var fb = 0x0; fb < f8['length']; fb++)
-                        if (fa != fb && f8[fa] === f8[fb])
+                        if (fd != fb && f8[fd] === f8[fb])
                             f8['splice'](fb, 0x1);
                 fc:
-                    for (var fa = 0x0; fa < f8['length']; fa++) {
+                    for (var fd = 0x0; fd < f8['length']; fd++) {
                         for (var fe = 0x0; fe < f9[0x0]['length']; fe++) {
-                            if (k['a'](f8[fa]['match'](f9[0x0][fe]))) {
+                            if (k['a'](f8[fd]['match'](f9[0x0][fe]))) {
                                 for (var ff = 0x0; ff < f9[0x1][fe]['a']['length']; ff++)
-                                    if (f9[0x1][fe]['a'][ff]['getAttribute'](f9[0x2][fe]) === f8[fa])
+                                    if (f9[0x1][fe]['a'][ff]['getAttribute'](f9[0x2][fe]) === f8[fd])
                                         break fc;
                                 [
                                     function (fg) {
@@ -1539,7 +1547,7 @@
                                             'href': fh
                                         })['a']);
                                     }
-                                ][fe](f8[fa]);
+                                ][fe](f8[fd]);
                                 return !0x0;
                             }
                         }
