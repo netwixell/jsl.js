@@ -51,7 +51,7 @@
             return typeof v === 'number';
         },
         o: function(v) {
-            return v instanceof NodeList || v instanceof HTMLCollection || Array.isArray(v) ? !1 : typeof v === 'object';
+            return (v instanceof NodeList || v instanceof HTMLCollection || Array.isArray(v)) ? !1 : typeof v === 'object';
         },
         s: function(v) {
             return typeof v === 'string';
