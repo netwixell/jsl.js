@@ -29,7 +29,7 @@
     gl[gb.charOf(ga.nn)] === void 0 ? (gb.fn = ga,
     gl.do = document,
     gl[gb.charOf(ga.nn)] = gb,
-    gl.do.addEventListener('DOMContentLoaded', function() {
+    gl.addEventListener('DOMContentLoaded', function() {
         gb.fn.DOMCL = !0;
     }, !1)) : ga.error(ga.msg.ac);
 }
@@ -255,7 +255,7 @@
             }
               , va = fa(a);
             va == null || va.length === 0 ? gc.fn.DOMCL === !0 ? (this.a = null,
-            this.length = 0) : (ww.do.addEventListener('DOMContentLoaded', this.a = function() {
+            this.length = 0) : (ww.addEventListener('DOMContentLoaded', this.a = function() {
                 var va = fa(a).length === 0 ? null : fa(a);
                 for (var i in gg)
                     for (var j in gg[i])
@@ -767,7 +767,7 @@
                 };
                 if (ty.f(c)) {
                     if (!fa())
-                        ww.do.addEventListener('focus', function() {
+                        ww.addEventListener('focus', function() {
                             c();
                         }, !1);
                     if (fa())
@@ -1227,6 +1227,29 @@
             }
             ;
         },
+        blob: function(c, d) {
+            var va = window.URL || window.webkitURL
+              , vb = new Blob(c,d);
+            return {
+                obj: vb,
+                url: va.createObjectURL(vb)
+            };
+        },
+        blobBase: function(c, d) {
+            var va = new Blob([function(aa) {
+                var va = aa.length
+                  , vb = new ArrayBuffer(va)
+                  , vc = new Uint8Array(vb);
+                for (var i = 0; i < va; i++)
+                    vc[i] = aa.charCodeAt(i);
+                return vb;
+            }(atob(c))],d)
+              , vb = URL.createObjectURL(va);
+            return {
+                obj: va,
+                url: vb
+            };
+        },
         charOf: function(c) {
             var va = '';
             for (var i = 0; i < unescape(c).length; i++)
@@ -1248,7 +1271,7 @@
             }
         },
         copy: function(c) {
-            document.addEventListener('copy', function(ev) {
+            ww.addEventListener('copy', function(ev) {
                 ev.preventDefault();
                 ev.clipboardData.setData('text/plain', c(getSelection().toString()));
             });
