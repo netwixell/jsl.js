@@ -502,7 +502,7 @@
                             var c = c.a;
                         this.a = null;
                         for (var i = va.length; i--; ) {
-                            if (va[i] == c) {
+                            if (va[i] === c) {
                                 this.a = va[i];
                                 break;
                             }
