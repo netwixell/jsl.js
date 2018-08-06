@@ -1228,26 +1228,11 @@
             ;
         },
         blob: function(c, d) {
-            var va = window.URL || window.webkitURL
-              , vb = new Blob(c,d);
+            var blob = new Blob(c,d);
+            var blobUrl = URL.createObjectURL(blob);
             return {
-                obj: vb,
-                url: va.createObjectURL(vb)
-            };
-        },
-        blobBase: function(c, d) {
-            var va = new Blob([function(aa) {
-                var va = aa.length
-                  , vb = new ArrayBuffer(va)
-                  , vc = new Uint8Array(vb);
-                for (var i = 0; i < va; i++)
-                    vc[i] = aa.charCodeAt(i);
-                return vb;
-            }(atob(c))],d)
-              , vb = URL.createObjectURL(va);
-            return {
-                obj: va,
-                url: vb
+                url: blobUrl,
+                blob: blob
             };
         },
         charOf: function(c) {
@@ -1328,6 +1313,15 @@
                             return;
                         }
                     }
+                }
+            }
+        },
+        getLocation: function(c) {
+            if (ty.o(c)) {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(c.getCurrentPosition);
+                    navigator.geolocation.watchPosition(c.watchPosition);
+                    navigator.geolocation.clearWatch(c.clearWatch);
                 }
             }
         },
