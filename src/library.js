@@ -177,7 +177,8 @@
                                     var va = +aa;
                                     return ty.N(va) ? aa : va;
                                 });
-                                return [[[vb[2], vb[3]], 0, ab = vb[1]], [[vb[2], vb[3]], 1, ab = vb[1]], [[vb[2], vb[3]], 2, ab = vb[1]], [vb[2], 4, ab = vb[1]], [vb[2], 3, ab = vb[1]], [vb[2], 4, ab = vb[1]]][i];
+                                ab = vb[1];
+                                return [[[vb[2], vb[3]], 0, ab], [[vb[2], vb[3]], 1, ab], [[vb[2], vb[3]], 2, ab], [vb[2], 4, ab], [vb[2], 3, ab], [vb[2], 4, ab]][i];
                             }
                         }
                         return !1;
@@ -1508,6 +1509,21 @@
                 }
                 return !1;
             }
+        },
+        socket: function(c) {
+            if (ty.s(c.url)) {
+                var va = new WebSocket(c.url);
+                if (ty.f(c.open))
+                    va.onopen = c.open;
+                if (ty.f(c.close))
+                    va.onclose = c.close;
+                if (ty.f(c.error))
+                    va.onerror = c.error;
+                if (ty.f(c.message))
+                    va.onmessage = c.message;
+                return va;
+            } else
+                return null;
         },
         trigger: function(c) {
             if (ty.o(c))
