@@ -65,32 +65,21 @@
         N: function(v) {
             return typeof v === 'number' && isNaN(v);
         }
-    }
-      , ga = function(a, b, c, d) {
+    }, ga = function(a, b, c, d) {
         ty.u(gc.change) && (gc.change = {});
         ty.u(gc.change[a]) && (gc.change[a] = {});
         ty.u(gc.change[a][b]) && (gc.change[a][b] = {});
         gc.change[a][b][c] = d;
-    }
-      , gb = function(a, b, c, d) {
+    }, gb = function(a, b, c, d) {
         Object.defineProperty(a, b, {
             value: c,
             writable: !1,
             enumerable: !1,
             configurable: d || !1
         });
-    }
-      , gc = function(a, b) {
+    }, gc = function(a, b) {
         return Fn.re.dom(a, b);
-    }
-      , gd = {}
-      , ge = {}
-      , gf = {}
-      , gg = {}
-      , gh = {}
-      , gi = {}
-      , gk = []
-      , gl = [];
+    }, gd = {}, ge = {}, gf = {}, gg = {}, gh = {}, gi = {}, gk = [], gl = [], gm;
     return gb(Fn, 're', function(a, b) {
         if (ty.a(a)) {
             this.a = a;
@@ -128,7 +117,9 @@
             } else {
                 gi.creator = gc.fn.name;
                 gi.fn = a;
-                gi.fn();
+                gm = gi.fn(gm || undefined);
+                if (ty.f(gi.fn.next))
+                    Fn.re(gi.fn.next);
             }
             return a;
         }
