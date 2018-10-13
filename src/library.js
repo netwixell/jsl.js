@@ -1185,15 +1185,15 @@
         ajax: function(c, d) {
             if (ty.o(c)) {
                 var va = this.getXmlHttp()
-                  , a_2 = ty.f(c[2]) ? c[2] : void 0
-                  , a_3 = ty.f(c[3]) ? c[3] : void 0
-                  , a_4 = ty.f(c[4]) ? c[4] : void 0;
+                  , vb = ['onabort', 'onerror', 'onload', 'onloadend', 'onloadstart', 'onprogress', 'ontimeout']
+                  , a_2 = c[2]
+                  , a_3 = c[3]
+                  , a_4 = c[4];
                 va.open(c.type, c.url, !0);
                 if (ty.o(c.headers))
                     for (var i in c.headers)
                         va.setRequestHeader(i, c.headers[i]);
-                va.send(d || null);
-                if ((ty.f(a_2) || ty.f(a_3) || ty.f(a_4)) && ty.u(c.callback))
+                if ((ty.f(a_2) || ty.f(a_3) || ty.f(a_4)))
                     va.onreadystatechange = function(data) {
                         if (va.readyState === 2 && a_2)
                             a_2(va);
@@ -1203,9 +1203,14 @@
                             a_4(va);
                     }
                     ;
-                if (ty.u(a_2) && ty.u(a_3) && ty.u(a_4) && ty.o(c.callback))
-                    for (var i in c.callback)
-                        va[i] = c.callback[i];
+                for (var i = vb.length; i--; )
+                    if (ty.f(c[vb[i]]))
+                        va[vb[i]] = c[vb[i]];
+                if (ty.o(c.upload))
+                    for (var i = vb.length; i--; )
+                        if (ty.f(c.upload[vb[i]]))
+                            va.upload[vb[i]] = c.upload[vb[i]];
+                va.send(d || null);
                 return va;
             }
         },
@@ -1220,11 +1225,11 @@
             ;
         },
         blob: function(c, d) {
-            var blob = new Blob(c,d);
-            var blobUrl = URL.createObjectURL(blob);
+            var va = new Blob(c,d)
+              , vb = URL.createObjectURL(blob);
             return {
-                url: blobUrl,
-                blob: blob
+                url: vb,
+                blob: va
             };
         },
         charOf: function(c) {
@@ -1318,16 +1323,7 @@
             }
         },
         getXmlHttp: function() {
-            try {
-                return new XMLHttpRequest();
-            } catch (e) {}
-            ;try {
-                return new ActiveXObject('Msxml2.XMLHTTP');
-            } catch (e) {}
-            ;try {
-                return new ActiveXObject('Microsoft.XMLHTTP');
-            } catch (e) {}
-            ;return null;
+            return ("onload"in new XMLHttpRequest()) ? new XMLHttpRequest() : new XDomainRequest();
         },
         hotkey: function(c, d, e) {
             if (c != 'keydown' && c != 'keyup')
