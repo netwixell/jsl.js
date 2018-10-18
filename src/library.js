@@ -556,7 +556,10 @@
                 var va = ww.do.createElement(a);
                 if (ty.o(c))
                     for (var i in c)
-                        if (ty.s(c[i]))
+                        if (i === 'style' && ty.o(c[i]))
+                            for (var j in c[i])
+                                va.style[j] = c[i][j];
+                        else if (ty.s(c[i]))
                             va.setAttribute(i, c[i]);
                 this.a = va;
                 this.length = 1;
