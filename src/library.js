@@ -1323,7 +1323,7 @@
             }
         },
         getXmlHttp: function() {
-            return ("onload"in new XMLHttpRequest()) ? new XMLHttpRequest() : new XDomainRequest();
+            return ('onload'in new XMLHttpRequest()) ? new XMLHttpRequest() : new XDomainRequest();
         },
         hotkey: function(c, d, e) {
             if (c != 'keydown' && c != 'keyup')
