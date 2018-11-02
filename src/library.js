@@ -1188,7 +1188,7 @@
         ajax: function(c, d) {
             if (ty.o(c)) {
                 var va = this.getXmlHttp()
-                  , vb = ['onabort', 'onerror', 'onload', 'onloadend', 'onloadstart', 'onprogress', 'ontimeout']
+                  , vb = ['onabort', 'onerror', 'onload', 'onloadend', 'onloadstart', 'onprogress', 'ontimeout', 'onmessage']
                   , a_2 = c[2]
                   , a_3 = c[3]
                   , a_4 = c[4];
@@ -1214,6 +1214,7 @@
                         if (ty.f(c.upload[vb[i]]))
                             va.upload[vb[i]] = c.upload[vb[i]];
                 va.send(d || null);
+
                 return va;
             }
         },
@@ -1405,13 +1406,13 @@
             };
             return vb;
         },
-        notifi: function(c) {
+        notification: function(c) {
             if (!('Notification'in ww))
                 gc.fn.error(gc.fn.msg.ah);
             else if (Notification.permission === 'granted' && !ty.u(c) && !ty.e(c))
-                new Notification(c);
+                return new Notification(c);
             else if (Notification.permission != 'denied')
-                Notification.requestPermission(function(permission) {});
+                return Notification.requestPermission(function(permission) {});
         },
         on: function(c, d) {
             var va = new CustomEvent(c,{});
