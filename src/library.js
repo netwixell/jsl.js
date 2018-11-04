@@ -257,7 +257,7 @@
             }
             , b && !0),
             this.length = void 0) : (this.length = ty.u(va.length) && ty.o(va) && va != null ? 1 : va.length,
-            this.a = ty.a(va) || ty.o(va) ? this.length === 1 && ty.o(va[0]) ? va[0] : this.a = va : null);
+            this.a = ty.a(va) || ty.o(va) ? this.length === 1 && ty.o(va[0]) ? va[0] : va : null);
             this.selector = a;
         }
     }),
