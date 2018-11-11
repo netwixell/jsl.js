@@ -117,7 +117,6 @@
             } else {
                 gi.creator = gc.fn.name;
                 gi.fn = a;
-                gm = gi.fn(gm || void 0);
                 if (ty.f(gi.fn.next))
                     Fn.re(gi.fn.next);
             }
