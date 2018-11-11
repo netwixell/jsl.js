@@ -88,13 +88,13 @@
         }
         if (ty.f(a)) {
             if (ty.a(b)) {
-                for (var i = b.length; i--; ) {
+                for (var i = 0; i < b.length; i++) {
                     if (gk.indexOf(ww) === -1)
                         gk.push(ww);
                     var va = /\[object [a-zA-Z]+\]/.test(String(ww)) ? ww + gk.indexOf(ww) : ww
                       , vb = b[i]
                       , fa = function(ev) {
-                        for (var j = gh[va][vb].length; j--; ) {
+                        for (var j = 0; j < gh[va][vb].length; j++) {
                             if (ty.f(gh[va][vb][j])) {
                                 (ty.s(gh[va][vb][j].tagName)) && (gh[va][vb][j].tagName === ev.target.tagName) && gh[va][vb][j](ev);
                                 (ty.u(gh[va][vb][j].tagName)) && gh[va][vb][j](ev);
@@ -117,7 +117,7 @@
             } else {
                 gi.creator = gc.fn.name;
                 gi.fn = a;
-                gm = gi.fn(gm || undefined);
+                gm = gi.fn(gm || void 0);
                 if (ty.f(gi.fn.next))
                     Fn.re(gi.fn.next);
             }
@@ -127,7 +127,7 @@
             if (ty.o(a.a) && ty.s(a.selector) && ty.n(a.length)) {
                 this.a = a.length === 1 ? a.a : [];
                 if (a.length > 1)
-                    for (var i = a.a.length; i--; )
+                    for (var i = 0; i < a.a.length; i++)
                         this.a.push(a.a[i]);
                 this.selector = a.selector;
                 this.length = a.length;
@@ -146,7 +146,7 @@
                 if (ty.s(a.href))
                     return this.selector = 'a';
                 if (ty.a(a))
-                    for (var i = a.length; i--; )
+                    for (var i = 0; i < a.length; i++)
                         if (ty.o(a[i]))
                             return this.selector = a;
                 if (ty.a(vb))
@@ -161,7 +161,7 @@
                 var fb = function(ab) {
                     var fc = (function(ac) {
                         var va = [/^(.+)\[(\d+)-(\d+)\]$/im, /^(.+)\((\d+),(\d+)\)$/im, /^(.+)\[(\d+)-\]$/im, /^(.+)\[(\d+)\]$/im, /^(.+)!(\d+)$/im, /^(.+):(\d+)$/im];
-                        for (var i = va.length; i--; ) {
+                        for (var i = 0; i < va.length; i++) {
                             var vb = ac.match(va[i]);
                             if (ty.a(vb)) {
                                 vb = vb.map(function(aa) {
@@ -216,7 +216,7 @@
                         case 3:
                             {
                                 var vb = [];
-                                for (var i = va.length; i--; )
+                                for (var i = 0; i < va.length; i++)
                                     if (ty.o(va[i]))
                                         vb.push(va[i]);
                                 vb.splice(fc[0], 1);
@@ -233,10 +233,10 @@
                   , va = aa.split(/(?!\([^)]*),(?![^(]*\))/);
                 if (va.length > 1) {
                     var vb = [];
-                    for (var i = va.length; i--; ) {
+                    for (var i = 0; i < va.length; i++) {
                         var vc = fb(va[i]);
                         if (ty.a(vc))
-                            for (var j = vc.length; j--; )
+                            for (var j = 0; j < vc.length; j++)
                                 vb.push(vc[j]);
                         else
                             vb.push(vc);
@@ -251,7 +251,7 @@
                 var va = fa(a).length === 0 ? null : fa(a);
                 for (var i in gg)
                     for (var j in gg[i])
-                        for (var k = gg[i][j].length; k--; )
+                        for (var k = 0; k < gg[i][j].length; k++)
                             gc(i)[j](gg[i][j][k][0], gg[i][j][k][1], gg[i][j][k][2], gg[i][j][k][3]);
                 return va == null ? va : va.length === 1 && ty.o(va[0]) ? va[0] : va;
             }
@@ -268,7 +268,7 @@
                 if (ty.f(this.a) || this.a == null)
                     return this;
                 if (!ty.e(this.a.className))
-                    for (var i = this.a.className.split(' ').length; i--; )
+                    for (var i = 0; i < this.a.className.split(' ').length; i++)
                         if (this.a.className.split(' ')[i] === c)
                             return this;
                 ga(a, 'addClass', 'className', c);
@@ -286,7 +286,7 @@
                               , vc = [+vb[1], +vb[2], +vb[3]]
                               , fa = function() {
                                 setTimeout(function() {
-                                    for (var i = vc.length; i--; )
+                                    for (var i = 0; i < vc.length; i++)
                                         if (vc[i] < 255)
                                             vc[i] = vc[i] + 5;
                                     new Fn.re(va.a,b).css('background', 'rgb(' + vc.join(',') + ')');
@@ -392,8 +392,8 @@
                             aa.appendChild(va.children[0])
                         }
                         if (ty.a(c)) {
-                            for (var j = c.length; j--; ) {
-                                var vb = (ty.o(c[j].a) && ty.s(c[j].selector) && ty.n(c[j].length)) ? c[j].a : c[j];
+                            for (var i = 0; i < c.length; i++) {
+                                var vb = (ty.o(c[i].a) && ty.s(c[i].selector) && ty.n(c[i].length)) ? c[i].a : c[i];
                                 vc = ab ? vb.cloneNode(!0) : vb;
                                 aa.appendChild(vb);
                             }
@@ -405,7 +405,7 @@
                         }
                     };
                     if (ty.a(this.a))
-                        for (var i = this.a.length; i--; )
+                        for (var i = 0; i < this.a.length; i++)
                             fa(this.a[i], !0);
                     else
                         fa(this.a, !1);
@@ -420,7 +420,7 @@
                     if (!ty.s(ab))
                         return;
                     if (ty.a(ac))
-                        for (var i = ac.length; i--; )
+                        for (var i = 0; i < ac.length; i++)
                             if (ty.f(ac[i].setAttribute))
                                 ac[i].setAttribute(aa, ab);
                     if (!ty.a(ac) && ty.o(ac))
@@ -439,7 +439,7 @@
                 if (ty.s(c) && ty.u(d)) {
                     if (ty.a(this.a)) {
                         var va = [];
-                        for (var i = this.a.length; i--; )
+                        for (var i = 0; i < this.a.length; i++)
                             if (ty.o(this.a[i]))
                                 va[i] = this.a[i].getAttribute(c);
                         return va;
@@ -493,7 +493,7 @@
                         if (ty.o(c.a) && ty.s(c.selector) && ty.n(c.length))
                             var c = c.a;
                         this.a = null;
-                        for (var i = va.length; i--; ) {
+                        for (var i = 0; i < va.length; i++) {
                             if (va[i] === c) {
                                 this.a = va[i];
                                 break;
@@ -522,7 +522,7 @@
                     if (ty.f(this.a.querySelectorAll)) {
                         var va = this.a.querySelectorAll(c)
                           , vb = [];
-                        for (var i = va.length; i--; )
+                        for (var i = 0; i < va.length; i++)
                             vb.push(va[i]);
                         this.a = vb;
                     }
@@ -537,7 +537,7 @@
                 if (ty.u(c)) {
                     var va = this.a.querySelectorAll('*')
                       , vb = [];
-                    for (var i = va.length; i--; )
+                    for (var i = 0; i < va.length; i++)
                         vb.push(va[i]);
                     this.selector = '' + this.a;
                     this.a = vb;
@@ -585,7 +585,7 @@
                             }
                         };
                         if (ty.a(this.a))
-                            for (var i = this.a.length; i--; ) {
+                            for (var i = 0; i < this.a.length; i++) {
                                 if (ty.o(this.a[i]))
                                     fa(this.a[i]);
                             }
@@ -682,7 +682,7 @@
                     if (ty.o(this.a))
                         c.call(this.a);
                     if (ty.a(this.a))
-                        for (var i = this.a.length; i--; )
+                        for (var i = 0; i < this.a.length; i++)
                             c.call(this.a[i]);
                 }
                 return this;
@@ -699,7 +699,7 @@
                     var va = [];
                     if (!Element.prototype.matches)
                         Element.prototype.matches = Element.prototype.matchesSelector || Element.prototype.webkitMatchesSelector || Element.prototype.mozMatchesSelector || Element.prototype.msMatchesSelector;
-                    for (var i = this.a.length; i--; )
+                    for (var i = 0; i < this.a.length; i++)
                         if (this.a[i].matches(c))
                             va.push(this.a[i]);
                     this.a = va;
@@ -708,7 +708,7 @@
                 }
                 if (ty.a(c)) {
                     var va = [];
-                    for (var i = c.length; i--; )
+                    for (var i = 0; i < c.length; i++)
                         if (!ty.u(this.a[c[i]]))
                             va.push(this.a[c[i]]);
                     this.a = va;
@@ -773,8 +773,8 @@
             getIndex: function() {
                 if (ty.f(this.a) || this.a == null)
                     return this;
-                for (var i = new Fn.re(this.a.tagName,b).a.length; i--; )
-                    if (j === this.a)
+                for (var i = 0; i < new Fn.re(this.a.tagName,b).a.length; i++)
+                    if (new Fn.re(this.a.tagName,b).a === this.a)
                         return i;
                 return this;
             },
@@ -795,7 +795,7 @@
                         }
                     };
                     if (ty.a(this.a))
-                        for (var i = this.a.length; i--; )
+                        for (var i = 0; i < this.a.length; i++)
                             fa(this.a[i]);
                     if (ty.o(this.a))
                         fa(this.a);
@@ -820,7 +820,7 @@
                             vc = vd[1] + vd[2] + vd[3];
                         }
                         if (gk.indexOf(a) != -1) {
-                            for (var i = gh[vc][c].length; i--; ) {
+                            for (var i = 0; i < gh[vc][c].length; i++) {
                                 if (String(va).replace(/\s+/g, ' ') === String(gh[vc][c][i]).replace(/\s+/g, ' ')) {
                                     gh[vc][c].splice(i, 1);
                                 }
@@ -829,7 +829,7 @@
                     } else {
                         if (ty.o(gh[vb])) {
                             if (ty.a(gh[vb][c])) {
-                                for (var i = gh[vb][c].length; i--; ) {
+                                for (var i = 0; i < gh[vb][c].length; i++) {
                                     if (va === gh[vb][c]) {
                                         gh[vb][c].splice(i, 1);
                                         break;
@@ -850,7 +850,7 @@
                     length: this.length,
                     selector: this.selector
                 }, fa = function(ev) {
-                    for (var i = gh[vc][c].length; i--; ) {
+                    for (var i = 0; i < gh[vc][c].length; i++) {
                         if (ty.f(gh[vc][c][i])) {
                             var va = {
                                 fn: gh[vc][c][i]
@@ -879,7 +879,7 @@
                     gh[vc] = gh[vc] || {};
                     gh[vc][c] = gh[vc][c] || [];
                     if (ty.a(this.a))
-                        for (var i = this.a.length; i--; )
+                        for (var i = 0; i < this.a.length; i++)
                             if (ty.o(this.a[i]))
                                 this.a[i]['on' + c] = fa;
                     if (ty.o(this.a))
@@ -893,11 +893,11 @@
                     if (ty.f(this.a['on' + c]))
                         if (String(this.a['on' + c]).replace(/\s+/g, ' ') != String(fa).replace(/\s+/g, ' '))
                             vd.push(this.a['on' + c]);
-                    for (var i = gh[vc][c].length; i--; )
-                        for (var j = vd.length; j--; )
+                    for (var i = 0; i < gh[vc][c].length; i++)
+                        for (var j = 0; j < vd.length; j++)
                             if (String(gh[vc][c][i]).replace(/\s+/g, ' ') === String(vd[j]).replace(/\s+/g, ' '))
                                 vd.splice(j, 1);
-                    for (var i = vd.length; i--; ) {
+                    for (var i = 0; i < vd.length; i++) {
                         if (ty.s(d))
                             vd[i].tagName = d;
                         gh[vc][c].push(vd[i]);
@@ -960,7 +960,7 @@
                         }
                     };
                     if (ty.a(this.a)) {
-                        for (var i = this.a.length; i--; )
+                        for (var i = 0; i < this.a.length; i++)
                             if (ty.o(this.a[i]))
                                 fa(this.a[i]);
                     }
@@ -975,7 +975,7 @@
                     return this;
                 if (ty.s(c) && !ty.e(this.a.className) && !ty.u(this.a.className)) {
                     var va = this.a.className.split(' ');
-                    for (var i = va.length; i--; )
+                    for (var i = 0; i < va.length; i++)
                         if (va[i] === c)
                             va.splice(i, 1);
                     this.a.className = va.join(' ');
@@ -987,7 +987,7 @@
                 return ty.s(c) && ty.o(gh[a][c]) ? {
                     getIndex: function(d) {
                         if (ty.f(d) || ty.s(d))
-                            for (var i = gh[a][c].length; i--; )
+                            for (var i = 0; i < gh[a][c].length; i++)
                                 if (String(gh[a][c][i]) === String(d))
                                     return i;
                     },
@@ -1034,7 +1034,7 @@
                 gc.fn.smb = gc.fn.smb || {};
                 if (ty.s(c)) {
                     var fa = function(aa) {
-                        for (var i = aa.length; i--; ) {
+                        for (var i = 0; i < aa.length; i++) {
                             var fb = function(ab, ac) {
                                 if (ty.e(aa[i].value) || aa[i].value.length < ac || !ab.test(String(aa[i].value)))
                                     return !1;
@@ -1109,7 +1109,7 @@
                     return this;
                 if (ty.s(c) || ty.n(c)) {
                     if (ty.a(this.a)) {
-                        for (var i = this.a.length; i--; ) {
+                        for (var i = 0; i < this.a.length; i++) {
                             if (ty.o(this.a[i])) {
                                 this.a[i].value = c;
                                 ga(this.a[i], 'val', 'value', c);
@@ -1206,15 +1206,14 @@
                             a_4(va);
                     }
                     ;
-                for (var i = vb.length; i--; )
+                for (var i = 0; i < vb.length; i++)
                     if (ty.f(c[vb[i]]))
                         va[vb[i]] = c[vb[i]];
                 if (ty.o(c.upload))
-                    for (var i = vb.length; i--; )
+                    for (var i = 0; i < vb.length; i++)
                         if (ty.f(c.upload[vb[i]]))
                             va.upload[vb[i]] = c.upload[vb[i]];
                 va.send(d || null);
-
                 return va;
             }
         },
@@ -1288,7 +1287,7 @@
                 if (ty.o(ww.databasedata[c][d.split('=')[1]]))
                     return ww.databasedata[c][d.split('=')[1]];
             } else
-                for (var i = ww.databasedata[c].length; i--; )
+                for (var i = 0; i < ww.databasedata[c].length; i++)
                     if (ww.databasedata[c][i][d.split('=')[0]] === d.split('=')[1])
                         return ww.databasedata[c][i];
             return null;
@@ -1298,17 +1297,17 @@
                 for (var j in d)
                     ww.databasedata[c][i][j] = d[j];
             };
-            _: for (var i = ww.databasedata[c].length; i--; ) {
-                for (var k = ww.databasedata[c][k].length; k--; ) {
-                    for (var l in ww.databasedata[c][k]) {
-                        if (ww.databaseinfo[c][l] === typeof d[l]) {
+            _: for (var i = 0; i < ww.databasedata[c].length; i++) {
+                for (var j = 0; j < ww.databasedata[c][j].length; j++) {
+                    for (var k in ww.databasedata[c][j]) {
+                        if (ww.databaseinfo[c][k] === typeof d[k]) {
                             if (e) {
-                                if (ww.databasedata[c][k][e.split('=')[0]] === e.split('=')[1]) {
+                                if (ww.databasedata[c][j][e.split('=')[0]] === e.split('=')[1]) {
                                     fa(i, d);
                                     break;
                                 }
                             } else
-                                ww.databasedata[c][k][l] = d[l];
+                                ww.databasedata[c][j][k] = d[l];
                         } else {
                             gc.fn.error(gc.fn.msg.ae);
                             return;
@@ -1327,7 +1326,7 @@
             }
         },
         getXmlHttp: function() {
-            return ('onload'in new XMLHttpRequest()) ? new XMLHttpRequest() : new XDomainRequest();
+            return 'onload'in new XMLHttpRequest() ? new XMLHttpRequest() : new XDomainRequest();
         },
         hotkey: function(c, d, e) {
             if (c != 'keydown' && c != 'keyup')
@@ -1338,7 +1337,7 @@
                 if (gl.indexOf(ev.keyCode) === -1)
                     gl.push(ev.keyCode);
                 if (ty.a(gf[gl.join('+')])) {
-                    for (var i = gf[gl.join('+')].length; i--; )
+                    for (var i = 0; i < gf[gl.join('+')].length; i++)
                         gf[gl.join('+')][i]();
                     gl = [];
                     ev.preventDefault();
@@ -1425,7 +1424,7 @@
             var va = ww.do.createElement('a');
             va.href = c || location.href;
             va.directory = va.pathname.split('/');
-            for (var i = va.directory.length; i--; )
+            for (var i = 0; i < va.directory.length; i++)
                 if (ty.u(va.directory[i]) || ty.e(va.directory[i]))
                     va.directory.splice(i, 1);
             if (va.pathname[va.pathname.length - 1] != '/') {
@@ -1451,10 +1450,10 @@
             if (ty.e(va.parameterns[0]) || ty.u(va.parameterns[0])) {
                 va.parameterns = '';
             }
-            for (var i = va.parameter.length; i--; )
+            for (var i = 0; i < va.parameter.length; i++)
                 va.query[va.parameter[i].split('=')[0]] = va.parameter[i].split('=')[1];
             va.mod = (function() {
-                for (var i = va.parameter.length; i > 0; i--)
+                for (var i = 0; i < va.parameter.length; i++)
                     if (ty.f(modales[String(va.parameter.slice(i - 1, va.parameter.length)).split('=')[0]]))
                         return [modales[String(va.parameter.slice(i - 1, va.parameter.length)).split('=')[0]], va.parameter.slice(i - 1, i).join('&'), va.parameter[i - 1]];
             }
@@ -1471,14 +1470,14 @@
             var va = [[/^(.+)\.[js](.*)$/im, /^(.+)\.[css](.*)$/im], [gc('script'), gc('link')], ['src', 'href'], gc('head').a];
             if (ty.a(c)) {
                 for (var i = c.length; i--; )
-                    for (var k = c.length; k--; )
-                        if (i != k && c[i] === c[k])
-                            c.splice(k, 1);
-                _: for (var i = c.length; i--; ) {
-                    for (var j = va[0].length; j--; ) {
+                    for (var j = c.length; j--; )
+                        if (i != j && c[i] === c[j])
+                            c.splice(j, 1);
+                _: for (var i = 0; i < c.length; i++) {
+                    for (var j = 0; j < va[0].length; j++) {
                         if (ty.a(c[i].match(va[0][j]))) {
-                            for (var l = 0; l < va[1][j].a.length; l++)
-                                if (va[1][j].a[l].getAttribute(va[2][j]) === c[i])
+                            for (var k = 0; k < va[1][j].a.kength; k++)
+                                if (va[1][j].a[k].getAttribute(va[2][j]) === c[i])
                                     break _;
                             ([function(c) {
                                 va[3].appendChild(va[1][j].createElement({
