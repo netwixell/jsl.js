@@ -1469,8 +1469,8 @@
         require: function(c) {
             var va = [[/^(.+)\.[js](.*)$/im, /^(.+)\.[css](.*)$/im], [gc('script'), gc('link')], ['src', 'href'], gc('head').a];
             if (ty.a(c)) {
-                for (var i = c.length; i--; )
-                    for (var j = c.length; j--; )
+                for (var i = 0; i < c.length; i++)
+                    for (var j = 0; j < c.length; j++)
                         if (i != j && c[i] === c[j])
                             c.splice(j, 1);
                 _: for (var i = 0; i < c.length; i++) {
