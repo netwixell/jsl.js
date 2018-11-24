@@ -1214,10 +1214,8 @@
                     for (var i = 0; i < vb.length; i++)
                         if (ty.f(c.upload[vb[i]]))
                             va.upload[vb[i]] = c.upload[vb[i]];
-                if (ty.o(d) || ty.a(d)) {
+                if (ty.o(d) || ty.a(d))
                     d = this.serialize(d);
-                    console.log(d);
-                }
                 va.send(d || null);
                 return va;
             }
