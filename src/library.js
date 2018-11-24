@@ -1185,6 +1185,13 @@
         return a;
     }
     )(gc, {
+        serialize: function(c) {
+            if (ty.a(c) || ty.o(c)) {
+                return Object.keys(c).map(function(k) {
+                    return encodeURIComponent(k) + "=" + encodeURIComponent(c[k]);
+                }).join('&');
+            }
+        },
         ajax: function(c, d) {
             if (ty.o(c)) {
                 var va = this.getXmlHttp()
@@ -1213,6 +1220,8 @@
                     for (var i = 0; i < vb.length; i++)
                         if (ty.f(c.upload[vb[i]]))
                             va.upload[vb[i]] = c.upload[vb[i]];
+                if (ty.o(d) || ty.a(d))
+                    d = this.serialize(d);
                 va.send(d || null);
                 return va;
             }
