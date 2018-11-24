@@ -89,15 +89,14 @@
         if (ty.f(a)) {
             if (ty.a(b)) {
                 for (var i = 0; i < b.length; i++) {
-                    if (gk.indexOf(ww) === -1)
-                        gk.push(ww);
+                    gk.indexOf(ww) === -1 && gk.push(ww);
                     var va = /\[object [a-zA-Z]+\]/.test(String(ww)) ? ww + gk.indexOf(ww) : ww
                       , vb = b[i]
                       , fa = function(ev) {
                         for (var j = 0; j < gh[va][vb].length; j++) {
                             if (ty.f(gh[va][vb][j])) {
-                                (ty.s(gh[va][vb][j].tagName)) && (gh[va][vb][j].tagName === ev.target.tagName) && gh[va][vb][j](ev);
-                                (ty.u(gh[va][vb][j].tagName)) && gh[va][vb][j](ev);
+                                ty.s(gh[va][vb][j].tagName) && gh[va][vb][j].tagName === ev.target.tagName && gh[va][vb][j](ev);
+                                ty.u(gh[va][vb][j].tagName) && gh[va][vb][j](ev);
                             }
                         }
                     };
@@ -118,8 +117,7 @@
                 gi.creator = gc.fn.name;
                 gi.fn = a;
                 gm = gi.fn(gm || void 0);
-                if (ty.f(gi.fn.next))
-                    a = Fn.re(gi.fn.next);
+                ty.f(gi.fn.next) && (a = Fn.re(gi.fn.next));
             }
             return a;
         }
