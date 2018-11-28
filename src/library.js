@@ -1125,7 +1125,30 @@
                 if (ty.u(c))
                     return this.a.value || '';
                 return this;
-            }
+            },
+            formToObject: function(c) {
+                if (ty.f(this.a) || this.a == null)
+                    return this;
+                var va = {};
+                if (ty.d(this.a)) {
+                    var vb = this.a.querySelectorAll("input,select,textarea");
+                    for (var i = 0; i < vb.length; ++i) {
+                        var vc = vb[i]
+                          , vd = vc.name
+                          , ve = vc.value;
+                        if (ty.s(vd))
+                            va[vd] = ve;
+                    }
+                    return va;
+                }
+                return this;
+            },
+            formToUrl: function() {
+                var va = new Fn.re(this.a,b).formToObject();
+                return Object.keys(va).map(function(aa) {
+                    return encodeURIComponent(aa) + '=' + encodeURIComponent(va[aa]);
+                }).join('&');
+            },
         }
           , bb = function(c, d, e, f, g) {
             gg[a] = gg[a] || {};
@@ -1503,12 +1526,6 @@
                 return !1;
             }
         },
-        serialize: function(c) {
-            c = this.toObject(c);
-            return Object.keys(c).map(function(d) {
-                return encodeURIComponent(d) + '=' + encodeURIComponent(c[d]);
-            }).join('&');
-        },
         socket: function(c) {
             if (ty.s(c.url)) {
                 var va = new WebSocket(c.url);
@@ -1523,32 +1540,6 @@
                 return va;
             } else
                 return null;
-        },
-        toObject: function(c) {
-            var va = {};
-            if (ty.o(c.a) && ty.n(c.length) && ty.s(c.selector))
-                c = c.a;
-            if (ty.d(c)) {
-                var vb = c.querySelectorAll("input,select,textarea");
-                for (var i = 0; i < vb.length; ++i) {
-                    var vc = vb[i]
-                      , vd = vc.name
-                      , ve = vc.value;
-                    if (ty.s(vd))
-                        va[vd] = ve;
-                }
-            }
-            if (ty.a(c))
-                for (var i = 0; i < c.length; i++)
-                    va[i] = c[i];
-            if (ty.s(c)) {
-                var vb = c.split('&');
-                for (var i = 0; i < vb.length; i++) {
-                    var vc = vb[i].split('=');
-                    va[vc[0]] = vc[1];
-                }
-            }
-            return ty.o(c) && !ty.d(c) ? c : va;
         },
         trigger: function(c) {
             if (ty.o(c))
