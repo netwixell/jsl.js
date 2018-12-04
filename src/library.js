@@ -1,6 +1,6 @@
 'use strict';
-!(function(gl, fa) {
-    var ga = {
+!(function(aa, ab) {
+    var va = {
         error: function(e) {
             throw new Error(e);
         },
@@ -16,22 +16,23 @@
             ag: 'bad type data',
             ah: 'this browser does not support desktop notification',
             ai: 'reserved',
-            ak: 'this item is not available'
+            ak: 'this item is not available',
+            al: 'method is not defined'
         },
         name: 'JSL (JavaScript Library)',
         nn: '%uE96A%uE973%uE96C'
     }
-      , gb = typeof module === 'object' && typeof module.exports === 'object' ? module.exports = gl.document ? fa(gl, fa) : function(v) {
-        !v.document && ga.error(ga.msg.ad);
-        return fa(v, fa);
+      , vb = typeof module === 'object' && typeof module.exports === 'object' ? module.exports = aa.document ? ab(aa, ab) : function(a) {
+        !a.document && va.error(va.msg.ad);
+        return ab(a, ab);
     }
-    : fa(gl, fa);
-    gl[gb.charOf(ga.nn)] === void 0 ? (gb.fn = ga,
-    gl.do = document,
-    gl[gb.charOf(ga.nn)] = gb,
-    gl.addEventListener('DOMContentLoaded', function() {
-        gb.fn.DOMCL = !0;
-    }, !1)) : ga.error(ga.msg.ac);
+    : ab(aa, ab);
+    aa[vb.charOf(va.nn)] === void 0 ? (vb.fn = va,
+    aa.do = document,
+    aa[vb.charOf(va.nn)] = vb,
+    aa.addEventListener('DOMContentLoaded', function() {
+        vb.fn.DOMCL = !0;
+    }, !1)) : va.error(va.msg.ac);
 }
 )(typeof window != 'undefined' ? window : this, function(ww, Fn) {
     var ty = {
@@ -97,10 +98,8 @@
                       , vb = b[i]
                       , fa = function(ev) {
                         for (var j = 0; j < gh[va][vb].length; j++) {
-                            if (ty.f(gh[va][vb][j])) {
-                                ty.s(gh[va][vb][j].tagName) && gh[va][vb][j].tagName === ev.target.tagName && gh[va][vb][j](ev);
-                                ty.u(gh[va][vb][j].tagName) && gh[va][vb][j](ev);
-                            }
+                            ty.f(gh[va][vb][j]) && ty.s(gh[va][vb][j].tagName) && gh[va][vb][j].tagName === ev.target.tagName && gh[va][vb][j](ev);
+                            ty.u(gh[va][vb][j].tagName) && gh[va][vb][j](ev);
                         }
                     };
                     if (/(.*)\[[a-zA-Z]+ ([a-zA-Z]+)\](.*)/.exec(va) != null) {
@@ -342,12 +341,12 @@
                                             vc = vc + 1;
                                         if (f[0] === 0 || f[0] === 2) {
                                             vb = {
-                                                top: vc + 'px'
+                                                top: vc
                                             };
                                         }
                                         if (f[0] === 1 || f[0] === 3) {
                                             vb = {
-                                                left: vc + 'px'
+                                                left: vc
                                             };
                                         }
                                         new Fn.re(a,b).css(vb);
@@ -1181,7 +1180,7 @@
                         }
                         ;
                     if (ty.u(va[k]))
-                        return gc.fn.error('Method ' + k + ' is not defined');
+                        return gc.fn.error(gc.fn.msg.al);
                     return va[k];
                 }
             }
@@ -1488,7 +1487,7 @@
         },
         paste: function(c) {
             document.onpaste = function(ev) {
-                c(ev);
+                c(ev.clipboardData.getData('text/plain'));
             }
             ;
         },
