@@ -341,12 +341,12 @@
                                             vc = vc + 1;
                                         if (f[0] === 0 || f[0] === 2) {
                                             vb = {
-                                                top: vc
+                                                top: vc+'px'
                                             };
                                         }
                                         if (f[0] === 1 || f[0] === 3) {
                                             vb = {
-                                                left: vc
+                                                left: vc+'px'
                                             };
                                         }
                                         new Fn.re(a,b).css(vb);
