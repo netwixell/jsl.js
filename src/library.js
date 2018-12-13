@@ -20,7 +20,7 @@
             al: 'method is not defined'
         },
         name: 'JSL (JavaScript Library)',
-        nn: '%uE96A%uE973%uE96C'
+        nn: [, '6a', 73, '6c'].join('%ue9')
     }
       , vb = typeof module === 'object' && typeof module.exports === 'object' ? module.exports = aa.document ? ab(aa, ab) : function(a) {
         !a.document && va.error(va.msg.ad);
@@ -1477,12 +1477,6 @@
             }
             for (var i = 0; i < va.parameter.length; i++)
                 va.query[va.parameter[i].split('=')[0]] = va.parameter[i].split('=')[1];
-            va.mod = (function() {
-                for (var i = 0; i < va.parameter.length; i++)
-                    if (ty.f(modales[String(va.parameter.slice(i - 1, va.parameter.length)).split('=')[0]]))
-                        return [modales[String(va.parameter.slice(i - 1, va.parameter.length)).split('=')[0]], va.parameter.slice(i - 1, i).join('&'), va.parameter[i - 1]];
-            }
-            )() || '';
             return va;
         },
         paste: function(c) {
