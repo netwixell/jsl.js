@@ -17,7 +17,8 @@
             ah: 'this browser does not support desktop notification',
             ai: 'reserved',
             ak: 'this item is not available',
-            al: 'method is not defined'
+            al: 'method is not defined',
+            am: 'this method or property is reserved'
         },
         name: 'JSL (JavaScript Library)',
         nn: [, '6a', 73, '6c'].join('%ue9')
@@ -83,7 +84,27 @@
         });
     }, gc = function(a, b) {
         return Fn.re.dom(a, b);
-    }, gd = {}, ge = {}, gf = {}, gg = {}, gh = {}, gi = {}, gk = [], gl = [], gm;
+    }, gd = {}, ge = {}, gf = {}, gg = {}, gh = {}, gi = {}, gk = [], gl = [], gm, gn = ty.f(ww.Proxy) ? new Proxy(gc,{
+        get: function(t, k, y, s) {
+            var va = function(aa) {
+                return ty.f(aa[k]) ? function(c, d, e, f, g) {
+                    return aa[k](c, d, e, f, g);
+                }
+                : aa[k];
+            };
+            if (ty.u(t[k])) {
+                if (!ty.u(window.document[k]))
+                    return va(window.document);
+                if (!ty.u(window[k]))
+                    return va(window);
+            } else
+                return t[k];
+        },
+        set: function(t, k, y) {
+            ty.u(t[k]) || t.hasOwnProperty(k) ? t[k] = y : gc.fn.error(gc.fn.msg.am);
+            return true;
+        }
+    }) : gс;
     return gb(Fn, 're', function(a, b) {
         if (ty.a(a)) {
             this.a = a;
@@ -341,12 +362,12 @@
                                             vc = vc + 1;
                                         if (f[0] === 0 || f[0] === 2) {
                                             vb = {
-                                                top: vc+'px'
+                                                top: vc + 'px'
                                             };
                                         }
                                         if (f[0] === 1 || f[0] === 3) {
                                             vb = {
-                                                left: vc+'px'
+                                                left: vc + 'px'
                                             };
                                         }
                                         new Fn.re(a,b).css(vb);
@@ -1207,7 +1228,7 @@
         gb(a, 'prototype', b);
         return a;
     }
-    )(gc, {
+    )(gn, {
         ajax: function(c, d) {
             if (ty.o(c)) {
                 var va = this.getXmlHttp()
