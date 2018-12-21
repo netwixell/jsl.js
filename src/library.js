@@ -84,25 +84,24 @@
         });
     }, gc = function(a, b) {
         return Fn.re.dom(a, b);
-    }, gd = {}, ge = {}, gf = {}, gg = {}, gh = {}, gi = {}, gk = [], gl = [], gm,
-    gn = ty.f(ww.Proxy) ? new Proxy(gc,{
-        get: function(t, k, y, s) {
+    }, gd = {}, ge = {}, gf = {}, gg = {}, gh = {}, gi = {}, gk = [], gl = [], gm, gn = ty.f(ww.Proxy) ? new Proxy(gc,{
+        get: function(a, b) {
             var va = function(aa) {
-                return ty.f(aa[k]) ? function(c, d, e, f, g) {
-                    return aa[k](c, d, e, f, g);
+                return ty.f(aa[b]) ? function(c, d, e, f, g) {
+                    return aa[b](c, d, e, f, g);
                 }
-                : aa[k];
+                : aa[b];
             };
-            if (ty.u(t[k])) {
-                if (!ty.u(window.document[k]))
+            if (ty.u(a[b])) {
+                if (!ty.u(window.document[b]))
                     return va(window.document);
-                if (!ty.u(window[k]))
+                if (!ty.u(window[b]))
                     return va(window);
             } else
-                return t[k];
+                return a[b];
         },
-        set: function(t, k, y) {
-            ty.u(t[k]) || t.hasOwnProperty(k) ? t[k] = y : gc.fn.error(gc.fn.msg.am);
+        set: function(a, b, c) {
+            ty.u(a[b]) || a.hasOwnProperty(b) ? a[b] = c : gc.fn.error(gc.fn.msg.am);
             return true;
         }
     }) : gc;
@@ -1234,6 +1233,7 @@
             if (ty.o(c)) {
                 var va = this.getXmlHttp()
                   , vb = ['onabort', 'onerror', 'onload', 'onloadend', 'onloadstart', 'onprogress', 'ontimeout', 'onmessage']
+                  , vc = d
                   , a_2 = c[2]
                   , a_3 = c[3]
                   , a_4 = c[4];
@@ -1259,10 +1259,38 @@
                         if (ty.f(c.upload[vb[i]]))
                             va.upload[vb[i]] = c.upload[vb[i]];
                 if (ty.o(d) || ty.a(d))
-                    d = this.serialize(d);
+                    d = this.serrialize(d);
                 va.send(d || null);
                 return va;
             }
+        },
+        serrialize: function(c) {
+            var fa = function(aa) {
+                var va = '';
+                for (var i in aa) {
+                    if (ty.a(aa[i]) || ty.o(aa[i])) {
+                        if (ty.a(aa[i])) {
+                            for (var j = 0; j < aa[i].length; j++) {
+                                va += va == '' ? '' : '&';
+                                va += i + '[' + j + ']=' + encodeURIComponent(aa[i][j]);
+                            }
+                        }
+                        if (ty.o(aa[i]))
+                            for (var j in aa[i])
+                                va += [va == '' ? '' : '&'] + i + '[' + j + ']=' + encodeURIComponent(aa[i][j]);
+                    } else
+                        va += [va == '' ? '' : '&'] + i + '=' + encodeURIComponent(aa[i]);
+                }
+                return va;
+            }
+              , fc = function(c) {
+                return c.split("&").reduce(function(aa, ab) {
+                    var va = ab.split("=");
+                    aa[decodeURIComponent(va[0])] = decodeURIComponent(va[1]);
+                    return aa;
+                }, {});
+            };
+            return ty.o(c) ? fa(c) : fc(c);
         },
         bind: function(c) {
             return Function.prototype.bind = function(c) {
