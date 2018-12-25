@@ -954,7 +954,11 @@
                     return this;
                 if (ty.s(c) && !ty.u(d)) {
                     ga(a, 'prop', c, d);
-                    this.a[c] = d;
+                    if (ty.a(this.a))
+                        for (var i = 0; i < this.a.length; i++)
+                            this.a[i][c] = d;
+                    if (ty.o(this.a))
+                        this.a[c] = d;
                 }
                 if (ty.s(c) && ty.u(d))
                     return !ty.u(this.a[c]) ? this.a[c] : this.a;
@@ -1195,14 +1199,12 @@
                     if (ty.o(va) || ty.a(va))
                         return t[k];
                 } else {
-                    if (ty.f(va[k]))
-                        return function(c, d, e, f, g) {
+                    return function(c, d, e, f, g) {
+                        if (ty.f(this.a[k]))
                             return this.a[k](c, d, e, f, g);
-                        }
-                        ;
-                    if (ty.u(va[k]))
-                        return gc.fn.error(gc.fn.msg.al);
-                    return va[k];
+                        if (ty.a(this.a[k]) || ty.b(this.a[k]) || ty.d(this.a[k]) || ty.n(this.a[k]) || ty.o(this.a[k]) || ty.s(this.a[k]))
+                            return this.a[k];
+                    }
                 }
             }
         }) : ba;
