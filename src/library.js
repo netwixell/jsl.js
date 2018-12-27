@@ -1199,12 +1199,29 @@
                     if (ty.o(va) || ty.a(va))
                         return t[k];
                 } else {
-                    return function(c, d, e, f, g) {
-                        if (ty.f(this.a[k]))
-                            return this.a[k](c, d, e, f, g);
-                        if (ty.a(this.a[k]) || ty.b(this.a[k]) || ty.d(this.a[k]) || ty.n(this.a[k]) || ty.o(this.a[k]) || ty.s(this.a[k]))
-                            return this.a[k];
+                    if (ty.o(va))
+                        if (ty.u(ba[k]) && !ty.u(va[k])) {
+                            return ty.f(va[k]) ? function(c, d, e, f, g) {
+                                if (ty.f(this.a[k]))
+                                    return this.a[k](c, d, e, f, g);
+                                if (ty.a(this.a[k]) || ty.b(this.a[k]) || ty.d(this.a[k]) || ty.n(this.a[k]) || ty.o(this.a[k]) || ty.s(this.a[k]))
+                                    return this.a[k];
+                            }
+                            : va[k];
+                        }
+                    if (ty.a(va)) {
+                        if (ty.u(ba[k]) && ty.u(va[k])) {
+                            return function(c, d, e, f, g) {
+                                for (var i = 0; i < this.a.length; i++) {
+                                    if (ty.f(this.a[i][k]))
+                                        this.a[i][k](c, d, e, f, g);
+                                }
+                            }
+                            ;
+                        }
                     }
+                    if (!ty.u(va[k]))
+                        return va[k];
                 }
             }
         }) : ba;
