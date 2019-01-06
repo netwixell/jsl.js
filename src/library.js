@@ -952,6 +952,14 @@
                 (ty.f(this.a)) && bb('prop', c, d);
                 if (ty.f(this.a) || this.a == null)
                     return this;
+                var fn = function(c, d) {
+                    ga(a, 'prop', c, d);
+                    if (ty.a(this.a))
+                        for (var i = 0; i < this.a.length; i++)
+                            this.a[i][c] = d;
+                    if (ty.o(this.a))
+                        this.a[c] = d;
+                };
                 if (ty.s(c) && !ty.u(d)) {
                     ga(a, 'prop', c, d);
                     if (ty.a(this.a))
@@ -959,6 +967,16 @@
                             this.a[i][c] = d;
                     if (ty.o(this.a))
                         this.a[c] = d;
+                }
+                if (ty.o(c) && ty.u(d)) {
+                    for (var i in c) {
+                        ga(a, 'prop', i, c[i]);
+                        if (ty.a(this.a))
+                            for (var j = 0; j < this.a.length; j++)
+                                this.a[j][i] = c[i];
+                        if (ty.o(this.a))
+                            this.a[i] = c[i];
+                    }
                 }
                 if (ty.s(c) && ty.u(d))
                     return !ty.u(this.a[c]) ? this.a[c] : this.a;
@@ -1159,7 +1177,7 @@
                     for (var i = 0; i < vb.length; ++i) {
                         var vc = vb[i]
                           , vd = vc.name
-                          , ve = vc.value;
+                          , ve = vc[vc.type == 'checkbox' ? 'checked' : 'value'];
                         if (ty.s(vd))
                             va[vd] = ve;
                     }
