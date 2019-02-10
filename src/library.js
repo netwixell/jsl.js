@@ -1220,8 +1220,10 @@
                     if (ty.o(va))
                         if (ty.u(ba[k]) && !ty.u(va[k])) {
                             return ty.f(va[k]) ? function(c, d, e, f, g) {
-                                if (ty.f(this.a[k]))
-                                    return this.a[k](c, d, e, f, g);
+                                if (ty.f(this.a[k])) {
+                                    var ret = this.a[k](c, d, e, f, g);
+                                    return ret == undefined ? this : ret;
+                                }
                                 if (ty.a(this.a[k]) || ty.b(this.a[k]) || ty.d(this.a[k]) || ty.n(this.a[k]) || ty.o(this.a[k]) || ty.s(this.a[k]))
                                     return this.a[k];
                             }
