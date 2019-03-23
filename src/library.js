@@ -1,4 +1,4 @@
-'use strict';
+;'use strict';
 !(function(aa, ab) {
     var va = {
         error: function(e) {
@@ -284,6 +284,19 @@
     }),
     gb(Fn.re, 'dom', function(a, b) {
         var ba = {
+            forEach: function(c) {
+                (ty.f(this.a)) && bb('forEach', c);
+                if (ty.f(this.a) || this.a == null)
+                    return this;
+                if (ty.f(c)) {
+                    if (ty.o(this.a))
+                        c(this.a);
+                    if (ty.a(this.a))
+                        for (var i = 0; i < this.length; i++)
+                            c(this.a[i]);
+                }
+                return this;
+            },
             addClass: function(c) {
                 (ty.f(this.a)) && bb('addClass', c);
                 if (ty.f(this.a) || this.a == null)
@@ -293,7 +306,11 @@
                         if (this.a.className.split(' ')[i] === c)
                             return this;
                 ga(a, 'addClass', 'className', c);
-                this.a.className = ty.e(this.a.className) || ty.u(this.a.className) ? c : this.a.className + ' ' + c;
+                if (ty.a(this.a))
+                    for (var i = 0; i < this.a.length; i++)
+                        this.a[i].className = ty.e(this.a[i].className) || ty.u(this.a[i].className) ? c : this.a[i].className + ' ' + c;
+                if (ty.o(this.a))
+                    this.a.className = ty.e(this.a.className) || ty.u(this.a.className) ? c : this.a.className + ' ' + c;
                 return this;
             },
             animate: function(c, d, e) {
@@ -580,7 +597,7 @@
                         if (i === 'style' && ty.o(c[i]))
                             for (var j in c[i])
                                 va.style[j] = c[i][j];
-                        else if (ty.s(c[i]))
+                        else
                             va.setAttribute(i, c[i]);
                 this.a = va;
                 this.length = 1;
@@ -758,8 +775,8 @@
                       , vh = va.top + vd - vf
                       , vi = va.left + ve - vg;
                     return {
-                        top: Math.round(vh),
-                        left: Math.round(vi)
+                        top: vh,
+                        left: vi
                     };
                 }
                 )(this.a);
@@ -1220,10 +1237,8 @@
                     if (ty.o(va))
                         if (ty.u(ba[k]) && !ty.u(va[k])) {
                             return ty.f(va[k]) ? function(c, d, e, f, g) {
-                                if (ty.f(this.a[k])) {
-                                    var ret = this.a[k](c, d, e, f, g);
-                                    return ret == undefined ? this : ret;
-                                }
+                                if (ty.f(this.a[k]))
+                                    return this.a[k](c, d, e, f, g) == undefined ? this : this.a[k](c, d, e, f, g);
                                 if (ty.a(this.a[k]) || ty.b(this.a[k]) || ty.d(this.a[k]) || ty.n(this.a[k]) || ty.o(this.a[k]) || ty.s(this.a[k]))
                                     return this.a[k];
                             }
@@ -1561,9 +1576,8 @@
                 va.directory = '';
             if (ty.e(va.parameter[0]) || ty.u(va.parameter[0]))
                 va.parameter = '';
-            if (ty.e(va.parameterns[0]) || ty.u(va.parameterns[0])) {
+            if (ty.e(va.parameterns[0]) || ty.u(va.parameterns[0]))
                 va.parameterns = '';
-            }
             for (var i = 0; i < va.parameter.length; i++)
                 va.query[va.parameter[i].split('=')[0]] = va.parameter[i].split('=')[1];
             return va;
