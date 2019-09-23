@@ -284,19 +284,6 @@
     }),
     gb(Fn.re, 'dom', function(a, b) {
         var ba = {
-            forEach: function(c) {
-                (ty.f(this.a)) && bb('forEach', c);
-                if (ty.f(this.a) || this.a == null)
-                    return this;
-                if (ty.f(c)) {
-                    if (ty.o(this.a))
-                        c(this.a);
-                    if (ty.a(this.a))
-                        for (var i = 0; i < this.length; i++)
-                            c(this.a[i]);
-                }
-                return this;
-            },
             addClass: function(c) {
                 (ty.f(this.a)) && bb('addClass', c);
                 if (ty.f(this.a) || this.a == null)
@@ -604,6 +591,14 @@
                 this.selector = a;
                 return this;
             },
+            containsClass: function(c) {
+                (ty.f(this.a)) && bb('containsClass', c);
+                if (ty.f(this.a) || this.a == null)
+                    return this;
+                var va;
+                if (ty.s(c))
+                    return this.a.className.split(" ").indexOf(c) == -1 ? false : true;
+            },
             css: function(c, d) {
                 (ty.f(this.a)) && bb('css', c, d);
                 if (ty.f(this.a) || this.a == null)
@@ -755,6 +750,42 @@
                 }
                 return this;
             },
+            forEach: function(c) {
+                (ty.f(this.a)) && bb('forEach', c);
+                if (ty.f(this.a) || this.a == null)
+                    return this;
+                if (ty.f(c)) {
+                    if (ty.o(this.a))
+                        c(this.a, 0, 1);
+                    if (ty.a(this.a))
+                        for (var i = 0; i < this.length; i++)
+                            c(this.a[i], i, this.length);
+                }
+                return this;
+            },
+            formToObject: function(c) {
+                if (ty.f(this.a) || this.a == null)
+                    return this;
+                var va = {};
+                if (ty.d(this.a)) {
+                    var vb = this.a.querySelectorAll("input,select,textarea");
+                    for (var i = 0; i < vb.length; ++i) {
+                        var vc = vb[i]
+                          , vd = vc.name
+                          , ve = vc[vc.type == 'checkbox' ? 'checked' : 'value'];
+                        if (ty.s(vd))
+                            va[vd] = ve;
+                    }
+                    return va;
+                }
+                return this;
+            },
+            formToUrl: function() {
+                var va = new Fn.re(this.a,b).formToObject();
+                return Object.keys(va).map(function(aa) {
+                    return encodeURIComponent(aa) + '=' + encodeURIComponent(va[aa]);
+                }).join('&');
+            },
             fullScreen: function() {
                 if (ty.f(this.a) || this.a == null)
                     return this;
@@ -841,6 +872,12 @@
                 if (ty.u(c))
                     return this.a.innerHTML;
                 return this;
+            },
+            next: function() {
+                (ty.f(this.a)) && bb('next', c);
+                if (ty.f(this.a) || this.a == null)
+                    return this;
+                return this.a.nextElementSibling;
             },
             off: function(c, d, e) {
                 if (ty.f(this.a) || this.a == null)
@@ -964,6 +1001,12 @@
                     this.a = this.a.parentNode;
                 this.selector = this.a.parentNode + '';
                 return this;
+            },
+            previus: function() {
+                (ty.f(this.a)) && bb('previus', c);
+                if (ty.f(this.a) || this.a == null)
+                    return this;
+                return this.a.previousElementSibling;
             },
             prop: function(c, d) {
                 (ty.f(this.a)) && bb('prop', c, d);
@@ -1163,6 +1206,16 @@
                 }
                 return this;
             },
+            swapClass: function(c, d) {
+                (ty.f(this.a)) && bb('swapClass', c);
+                if (ty.f(this.a) || this.a == null)
+                    return this;
+                if (ty.s(c) && ty.s(d)) {
+                    gc(this.a).removeClass(c);
+                    gc(this.a).addClass(d);
+                }
+                return this;
+            },
             val: function(c) {
                 (ty.f(this.a)) && bb('val', c);
                 if (ty.f(this.a) || this.a == null)
@@ -1184,30 +1237,7 @@
                 if (ty.u(c))
                     return this.a.value || '';
                 return this;
-            },
-            formToObject: function(c) {
-                if (ty.f(this.a) || this.a == null)
-                    return this;
-                var va = {};
-                if (ty.d(this.a)) {
-                    var vb = this.a.querySelectorAll("input,select,textarea");
-                    for (var i = 0; i < vb.length; ++i) {
-                        var vc = vb[i]
-                          , vd = vc.name
-                          , ve = vc[vc.type == 'checkbox' ? 'checked' : 'value'];
-                        if (ty.s(vd))
-                            va[vd] = ve;
-                    }
-                    return va;
-                }
-                return this;
-            },
-            formToUrl: function() {
-                var va = new Fn.re(this.a,b).formToObject();
-                return Object.keys(va).map(function(aa) {
-                    return encodeURIComponent(aa) + '=' + encodeURIComponent(va[aa]);
-                }).join('&');
-            },
+            }
         }
           , bb = function(c, d, e, f, g) {
             gg[a] = gg[a] || {};
@@ -1218,7 +1248,7 @@
             get: function(t, k) {
                 var va = new Fn.re(a,b).a;
                 if (k in t) {
-                    var vb = ['addClass', 'attr', 'css', 'html', 'on', 'prop', 'removeClass', 'submit', 'val'];
+                    var vb = ['addClass', 'attr', 'css', 'html', 'on', 'prop', 'removeClass', 'submit', 'val', 'previus', 'next'];
                     if (ty.f(va) && vb.indexOf(k) === -1)
                         return !ty.f(ge.__proto__) ? null : ty.f(ba[k]) && ge.__proto__() ? function(c, d, e, f) {
                             bb(k, c, d, e, f);
@@ -1444,6 +1474,35 @@
                     }
                 }
             }
+        },
+        getCookie: function(name) {
+            var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+            return matches ? decodeURIComponent(matches[1]) : null;
+        },
+        setCookie: function(name, value, props) {
+            props = props || {};
+            var exp = props.expires;
+            if (typeof exp == "number" && exp) {
+                var d = new Date();
+                d.setTime(d.getTime() + exp * 1000);
+                exp = props.expires = d;
+            }
+            if (exp && exp.toUTCString)
+                props.expires = exp.toUTCString();
+            value = encodeURIComponent(value);
+            var updatedCookie = name + "=" + value;
+            for (var propName in props) {
+                updatedCookie += "; " + propName;
+                var propValue = props[propName];
+                if (propValue !== true)
+                    updatedCookie += "=" + propValue;
+            }
+            document.cookie = updatedCookie;
+        },
+        deleteCookie: function(name) {
+            setCookie(name, null, {
+                expires: -1
+            })
         },
         getLocation: function(c) {
             if (ty.o(c)) {
