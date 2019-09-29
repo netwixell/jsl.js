@@ -1247,7 +1247,8 @@
             gg[a] = gg[a] || {};
             gg[a][c] = gg[a][c] || [];
             ty.a(gg[a][c]) && gg[a][c].push([d, e, f, g]);
-        };
+        }
+          , bc = ['classList', 'className', 'clientHeight', 'clientLeft', 'clientTop', 'clientWidth', 'id', 'innerHTML', 'innerText', 'offsetHeight', 'offsetWidth', 'offsetLeft', 'offsetTop', 'tabIndex', 'tagName', 'textContent', 'title'];
         Fn.re.prototype = ty.f(ww.Proxy) ? new Proxy(ba,{
             get: function(t, k) {
                 var va = new Fn.re(a,b).a;
@@ -1294,6 +1295,20 @@
                 }
             }
         }) : ba;
+        for (var i = 0; i < bc.length; i++)
+            (function(c) {
+                Object.defineProperty(ba, c, {
+                    set: function(d) {
+                        if (this.a.length > 1)
+                            for (var j = 0; j < this.a.length; j++)
+                                this.a[j][c] = d;
+                        else
+                            this.a[c] = d;
+                        return d;
+                    }
+                });
+            }
+            )(bc[i]);
         for (var i in ge)
             ty.u(ba[i]) && (Fn.re.prototype[i] = function(c, d, e, f, g) {
                 var va = this.a
